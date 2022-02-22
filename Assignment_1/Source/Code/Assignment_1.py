@@ -8,6 +8,10 @@ number_of_calculations = 30
 fibonacci = Fibonacci()
 result = fibonacci.get_fibonacci_numbers(number_of_calculations)
 
+if type(result) == int:
+    print('wrong values')
+    quit(0)
+
 fig = plt.figure()
 fig.suptitle('Fibonacci')
 plt.xlabel('Number')

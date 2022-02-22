@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Changed to calculation from 1 to 30">
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/literature.bib" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/literature.bib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.bbl" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.bbl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.blg" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.blg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.dvi" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.dvi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../LatexTemplateReportsFeb2022/main.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Assignment_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Assignment_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Fibonacci.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Fibonacci.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Code/Assignment_1.py" />
   </component>
   <component name="RecentsManager">
@@ -59,6 +52,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Assignment_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -80,6 +74,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Fibonacci.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -107,6 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645524617446</updated>
+      <workItem from="1645558276941" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="Added solution">
       <created>1645528526271</created>
@@ -135,6 +131,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added solution" />
