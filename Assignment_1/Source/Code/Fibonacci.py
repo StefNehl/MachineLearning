@@ -3,8 +3,6 @@ import numpy as np
 class Fibonacci:
 
     def get_fibonacci_numbers(self, n):
-
-        # Iteration from 0 - n
         fibonacci_numbers = np.zeros(n)
 
         if n < 0:
@@ -13,7 +11,6 @@ class Fibonacci:
             return 0
         elif n == 1:
             return 1
-
 
         for x in range(0, n):
             calculatedValue = -1

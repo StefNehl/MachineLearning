@@ -25,10 +25,9 @@
 
 \author{
 	\coursetitle{Exercises in Machine Learning (190.013), SS2022}
-	\authorstyle{Joe Mann\textsuperscript{1} and Anne Frank\textsuperscript{2}} % Authors
+	\authorstyle{Stefan Nehl\textsuperscript{1}} % Authors
 	\newline\newline % Space before institutions
-	\textsuperscript{1}\textit{joe.mann@unileoben.ac.at}, \institution{Montanuniversität Leoben, Austria}\\ % Institution 1
-	\textsuperscript{2}\textit{anne.frank@unileoben.ac.at}, \institution{Montanuniversität Leoben, Austria}\\ % Institution 1
+	\textsuperscript{1}\textit{stefan-christopher.nehl@stud.unileoben.ac.at}, \institution{Montanuniversität Leoben, Austria}\\ % Institution 1
 	\newline\submissiondate{\today} % Add a date here
 }
 
@@ -49,121 +48,88 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\lettrineabstract{This latex template provides some instructions on how to format your assignment report. Feel free to use your favorite latex editor. Follow the structure below if it suits your needs.}
+\lettrineabstract{In the first assignment, I had to create an algorithm for calculating the Fibonacci sequence and plotting the values from 1 to 30. Furthermore, I made a report in Latex, using the template provided by the Institute and submitted the results.}
 
 %----------------------------------------------------------------------------------------
 %	REPORT CONTENTS
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-A short introduction to the problem.
+The Fibonacci sequence was developed by the Italian mathematician Leonardo Pisano Bigollo, also known as Leonardo Fibonacci (1170 - 1250). He created a number sequence where each number is the sum of the two previous numbers \citep{canaan2011all}. The sequence starts with zero and goes on to a specified number, in my assignment to 30. Example of the Fibonacci sequence: 0, 1, 2, 3, 5, 8, 13, ...
+The mathematical equation for the Fibonacci sequence is displayed here: 
 
-You may want to list your contributions using the command \textit{itemize}.
-
-\begin{itemize}
-	\item First item in a list 
-	\item Second item in a list 
-	\item Third item in a list
-\end{itemize}
+\[
+ f(y) =
+\begin{cases}
+	0 & {n = 0}\\
+  	1 & {n = 1}\\
+  	f(n) = f(n-1) + f(n-2) & n > 1
+\end{cases}
+\]
+\citep{canaan2011all}
 
 \section{Methods}
-Something about the used methods.
+For the results, I followed the following steps: 
 
-Define your equations using the \textit{align} environment. or using \textit{eqnarray}. 
+\begin{itemize}
+	\item Installed PyCharm
+	\item Created a project with a virtual environment 
+	\item Installed packages, \textit{matplotlib} and \textit{numpy}
+	\item Developed the algorithm
+	\item Plotted the results
+\end{itemize}
+\textit{PyCharm} is already installed on my pc, and the creation of a project worked without any issues.   Furthermore, installing the packages \textit{matplotlib} and \textit{numpy} with PIP also worked. Because of this, I will focus in this report on the development of the algorithm
 
-\begin{align}
-	A = 
-	\begin{bmatrix}
-		A_{11} & A_{21} \\
-		A_{21} & A_{22}
-	\end{bmatrix}
-\end{align}
+\subsection{Development of the algorithm}
+First, I created a class \textit{Fibonacci} to implement the needed calculations. I defined a function called \textit{get$\_$fibonacci$\_$numbers(self, n)}. The parameter \textit{self} is the object of the class and \textit{n} the range of the Fibonacci calculation. The next step was to initialize the array, \textit{fibonacci$\_$numbers} of size \textit{n} with zeros. The package \textit{Numpy} provides a function for this operation called \textit{.zeros(n)}, where \textit{n} defines the size of the array. Next, I handled the base case for \textit{n < 0}, \textit{n = 0} and \textit{n = 1} with texit{if} and \textit{elif}. The calculation of the Fibonacci \textit{n > 1} happens in the \textit{for-loop}. I iterated over the complete \textit{fibonacci$\_$numbers} array with the variable \textit{x} and implemented different cases. If \textit{x = 0}, the calculated value is 1, if \textit{x = 1} the calculated value is 1. I need this to calculate the Fibonacci for the third value. Otherwise, the access to the array position \textit{x - 2} would fail. The last step in the \textit{for-loop} is to handle the Fibonacci calculation itself. This calculation happens by accessing the values \textit{x - 1} and \textit{x - 2} in the \textit{fibonacci$\_$numbers} array and summing them up. The newly calculated value is then set to the position \textit{x} in the \textit{fibonacci$\_$numbers} array. The \textit{print} function in line number 25 only displays the values in the console. This function is not part of this assignment. After the loop, I return the \textit{fibonacci$\_$numbers} array.  
 
-\begin{eqnarray}\label{eq:linRegModel}
-y &=& w_1 + w_2 x_1 + w_3 x_2 + \dots + w_{D+1} x_D, \nonumber \\
-y &=&  \bm x^T \bm w.
-\end{eqnarray}
-
-\subsection{Referencing related work}
-
-You may want to use \textit{Google Scholar} to find related scientific publications. Download the bib files and add the entries to the file \textit{literature.bib}. Below are some examples of how to refer to related works. 
-
-The reader should get a copy of Bishop's book on pattern recognition and machine learning \citep{bishop2006pattern} from our library. Also highly recommended are the books of Murphy and Williams \etal \citep{murphy2012machine, williams2006gaussian}.  Also make sure to refer to all artwork like Figure \ref{fig:pythonPlotOne}.
-
-\subsection{You may add more structure to your report}
-
-Your assignment report should comply with the following structure. Feel free to add latex structure elements like 
-\begin{verbatim}
-\paragraph*{...}, \subsubsection*{...} \end{verbatim}
-\begin{verbatim}
-\begin{itemize}..., \begin{enumerate}, etc. 
-\end{verbatim}
+\subsection{Plotting the results}
+For plotting the results, I created a plot with the \textit{.figure()} function of \textit{matplotlib}. First, I set the subtitle of this plot to \textit{Fibonacci}, the x-axis label to \textit{Number} and the y-axis label to \textit{Value}. I created an array with the \textit{range()} function from python which contains the values from 1 to 30 and is needed for the x-axis values. Next, is set y-axis values to the results of the Fibonacci calculation, added the values to the plot with the  \textit{.plot()} function and displayed the plot with \textit{.show()}.
 
 \section{Results}
-Something about your results. Some plots would be also nice.
-
-\subsection{Formatting instructions for equations} 
-
-Use the notation defined in our online slides defined in pages 8-11 in \url{https://docs.google.com/presentation/d/1mtpjSyuoBwhZxc8QUI1PUfMhyyXAXsXNXNqHsLSk-AQ/edit?usp=sharing}. In particular,  
-\begin{itemize}
-\item Use single letters for scalars, i.e., $a \in \sR^1$.  
-\item Vectors are written in bold, i.e., $\bm w \in \sR^{10}$.
-\item Matrices are written in bold capital letters, i.e., $\bm M \in \sR^{\{10\;\times\;10\}}$. 
-\item Use subscripts to denote elements in vectors, i.e., $w_i$ is part of $\bm w = [w_1, w_2, \dots, w_i]$.
-\item Denote functions by single lower case letters, i.e., $x = f(y)$ which implements the transformation $f(y): \sR^1 \rightarrow \sR^1$.
-\item You may use subscripts for functions, i.e., $x = f_{\textrm{fwd}}(y)$ which implements the forward kinematics transformation. Or $y = f_{\textrm{inv}}(x)$ which implements the inverse kinematics transformation. 
-\item Denote continuous distribution using the lower case $p(x)$ term and use the symbol $\N(.)$ to denote Gaussian distributions. 
-\end{itemize}
-
-\subsection{Formatting instructions for figures}
-
-When creating \textbf{figures}, 
-\begin{itemize}
-\item Make sure that all axis have labels. 
-\item Always add a legend (images may be exceptions).
-\item Use different line colors, e.g., in MATLAB use the colormap \textit{Lines}. 
-\item Use a minimum line width of $2$ and different line styles. 
-\item The font size of text in figures should be equal to the figure caption font size. E.g., in MATLAB use a font size of $18-24$ for figures.\end{itemize} 
+Figure 1 displays the result of the Fibonacci calculation. The calculated values grow very fast as the numbers for the calculation rise. For example, the value for the number 15 is 610, and for 30, 832040. Table 1 displays the first and last three values of the Fibonacci calculation.    
 
 \begin{figure}[t] %or use htbp to place it inside the text blocks
   \centering
-  \includegraphics[width=\columnwidth]{pics/example_plot.png}
-  \caption{Illustration of an figure generated using python. Make sure that all axis labels and legend texts are readable. The font size should be close to the the font size of this caption.}
-  \label{fig:pythonPlotOne}
+  \includegraphics[width=\columnwidth]{pics/fibonacci_1.png}
+  \caption{Illustrates the calculated values for the Fibonacci sequence from 1 to 30.}
+  \label{fig:fibonacciPlot}
 \end{figure}
 
-Use the command \begin{verbatim} \begin{figure*}[t] ... \end{figure*} \end{verbatim} to print double column figures. 
-
-\subsection{Tables are important}
-
-You may want to use some online latex table generators like \url{https://www.tablesgenerator.com/}. Below are some examples. 
-
-
-\begin{table}[b]
-         \label{tab:exampleTableOne}
-	\caption{Example table}
+\begin{table}[h]
+         \label{tab:fibonacciValuesTable}
+	\caption{Fibonacci Values}
 	\centering
-	\begin{tabular}{llr}
+	\begin{tabular}{c c}
 		\toprule
-		\multicolumn{2}{c}{Name} \\
-		\cmidrule(r){1-2}
-		First Name & Last Name & Grade \\
+		Number & Calculated Value \\
 		\midrule
-		John & Doe & $7.5$ \\
-		Richard & Miles & $5$ \\
+		1 & 1 \\
+		2 & 1 \\
+		3 & 2 \\
+		... & ... \\
+		28 & 317811 \\
+		29 & 514229 \\
+		30 & 832040 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 
 \section{Conclusion}
-Something about the problems of the method you used and give hints on how to solve them.
+The setup for the assignment was straightforward, and no issues appeared in the process. Also, the implementation of the algorithm happened without any problem. However, I had some trouble with creating the report because of the wrong build options in \textit{Texmark}. Changing the build options to \textit{PDFLaTex} solved this issue. 
+
+\newpage
 
 \section*{APPENDIX}
 
-You can also directly print your source code using the command shown below.
+Fibonacci class: 
+\lstinputlisting{../Source/Code/Fibonacci.py}
+\newpage
 
-\lstinputlisting{plot_template.py}
+Plotting of the values:
+\lstinputlisting{../Source/Code/Assignment_1.py}
+
 
 
 
