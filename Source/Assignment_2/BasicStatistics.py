@@ -1,30 +1,32 @@
-
+import math
 
 class BasicStatistics:
 
-    def getMean(self, dataSet):
+    def checkDataSet(self, dataSet):
         if dataSet == None:
-            return None;
+            return False
 
-        length = len(dataSet)
-        if length == 0:
+        if len(dataSet) == 0:
+            return False
+
+        return True
+
+    def getMean(self, dataSet):
+        if self.checkDataSet(dataSet) == False:
             return None
 
-        sum = sum(dataSet)
-        mean = sum / length
+        length = len(dataSet)
+        sumValue = sum(dataSet)
+        mean = sumValue / length
         return mean
 
 
     def getMedian(self, dataSet):
-        if dataSet == None:
-            return None;
-
-        length = len(dataSet)
-        if length == 0:
+        if self.checkDataSet(dataSet) == False:
             return None
 
+        length = len(dataSet)
         dataSet.sort()
-
         mid = length // 2
 
         if length % 2 == 0:
@@ -38,10 +40,28 @@ class BasicStatistics:
 
 
     def getVariance(self, dataSet):
-        return 0
+        if self.checkDataSet(dataSet) == False:
+            return None
+
+        length = len(dataSet)
+        mean = self.getMean(dataSet)
+
+        squareDeviations = [(x - mean) ** 2 for x in dataSet]
+        variance = sum(squareDeviations) / (length - 1)
+        return variance
+
 
     def getStandardDeviation(self, dataSet):
-        return 0
+        if self.checkDataSet(dataSet) == False:
+            return None
+
+        variance = self.getVariance(dataSet)
+        standardDeviation = math.sqrt(variance)
+        return standardDeviation
 
     def standardizeDataSet(self, dataSet):
-        return dataSet
+        mean = self.getMean(dataSet)
+        standardDeviation = self.getStandardDeviation(dataSet)
+        standardizeDataSet = [((x - mean)/standardDeviation) for x in dataSet]
+
+        return standardizeDataSet
