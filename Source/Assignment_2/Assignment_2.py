@@ -1,6 +1,7 @@
 import csv
 
 import matplotlib.pyplot as plt
+import numpy
 from BasicStatistics import BasicStatistics
 
 dataSet = []
@@ -18,20 +19,65 @@ mean = basicStatistics.getMean(dataSet)
 median = basicStatistics.getMedian(dataSet)
 variance = basicStatistics.getVariance(dataSet)
 standardDeviation = basicStatistics.getStandardDeviation(dataSet)
+
 standardizedDataSet = basicStatistics.standardizeDataSet(dataSet)
+standardizedMean = basicStatistics.getMean(standardizedDataSet)
+standardizedMedian = basicStatistics.getMedian(standardizedDataSet)
+standardizedStandardDeviation = basicStatistics.getStandardDeviation(standardizedDataSet)
+
 
 length = len(standardizedDataSet)
-range = range(length)
+plotRange = range(length)
 
-fig = plt.figure()
-fig.suptitle('Raw Data')
-plt.xlabel('Samples')
-plt.ylabel('Values')
+plt.suptitle('Data Distribution')
 
-x = range
-y = dataSet
+plt.figure(figsize=(8,6))
+# plot histogram (left, right, top)
+plt.subplot(2, 1, 1)
+plt.tight_layout()
 
-plt.plot(x, y)
+
+plt.hist(dataSet, label='Histogram')
+plt.axvline(mean, label='Mean', color='r', ls='--')
+plt.axvline(median, label='Median', color='y', ls='--')
+plt.axvline(mean - standardDeviation, label='Standard Deviation', color='g', ls='--')
+plt.axvline(mean + standardDeviation, color='g', ls='--')
+
+plt.title("Raw Data")
+plt.xlabel('Values')
+plt.ylabel('Frequency')
+plt.legend(loc="upper right")
+
+# plot raw data (left, bottom)
+plt.subplot(2, 2, 3)
+plt.tight_layout()
+
+plt.scatter(plotRange, dataSet, label='Data')
+plt.axhline(mean, label='Mean', color='r', ls='--')
+#plt.axhline(median, label='Median', color='y', ls='--')
+plt.axhline(mean + standardDeviation, label='Standard Deviation', color='g', ls='--')
+plt.axhline(mean - standardDeviation, color='g', ls='--')
+
+plt.title('Raw Data')
+plt.xlabel('Sample')
+plt.ylabel('Value')
+plt.legend(loc="best")
+
+# plot standardizedData(left, bottom)
+plt.subplot(2, 2, 4)
+plt.tight_layout()
+plt.title('Normalized Data')
+plt.xlabel('Sample')
+plt.ylabel('Standardized Value')
+
+plt.scatter(plotRange, standardizedDataSet, label='Data')
+plt.axhline(standardizedMean, label='Mean', color='r', ls='--')
+#plt.axhline(standardizedMedian, label='Median', color='y', ls='--')
+plt.axhline(standardizedMean + standardizedStandardDeviation, label='Standard Deviation', color='g', ls='--')
+plt.axhline(standardizedMean - standardizedStandardDeviation, color='g', ls='--')
+
+plt.legend(loc="best")
+
 plt.show()
 
 
