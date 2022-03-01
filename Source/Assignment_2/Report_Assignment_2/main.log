@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  23 FEB 2022 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  1 MAR 2022 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1335,14 +1335,7 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 84.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 5.0pt on input line 84.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-<pics/fibonacci_1.png, id=16, 462.528pt x 346.896pt>
+<pics/fibonacci_1.png, id=1, 462.528pt x 346.896pt>
 File: pics/fibonacci_1.png Graphic file (type png)
 <use pics/fibonacci_1.png>
 Package pdftex.def Info: pics/fibonacci_1.png  used on input line 94.
@@ -1353,28 +1346,38 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 95.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 95.
+ [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-(../Source/Code/Fibonacci.py
+
+] (../BasicStatistics.py
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 (Font)              scaled to size 5.0pt on input line 1.
-) [2 <./pics/fibonacci_1.png>]
-(../Source/Code/Assignment_1.py) 
-AED: lastpage setting LastPage
-[3
 
-] (./main.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./pics/fibonacci_1.png>]) (../Assignment_2.py
+Underfull \vbox (badness 4120) has occurred while \output is active []
+
+ [3])
+
+AED: lastpage setting LastPage
+[4] (./main.aux)
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22047 strings out of 478278
- 383758 string characters out of 5850546
- 1193150 words of memory out of 5000000
- 39717 multiletter control sequences out of 15000+600000
- 622849 words of font info for 213 fonts, out of 8000000 for 9000
+ 22111 strings out of 478278
+ 384440 string characters out of 5850546
+ 1323146 words of memory out of 5000000
+ 39790 multiletter control sequences out of 15000+600000
+ 621862 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,11n,75p,1903b,1724s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,75p,1903b,1855s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{c:/texlive/2021/te
 xmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/pu
@@ -1386,10 +1389,10 @@ s/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
 /texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/
 2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist
 /fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (3 pages, 248445 bytes).
+Output written on main.pdf (4 pages, 253138 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  68102 words of extra memory for PDF output out of 74296 (max. 10000000)
 
