@@ -50,6 +50,39 @@ result = basicStatistics.getStandardDeviation(dataSet2)
 print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
 print()
 
+#FindMinValue
+print('Find MinValue')
+expectedResult = 1
+result = basicStatistics.findMinValue(dataSet1)
+print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
+
+print('Find MinValue')
+expectedResult = 1
+result = basicStatistics.findMinValue(dataSet2)
+print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
+
+#FindMaxValue
+print('Find MaxValue')
+expectedResult = 5
+result = basicStatistics.findMaxValue(dataSet1)
+print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
+
+print('Find MaxValue')
+expectedResult = 6
+result = basicStatistics.findMaxValue(dataSet2)
+print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
+
+#Normalize Data
+print('Standardized Data')
+expectedResult = "??"
+result = basicStatistics.normalizeDataSet(dataSet1)
+print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
+
+expectedResult = "??"
+result = basicStatistics.normalizeDataSet(dataSet2)
+print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
+print()
+
 #Standardized Data
 print('Standardized Data')
 expectedResult = "??"

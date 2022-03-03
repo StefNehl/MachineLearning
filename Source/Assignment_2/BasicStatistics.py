@@ -59,6 +59,30 @@ class BasicStatistics:
         standardDeviation = math.sqrt(variance)
         return standardDeviation
 
+    def findMinValue(self, dataSet):
+        if self.checkDataSet(dataSet) == False:
+            return None
+
+        dataSetSorted = dataSet[:]
+        dataSetSorted.sort()
+        return dataSetSorted[0]
+
+
+    def findMaxValue(self, dataSet):
+        if self.checkDataSet(dataSet) == False:
+            return None
+
+        dataSetSorted = dataSet[:]
+        dataSetSorted.sort()
+        return dataSetSorted[len(dataSetSorted) - 1]
+
+    def normalizeDataSet(self, dataSet):
+        min = self.findMinValue(dataSet)
+        max = self.findMaxValue(dataSet)
+
+        dataNorm = [(i - min) / (max - min) for i in dataSet]
+        return dataNorm
+
     def standardizeDataSet(self, dataSet):
         mean = self.getMean(dataSet)
         standardDeviation = self.getStandardDeviation(dataSet)
