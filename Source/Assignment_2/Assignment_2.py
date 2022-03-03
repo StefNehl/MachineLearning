@@ -15,11 +15,13 @@ with open('gauss.csv', mode='r') as file:
 
 basicStatistics = BasicStatistics()
 
+#dataSet = basicStatistics.normalizeDataSet(dataSet)
 mean = basicStatistics.getMean(dataSet)
 median = basicStatistics.getMedian(dataSet)
 variance = basicStatistics.getVariance(dataSet)
 standardDeviation = basicStatistics.getStandardDeviation(dataSet)
 
+normalizedDataSet = basicStatistics.normalizeDataSet(dataSet)
 standardizedDataSet = basicStatistics.standardizeDataSet(dataSet)
 standardizedMean = basicStatistics.getMean(standardizedDataSet)
 standardizedMedian = basicStatistics.getMedian(standardizedDataSet)
@@ -37,7 +39,7 @@ plt.subplot(2, 1, 1)
 plt.tight_layout()
 
 
-plt.hist(dataSet, label='Histogram')
+plt.hist(dataSet, bins=20, density=True, label='Histogram')
 plt.axvline(mean, label='Mean', color='r', ls='--')
 plt.axvline(median, label='Median', color='y', ls='--')
 plt.axvline(mean - standardDeviation, label='Standard Deviation', color='g', ls='--')
