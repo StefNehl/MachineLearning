@@ -26,7 +26,8 @@ class BasicStatistics:
             return None
 
         length = len(dataSet)
-        dataSet.sort()
+        dataSetSorted = dataSet[:]
+        dataSetSorted.sort()
         mid = length // 2
 
         if length % 2 == 0:
