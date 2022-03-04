@@ -47,7 +47,9 @@ class BasicStatistics:
         mean = self.getMean(dataSet)
 
         squareDeviations = [(x - mean) ** 2 for x in dataSet]
-        variance = sum(squareDeviations) / (length - 1)
+
+        #Bessel's correction (n-1) instead of n for better results
+        variance = sum(squareDeviations) / (length-1)
         return variance
 
 
@@ -77,6 +79,9 @@ class BasicStatistics:
         return dataSetSorted[len(dataSetSorted) - 1]
 
     def normalizeDataSet(self, dataSet):
+        if self.checkDataSet(dataSet) == False:
+            return None
+
         min = self.findMinValue(dataSet)
         max = self.findMaxValue(dataSet)
 
@@ -84,6 +89,9 @@ class BasicStatistics:
         return dataNorm
 
     def standardizeDataSet(self, dataSet):
+        if self.checkDataSet(dataSet) == False:
+            return None
+
         mean = self.getMean(dataSet)
         standardDeviation = self.getStandardDeviation(dataSet)
         standardizeDataSet = [((x - mean)/standardDeviation) for x in dataSet]

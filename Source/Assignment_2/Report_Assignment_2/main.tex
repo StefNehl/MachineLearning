@@ -21,7 +21,7 @@
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Assignment I: Latex and Python Basics} % The article title
+\title{Assignment II: Latex and Python Basics} % The article title
 
 \author{
 	\coursetitle{Exercises in Machine Learning (190.013), SS2022}
@@ -56,33 +56,78 @@
 
 \section{Introduction}
 
-The statistic functions I implemented were calculating the mean, median, variance, and standard deviation. So, first, I implemented the mean. 
+The statistic functions I implemented were calculating the mean, median, variance, and standard deviation. Furthermore, I added a function for normalizing and standardizing a data set.  
 
+\section{Implementation}
+For the implementation I created the class \textit{BasicStatistics} with all the statistic functions. First, I implemented the mean. 
+
+\subsection{Mean}
+The mean is the average of a collection of numbers. The formula for the calculation is the following
+\citep{meanCFI}: 
 \[
- f(y) =
-\begin{cases}
-	0 & {n = 0}\\
-  	1 & {n = 1}\\
-  	f(n) = f(n-1) + f(n-2) & n > 1
-\end{cases}
+mean = \frac{x\textsubscript{1} + x\textsubscript{2} + \ldots + x\textsubscript{n}} {n}
 \]
-\citep{canaan2011all}
+Where n is the number of elements in the collection and x\textsubscript{n} the element on the position n. The calculation was implemented in the \textit{getMean} function. 
+The function \textit{checkDataSet} checks if the \textit{dataSet} is empty or \textit{None}. If this is the case \textit{None} is returned.
+\lstinputlisting[linerange=14-21]{../BasicStatistics.py}
 
-\section{Methods}
-For the results, I followed the following steps: 
-
+\subsection{Median}
+The Median is the middle value of a collection of numbers. The steps of the implemented algorithm are
+\citep{medianCFI}: 
 \begin{itemize}
-	\item Installed PyCharm
-	\item Created a project with a virtual environment 
-	\item Installed packages, \textit{matplotlib} and \textit{numpy}
-	\item Developed the algorithm
-	\item Plotted the results
+	\item Sort the collection of numbers 
+	\item Calculate the mid index 
+	\item if the length of the collection is uneven: take the element with the mid index
+	\item if the length is even calculate the median: 
+	\[
+	median = \frac{x\textsubscript{mid} + x\textsubscript{mid-1}} {2}
+	\]
+	\item return the result
 \end{itemize}
-\textit{PyCharm} is already installed on my pc, and the creation of a project worked without any issues.   Furthermore, installing the packages \textit{matplotlib} and \textit{numpy} with PIP also worked. Because of this, I will focus in this report on the development of the algorithm
 
-\subsection{Development of the algorithm}
-First, I created a class \textit{Fibonacci} to implement the needed calculations. I defined a function called \textit{get$\_$fibonacci$\_$numbers(self, n)}. The parameter \textit{self} is the object of the class and \textit{n} the range of the Fibonacci calculation. The next step was to initialize the array, \textit{fibonacci$\_$numbers} of size \textit{n} with zeros. The package \textit{Numpy} provides a function for this operation called \textit{.zeros(n)}, where \textit{n} defines the size of the array. Next, I handled the base case for \textit{n < 0}, \textit{n = 0} and \textit{n = 1} with \textit{if} and \textit{elif}. The calculation of the Fibonacci \textit{n > 1} happens in the \textit{for-loop}. I iterated over the complete \textit{fibonacci$\_$numbers} array with the variable \textit{x} and implemented different cases. If \textit{x = 0}, the calculated value is 1, if \textit{x = 1} the calculated value is 1. I need this to calculate the Fibonacci for the third value. Otherwise, the access to the array position \textit{x - 2} would fail. The last step in the \textit{for-loop} is to handle the Fibonacci calculation itself. This calculation happens by accessing the values \textit{x - 1} and \textit{x - 2} in the \textit{fibonacci$\_$numbers} array and summing them up. The newly calculated value is then set to the position \textit{x} in the \textit{fibonacci$\_$numbers} array. The \textit{print} function in line number 26 only displays the values in the console. This function is not part of this assignment. After the loop, I return the \textit{fibonacci$\_$numbers} array.  
 
+\lstinputlisting[linerange=24-39]{../BasicStatistics.py}
+
+\subsection{Variance}
+The variance is the expected variation between values in a collection of numbers. 
+The formula for the calculation of the variance it the following
+\citep{varianceAndStandardDeviationStack}: 
+\[
+Variance\:\sigma\textsuperscript{2} = \frac{\sum_{i=0}^{n-1}(x\textsubscript{i} - \overline{x})}{n-1}
+\]
+Where \textit{n} is the number of elements, \textit{x\textsubscript{i}} the element on the index \textit{i} and \textit{$\overline{x}$} the mean. This formula uses the Bessel's correction for smaller numbers. Therefore, instead of dividing the aggregated values with n, I divided them with n-1 \citep{varianceAndStandardDeviationStack}. 
+
+\lstinputlisting[linerange=42-53]{../BasicStatistics.py}
+
+\subsection{Standard Deviation}
+The standard deviation is the amount of the variation of a collection of numbers. 
+The formula for the calculation of the standard deviation is
+\citep{varianceAndStandardDeviationStack}: 
+\[
+Standard\:Deviation\:\sigma = \sqrt{\sigma\textsuperscript{2}}
+\]
+
+\lstinputlisting[linerange=56-62]{../BasicStatistics.py}
+
+
+\subsection{Normalize Data}
+The normalization is a process to transform the values in a collection of numbers to values between zero and one. The idea is that every value contributes equally to the further analysis. The calculation happens with the formula \citep{normalizeDataStatology}: 
+\[
+x\textsubscript{norm} = \frac{x\textsubscript{i} - x\textsubscript{min}} {x\textsubscript{max} - x\textsubscript{min}}
+\]
+Where \textit{x\textsubscript{norm}}, is the normalized value, \textit{x\textsubscript{i}} the value which needs to be normalized, \textit{x\textsubscript{min}} the min values and \textit{x\textsubscript{max}} the maximum value of the collection. 
+\lstinputlisting[linerange=81-89]{../BasicStatistics.py}
+The functions \textit{findMinValue} and \textit{findMaxValue} return the min or max value of the given collection. 
+
+\subsection{Standardize Data}
+Standardization is a preprocessing step, to standardize the range of values of a collection of numbers. I used the following formula to standardize the data
+\citep{standardizeDataBuildIn}. 
+\[
+z = \frac{x\textsubscript{i} - \overline{x}}{\sigma}
+\]
+Where \textit{z} is the standardize value, \textit{$x\textsubscript{i}$} the value in the collection on index i, \textit{$\overline{x}$} the mean and \textit{$\sigma$} the standard deviation.
+                                                                                                                                                                                                                                                             
+\subsection{Loading the data}
 \subsection{Plotting the results}
 For plotting the results, I created a plot with the \textit{.figure()} function of \textit{matplotlib}. First, I set the subtitle of this plot to \textit{Fibonacci}, the x-axis label to \textit{Number} and the y-axis label to \textit{Value}. I created an array with the \textit{range()} function from python which contains the values from 1 to 30 and is needed for the x-axis values. Next, is set y-axis values to the results of the Fibonacci calculation, added the values to the plot with the  \textit{.plot()} function and displayed the plot with \textit{.show()}.
 

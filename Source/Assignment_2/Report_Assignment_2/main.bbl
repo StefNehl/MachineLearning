@@ -17,42 +17,94 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
-  \entry{canaan2011all}{article}{}
-    \name{author}{3}{}{%
-      {{hash=CC}{%
-         family={Canaan},
-         familyi={C\bibinitperiod},
-         given={C},
-         giveni={C},
-      }}%
-      {{hash=GM}{%
-         family={Garai},
-         familyi={G\bibinitperiod},
-         given={MS},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=DM}{%
-         family={Daya},
-         familyi={D\bibinitperiod},
-         given={M},
-         giveni={M},
+  \entry{meanCFI}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=ICF}{%
+         family={Institute},
+         familyi={I\bibinitperiod},
+         given={Corporate\bibnamedelima Finance},
+         giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {Citeseer}%
+      {Corporate Finance Institute}%
     }
-    \strng{namehash}{CCGMDM1}
-    \strng{fullhash}{CCGMDM1}
+    \strng{namehash}{ICF1}
+    \strng{fullhash}{ICF1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2011}
+    \field{extradate}{1}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Mean}
+    \verb{url}
+    \verb https://corporatefinanceinstitute.com/resources/knowledge/other/mean/
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{medianCFI}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=ICF}{%
+         family={Institute},
+         familyi={I\bibinitperiod},
+         given={Corporate\bibnamedelima Finance},
+         giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Corporate Finance Institute}%
+    }
+    \strng{namehash}{ICF1}
+    \strng{fullhash}{ICF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{extradate}{2}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Median}
+    \verb{url}
+    \verb https://corporatefinanceinstitute.com/resources/knowledge/other/media
+    \verb n/
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{varianceAndStandardDeviationStack}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=RLP}{%
+         family={Ramos},
+         familyi={R\bibinitperiod},
+         given={Leodanis\bibnamedelima Pozo},
+         giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Stack Abuse}%
+    }
+    \strng{namehash}{RLP1}
+    \strng{fullhash}{RLP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
     \field{labeldatesource}{}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{pages}{72}
-    \field{title}{All about Fibonacci: A python approach}
-    \field{journaltitle}{World Applied Programming journal, no. April}
-    \field{year}{2011}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Calculating Variance and Standard Deviation in Python}
+    \verb{url}
+    \verb https://stackabuse.com/calculating-variance-and-standard-deviation-in
+    \verb -python/
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
   \endentry
 \enddatalist
 \endinput
