@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  4 MAR 2022 11:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  4 MAR 2022 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1350,85 +1350,91 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 consecutive:
 ) (../BasicStatistics.py
 consecutive:
-)
-
-LaTeX Warning: Citation 'normalizeDataStatology' on page 2 undefined on input l
-ine 114.
-
-(../BasicStatistics.py
+) (../BasicStatistics.py
 consecutive:
 )
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
+(Font)              scaled to size 5.0pt on input line 131.
 
-LaTeX Warning: Citation 'standardizeDataBuildIn' on page 2 undefined on input l
-ine 124.
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+\T1/XCharter-TLF/m/n/10 (+20) I im-ple-mented a script file with the name
+ []
 
-<pics/fibonacci_1.png, id=14, 462.528pt x 346.896pt>
+
+Underfull \hbox (badness 6396) in paragraph at lines 131--132
+\T1/XCharter-TLF/m/it/10 (+20) BasicStatistics$[]$Test \T1/XCharter-TLF/m/n/10 
+(+20) which tests all the func-tion
+ []
+
+(../Assignment_2.py
+consecutive:
+) [2]
+<pics/fibonacci_1.png, id=22, 462.528pt x 346.896pt>
 File: pics/fibonacci_1.png Graphic file (type png)
 <use pics/fibonacci_1.png>
-Package pdftex.def Info: pics/fibonacci_1.png  used on input line 139.
+Package pdftex.def Info: pics/fibonacci_1.png  used on input line 153.
 (pdftex.def)             Requested size: 231.88997pt x 173.91866pt.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 140.
+(Font)              scaled to size 9.0pt on input line 154.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 140.
+(Font)              scaled to size 9.0pt on input line 154.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 140.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] (../BasicStatistics.py [3 <./pics/fibonacci_1.png>]
+(Font)              scaled to size 9.0pt on input line 154.
+ [3 <./pics/fibonacci_1.png>] (../BasicStatistics.py
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) [4]
+ [4])
+(../BasicStatistics_Test.py
+Underfull \vbox (badness 4120) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+) [6]
 (../Assignment_2.py
 Underfull \vbox (badness 4120) has occurred while \output is active []
 
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5]
+ [7]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
 [][][]\T1/XCharter-TLF/m/n/10 (+20) (n.d.[b]). \T1/XCharter-TLF/m/it/10 (+20) M
 e-dian\T1/XCharter-TLF/m/n/10 (+20) . \T1/XCharter-TLF/m/sc/10 (+20) url\T1/XCh
 arter-TLF/m/n/10 (+20) : $\T1/cmtt/m/n/10 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
 \T1/cmtt/m/n/10 knowledge / other / median/$ \T1/XCharter-TLF/m/n/10 (+20) (vis
 -ited on
  []
 
 
 AED: lastpage setting LastPage
-[6
+[8
 
 ] (./main.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22180 strings out of 478278
- 386003 string characters out of 5850546
- 1489394 words of memory out of 5000000
- 39828 multiletter control sequences out of 15000+600000
- 618331 words of font info for 220 fonts, out of 8000000 for 9000
+ 22236 strings out of 478278
+ 387454 string characters out of 5850546
+ 1490468 words of memory out of 5000000
+ 39854 multiletter control sequences out of 15000+600000
+ 627095 words of font info for 237 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,75p,1903b,1737s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,75p,1903b,1733s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc}{c:/texlive/2021/te
 xmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{c:/texlive/2021/texmf-dist/f
@@ -1445,10 +1451,10 @@ c/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000
 .pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texliv
 e/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (6 pages, 316903 bytes).
+Output written on main.pdf (8 pages, 323107 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 70662 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 72710 words of extra memory for PDF output out of 74296 (max. 10000000)
 

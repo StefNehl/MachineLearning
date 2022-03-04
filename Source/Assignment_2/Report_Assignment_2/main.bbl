@@ -76,6 +76,36 @@
     \field{urlyear}{2022}
   \endentry
 
+  \entry{standardizeDataBuildIn}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=JZ}{%
+         family={Jaadi},
+         familyi={J\bibinitperiod},
+         given={Zakaria},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Built In}%
+    }
+    \strng{namehash}{JZ1}
+    \strng{fullhash}{JZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Standardization}
+    \verb{url}
+    \verb https://builtin.com/data-science/when-and-why-standardize-your-data
+    \endverb
+    \field{year}{2019}
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
   \entry{varianceAndStandardDeviationStack}{misc}{}
     \name{author}{1}{}{%
       {{hash=RLP}{%
@@ -100,6 +130,34 @@
     \verb{url}
     \verb https://stackabuse.com/calculating-variance-and-standard-deviation-in
     \verb -python/
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{normalizeDataStatology}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=Z}{%
+         family={Zach},
+         familyi={Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Statology}%
+    }
+    \strng{namehash}{Z1}
+    \strng{fullhash}{Z1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{title}{How to Normalize Data in Python}
+    \verb{url}
+    \verb https://www.statology.org/normalize-data-in-python/
     \endverb
     \field{year}{2021}
     \field{urlday}{03}

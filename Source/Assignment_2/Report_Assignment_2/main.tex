@@ -126,10 +126,24 @@ Standardization is a preprocessing step, to standardize the range of values of a
 z = \frac{x\textsubscript{i} - \overline{x}}{\sigma}
 \]
 Where \textit{z} is the standardize value, \textit{$x\textsubscript{i}$} the value in the collection on index i, \textit{$\overline{x}$} the mean and \textit{$\sigma$} the standard deviation.
-                                                                                                                                                                                                                                                             
+
+\subsection{Testing the functions}
+I implemented a script file with the name \textit{BasicStatistics$\_$Test} which tests all the function with two data sets. 
+
+\begin{itemize}
+	\item 1, 2, 3, 4, 5
+	\item 1, 2, 3, 4, 5, 6
+\end{itemize}
+                                                                                                                                                                                                                                                              
 \subsection{Loading the data}
+The data which I should analyse is stored in the file \textit{gauss.csv}. The data is one dimensional and I read the lines in the file with the function \textit{reader()} of the imported csv package. The data was then stored in the array \textit{dataSet}. 
+
+\lstinputlisting[linerange=10-14]{../Assignment_2.py}
+
 \subsection{Plotting the results}
-For plotting the results, I created a plot with the \textit{.figure()} function of \textit{matplotlib}. First, I set the subtitle of this plot to \textit{Fibonacci}, the x-axis label to \textit{Number} and the y-axis label to \textit{Value}. I created an array with the \textit{range()} function from python which contains the values from 1 to 30 and is needed for the x-axis values. Next, is set y-axis values to the results of the Fibonacci calculation, added the values to the plot with the  \textit{.plot()} function and displayed the plot with \textit{.show()}.
+For plotting the results, I created a plot with the \textit{.figure()} function of \textit{matplotlib} with the width of 8 inch and the height of 6 inch. I set the subtitle of the plot to \textit{Data Distribution} and created a subplot. We need three different subplots in the plot. One histogram and two scatter plots. 
+First, I created the histogram with the function  \textit{.subplot(2,1,1)}. This subplot consumes two columns and one row and starts at the first position. I added the needed labels and plotted the values with the \textit{.hist()} function. I used 20 bins and the density property for the histogram. Also four vertical lines with the mean, median and the standard deviation with plus and minus was added to the subplot of the histogram. 
+The other two subplots contain the raw and the standardized data, where each of the plots had three horizontal lines with the mean and the standard deviation. 
 
 \section{Results}
 Figure 1 displays the result of the Fibonacci calculation. The calculated values grow very fast as the numbers for the calculation rise. For example, the value for the number 15 is 610, and for 30, 832040. Table 1 displays the first and last three values of the Fibonacci calculation.    
@@ -168,8 +182,12 @@ The setup for the assignment was straightforward, and no issues appeared in the 
 
 \section*{APPENDIX}
 
-Fibonacci class: 
+\textit{BasicStatistics} class: 
 \lstinputlisting{../BasicStatistics.py}
+\newpage
+
+\textit{BasicStatistics$\_$Test} class: 
+\lstinputlisting{../BasicStatistics_Test.py}
 \newpage
 
 Plotting of the values:
