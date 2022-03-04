@@ -43,7 +43,7 @@ plt.axvline(median, label='Median', color='y', ls='--')
 plt.axvline(mean - standardDeviation, label='Standard Deviation', color='g', ls='--')
 plt.axvline(mean + standardDeviation, color='g', ls='--')
 
-plt.title("Raw Data")
+plt.title("Data Distribution")
 plt.xlabel('Values')
 plt.ylabel('Frequency')
 plt.legend(loc="upper right")
