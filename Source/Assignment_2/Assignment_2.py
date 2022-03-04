@@ -36,8 +36,6 @@ plt.suptitle('Data Distribution')
 plt.figure(figsize=(8,6))
 # plot histogram (left, right, top)
 plt.subplot(2, 1, 1)
-plt.tight_layout()
-
 
 plt.hist(dataSet, bins=20, density=True, label='Histogram')
 plt.axvline(mean, label='Mean', color='r', ls='--')
@@ -52,7 +50,6 @@ plt.legend(loc="upper right")
 
 # plot raw data (left, bottom)
 plt.subplot(2, 2, 3)
-plt.tight_layout()
 
 plt.scatter(plotRange, dataSet, label='Data', s=2)
 plt.axhline(mean, label='Mean', color='r', ls='--')
@@ -67,7 +64,6 @@ plt.legend(loc="best")
 
 # plot standardizedData(left, bottom)
 plt.subplot(2, 2, 4)
-plt.tight_layout()
 plt.title('Normalized Data')
 plt.xlabel('Sample')
 plt.ylabel('Standardized Value')
@@ -80,6 +76,7 @@ plt.axhline(standardizedMean - standardizedStandardDeviation, color='g', ls='--'
 
 plt.legend(loc="best")
 
+plt.tight_layout()
 plt.show()
 
 

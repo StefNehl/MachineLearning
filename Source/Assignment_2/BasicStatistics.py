@@ -31,11 +31,11 @@ class BasicStatistics:
         mid = length // 2
 
         if length % 2 == 0:
-            median1 = dataSet[mid]
-            median2 = dataSet[mid - 1]
+            median1 = dataSetSorted[mid]
+            median2 = dataSetSorted[mid - 1]
             median = (median1 + median2) / 2
         else:
-            median = dataSet[mid]
+            median = dataSetSorted[mid]
 
         return median
 
