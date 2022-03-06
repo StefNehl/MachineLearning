@@ -1,3 +1,7 @@
+"""
+@author: Nehl Stefan
+"""
+
 import csv
 
 import matplotlib.pyplot as plt
@@ -20,7 +24,7 @@ mean = basicStatistics.getMean()
 median = basicStatistics.getMedian()
 variance = basicStatistics.getVariance()
 standardDeviation = basicStatistics.getStandardDeviation()
-standardizedDataSet = basicStatistics.getStandardizeDataSet()
+standardizedDataSet = basicStatistics.getNormalizeDataSet()
 
 standardizedStatistics = BasicStatistics(standardizedDataSet)
 standardizedMean = standardizedStatistics.getMean()

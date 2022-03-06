@@ -21,7 +21,8 @@
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Assignment II: Latex and Python Basics} % The article title
+\title{Assignment II: Python Basics (Datafile Import,
+Plotting, Functions, Classes)} % The article title
 
 \author{
 	\coursetitle{Exercises in Machine Learning (190.013), SS2022}
@@ -68,8 +69,7 @@ The mean is the average of a collection of numbers. The formula for the calculat
 mean = \frac{x\textsubscript{1} + x\textsubscript{2} + \ldots + x\textsubscript{n}} {n}
 \]
 Where n is the number of elements in the collection and x\textsubscript{n} the element on the position n. The calculation was implemented in the \textit{getMean} function. 
-The function \textit{checkDataSet} checks if the \textit{dataSet} is empty or \textit{None}. If this is the case \textit{None} is returned.
-\lstinputlisting[linerange=14-21]{../BasicStatistics.py}
+\lstinputlisting[linerange=27-30]{../BasicStatistics.py}
 
 \subsection{Median}
 The Median is the middle value of a collection of numbers. The steps of the implemented algorithm are
@@ -86,7 +86,7 @@ The Median is the middle value of a collection of numbers. The steps of the impl
 \end{itemize}
 
 
-\lstinputlisting[linerange=24-39]{../BasicStatistics.py}
+\lstinputlisting[linerange=32-44]{../BasicStatistics.py}
 
 \subsection{Variance}
 The variance is the expected variation between values in a collection of numbers. 
@@ -97,7 +97,7 @@ Variance\:\sigma\textsuperscript{2} = \frac{\sum_{i=0}^{n-1}(x\textsubscript{i} 
 \]
 Where \textit{n} is the number of elements, \textit{x\textsubscript{i}} the element on the index \textit{i} and \textit{$\overline{x}$} the mean. This formula uses the Bessel's correction for smaller numbers. Therefore, instead of dividing the aggregated values with n, I divided them with n-1 \citep{varianceAndStandardDeviationStack}. 
 
-\lstinputlisting[linerange=42-53]{../BasicStatistics.py}
+\lstinputlisting[linerange=46-54]{../BasicStatistics.py}
 
 \subsection{Standard Deviation}
 The standard deviation is the amount of the variation of a collection of numbers. 
@@ -107,25 +107,17 @@ The formula for the calculation of the standard deviation is
 Standard\:Deviation\:\sigma = \sqrt{\sigma\textsuperscript{2}}
 \]
 
-\lstinputlisting[linerange=56-62]{../BasicStatistics.py}
+\lstinputlisting[linerange=56-59]{../BasicStatistics.py}
 
 
 \subsection{Normalize Data}
-The normalization is a process to transform the values in a collection of numbers to values between zero and one. The idea is that every value contributes equally to the further analysis. The calculation happens with the formula \citep{normalizeDataStatology}: 
-\[
-x\textsubscript{norm} = \frac{x\textsubscript{i} - x\textsubscript{min}} {x\textsubscript{max} - x\textsubscript{min}}
-\]
-Where \textit{x\textsubscript{norm}}, is the normalized value, \textit{x\textsubscript{i}} the value which needs to be normalized, \textit{x\textsubscript{min}} the min values and \textit{x\textsubscript{max}} the maximum value of the collection. 
-\lstinputlisting[linerange=81-89]{../BasicStatistics.py}
-The functions \textit{findMinValue} and \textit{findMaxValue} return the min or max value of the given collection. 
-
-\subsection{Standardize Data}
 Standardization is a preprocessing step, to standardize the range of values of a collection of numbers. I used the following formula to standardize the data
 \citep{standardizeDataBuildIn}. 
 \[
 z = \frac{x\textsubscript{i} - \overline{x}}{\sigma}
 \]
 Where \textit{z} is the standardize value, \textit{$x\textsubscript{i}$} the value in the collection on index i, \textit{$\overline{x}$} the mean and \textit{$\sigma$} the standard deviation.
+\lstinputlisting[linerange=74-79]{../BasicStatistics.py}
 
 \subsection{Testing the functions}
 I implemented a script file with the name \textit{BasicStatistics$\_$Test} which tests all the function with two data sets. 
@@ -138,7 +130,7 @@ I implemented a script file with the name \textit{BasicStatistics$\_$Test} which
 \subsection{Loading the data}
 The data which I should analyse is stored in the file \textit{gauss.csv}. The data is one dimensional and I read the lines in the file with the function \textit{reader()} of the imported csv package. The data was then stored in the array \textit{dataSet}. 
 
-\lstinputlisting[linerange=10-14]{../Assignment_2.py}
+\lstinputlisting[linerange=14-18]{../Assignment_2.py}
 
 \subsection{Plotting the results}
 For plotting the results, I created a plot with the \textit{.figure()} function of \textit{matplotlib} with the width of 8 inch and the height of 6 inch. I set the subtitle of the plot to \textit{Data Distribution} and created a subplot. We need three different subplots in the plot. One histogram and two scatter plots. 
@@ -146,39 +138,18 @@ First, I created the histogram with the function  \textit{.subplot(2,1,1)}. This
 The other two subplots contain the raw and the standardized data, where each of the plots had three horizontal lines with the mean and the standard deviation. 
 
 \section{Results}
-Figure 1 displays the result of the Fibonacci calculation. The calculated values grow very fast as the numbers for the calculation rise. For example, the value for the number 15 is 610, and for 30, 832040. Table 1 displays the first and last three values of the Fibonacci calculation.    
+The charts in Figure 1 display the result of the basic statistic functions. The histogram at the top displays the data distribution of the normalized data with the mean, median and standard deviation, the scatter chart at the bottom left the raw data with the mean and standard deviation and the scatter chart at the bottom right the normalized data with mean and standard deviation. 
 
-\begin{figure}[t] %or use htbp to place it inside the text blocks
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
   \centering
   \includegraphics[width=\columnwidth]{pics/result.png}
   \caption{Illustrates the raw data in a Histogram and the raw and standardized data in a scatter chart}
   \label{fig:fibonacciPlot}
 \end{figure}
 
-\begin{table}[h]
-         \label{tab:fibonacciValuesTable}
-	\caption{Fibonacci Values}
-	\centering
-	\begin{tabular}{c c}
-		\toprule
-		Number & Calculated Value \\
-		\midrule
-		1 & 1 \\
-		2 & 1 \\
-		3 & 2 \\
-		... & ... \\
-		28 & 317811 \\
-		29 & 514229 \\
-		30 & 832040 \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
 
 \section{Conclusion}
-The setup for the assignment was straightforward, and no issues appeared in the process. Also, the implementation of the algorithm happened without any problem. However, I had some trouble with creating the report because of the wrong build options in \textit{Texmark}. Changing the build options to \textit{PDFLaTex} solved this issue. 
-
-\newpage
+After some clarification of the tasks, implementing the statistic function was straightforward. The code needed for the implementation could keep clean and minimalistic. Only creating the plot functions needed some additional lines of code and the function \textit{.tight$\_$layout()} to improve the readability of the charts and labels. 
 
 \section*{APPENDIX}
 

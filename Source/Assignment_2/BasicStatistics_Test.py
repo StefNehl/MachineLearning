@@ -1,3 +1,7 @@
+"""
+@author: Nehl Stefan
+"""
+
 from BasicStatistics import BasicStatistics
 
 dataSet1 = [1, 2, 3, 4, 5]
@@ -76,22 +80,22 @@ print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
 #Normalize Data
 print('Standardized Data')
 expectedResult = "??"
-result = basicStatistics1.getNormalizeDataSet()
+result = basicStatistics1.getNormalizeDataSetOld()
 print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
 
 expectedResult = "??"
-result = basicStatistics2.getNormalizeDataSet()
+result = basicStatistics2.getNormalizeDataSetOld()
 print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
 print()
 
 #Standardized Data
 print('Standardized Data')
 expectedResult = "??"
-result = basicStatistics1.getStandardizeDataSet()
+result = basicStatistics1.getNormalizeDataSet()
 print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
 
 expectedResult = "??"
-result = basicStatistics2.getStandardizeDataSet()
+result = basicStatistics2.getNormalizeDataSet()
 print('Expected: ' + str(expectedResult) + ' Result: ' + str(result))
 print()
 

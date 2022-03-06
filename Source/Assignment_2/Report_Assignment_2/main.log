@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  4 MAR 2022 12:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  6 MAR 2022 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1081,64 +1081,64 @@ File: csquotes.cfg
 Package csquotes Info: Enabling multilingual quotes.
 ))
 LaTeX Font Info:    Trying to load font information for T1+XCharter-TLF on inpu
-t line 40.
+t line 41.
 
 (c:/texlive/2021/texmf-dist/tex/latex/xcharter/T1XCharter-TLF.fd
 File: T1XCharter-TLF.fd 2017/06/25 (autoinst) Font definitions for T1/XCharter-
 TLF.
 )
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 40.
+(Font)              scaled to size 10.0pt on input line 41.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 41.
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 4
-0.
+1.
 
 (c:/texlive/2021/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 41.
 LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 4
-0.
+1.
 
 (c:/texlive/2021/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Info: Redefining \microtypecontext on input line 40.
-Package microtype Info: Applying patch `item' on input line 40.
-Package microtype Info: Applying patch `toc' on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Info: Redefining \microtypecontext on input line 41.
+Package microtype Info: Applying patch `item' on input line 41.
+Package microtype Info: Applying patch `toc' on input line 41.
 
 
-Package microtype Warning: Unable to apply patch `eqnum' on input line 40.
+Package microtype Warning: Unable to apply patch `eqnum' on input line 41.
 
-Package microtype Info: Applying patch `footnote' on input line 40.
+Package microtype Info: Applying patch `footnote' on input line 41.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 40.
+LaTeX Info: Redefining \showhyphens on input line 41.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1184,7 +1184,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 40.
+(lastpage)             ! on input line 41.
 \c@lstlisting=\count441
 
 *geometry* driver: auto-detecting
@@ -1239,14 +1239,14 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 40.
-Package biblatex Info: Reference segment=0 on input line 40.
+Package biblatex Info: Reference section=0 on input line 41.
+Package biblatex Info: Reference segment=0 on input line 41.
 
 (./python_code.tex (c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 4
-3.
+4.
  (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
@@ -1255,13 +1255,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 43.
+(Font)              scaled to size 12.0pt on input line 44.
 
 (c:/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1270,7 +1270,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (c:/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1280,47 +1280,47 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 43.
+(Font)              scaled to size 7.0pt on input line 44.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 43.
+(Font)              scaled to size 10.0pt on input line 44.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 43.
+(Font)              scaled to size 8.0pt on input line 44.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
 
  []
 
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 51.
+(Font)              scaled to size 10.0pt on input line 52.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/XCharter-TLF/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 28.94pt on input line 51.
+(Font)              scaled to size 28.94pt on input line 52.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 42.55861pt on input line 51.
+(Font)              scaled to size 42.55861pt on input line 52.
 Package lettrine.sty Info: Targeted height = 28.94pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 28.93987pt (\color {MULSmoke}{I});
 
-(lettrine.sty)             reported on input line 51.
+(lettrine.sty)             reported on input line 52.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 51.
+(Font)              scaled to size 10.0pt on input line 52.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 57.
+(Font)              scaled to size 14.4pt on input line 58.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 57.
+(Font)              scaled to size 14.4pt on input line 58.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 64.
+(Font)              scaled to size 12.0pt on input line 65.
 (../BasicStatistics.py
 consecutive:
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 14.
+(Font)              scaled to size 5.0pt on input line 27.
 )
 LaTeX Font Info:    Trying to load font information for TS1+XCharter-TLF on inp
 ut line 78.
@@ -1354,71 +1354,69 @@ consecutive:
 consecutive:
 )
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 5.0pt on input line 131.
+(Font)              scaled to size 5.0pt on input line 123.
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 \T1/XCharter-TLF/m/n/10 (+20) I im-ple-mented a script file with the name
  []
 
 
-Underfull \hbox (badness 6396) in paragraph at lines 131--132
+Underfull \hbox (badness 6396) in paragraph at lines 123--124
 \T1/XCharter-TLF/m/it/10 (+20) BasicStatistics$[]$Test \T1/XCharter-TLF/m/n/10 
 (+20) which tests all the func-tion
  []
 
 (../Assignment_2.py
 consecutive:
-) [2]
-<pics/result.png, id=22, 803.0pt x 602.25pt>
+)
+<pics/result.png, id=14, 803.0pt x 602.25pt>
 File: pics/result.png Graphic file (type png)
 <use pics/result.png>
-Package pdftex.def Info: pics/result.png  used on input line 153.
+Package pdftex.def Info: pics/result.png  used on input line 145.
 (pdftex.def)             Requested size: 231.88997pt x 173.91286pt.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 154.
+(Font)              scaled to size 9.0pt on input line 146.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 154.
+(Font)              scaled to size 9.0pt on input line 146.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 154.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <./pics/result.png (PNG copy)>] (../BasicStatistics.py
+(Font)              scaled to size 9.0pt on input line 146.
+ [2] (../BasicStatistics.py
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4])
-(../BasicStatistics_Test.py
+ [3 <./pics/result.png (PNG copy)>]) (../BasicStatistics_Test.py
 Underfull \vbox (badness 4120) has occurred while \output is active []
 
- [5]
+ [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) [6]
+) [5]
 (../Assignment_2.py
 Underfull \vbox (badness 4120) has occurred while \output is active []
 
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6])
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 203--203
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 [][][]\T1/XCharter-TLF/m/n/10 (+20) (n.d.[b]). \T1/XCharter-TLF/m/it/10 (+20) M
 e-dian\T1/XCharter-TLF/m/n/10 (+20) . \T1/XCharter-TLF/m/sc/10 (+20) url\T1/XCh
 arter-TLF/m/n/10 (+20) : $\T1/cmtt/m/n/10 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--203
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 \T1/cmtt/m/n/10 knowledge / other / median/$ \T1/XCharter-TLF/m/n/10 (+20) (vis
 -ited on
  []
 
 
 AED: lastpage setting LastPage
-[8
+[7
 
 ] (./main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1426,13 +1424,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22241 strings out of 478278
- 387492 string characters out of 5850546
- 1489468 words of memory out of 5000000
- 39857 multiletter control sequences out of 15000+600000
- 627355 words of font info for 238 fonts, out of 8000000 for 9000
+ 22233 strings out of 478278
+ 387298 string characters out of 5850546
+ 1481440 words of memory out of 5000000
+ 39860 multiletter control sequences out of 15000+600000
+ 626052 words of font info for 231 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,75p,1903b,1733s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,75p,1903b,1739s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc}{c:/texlive/2021/te
 xmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{c:/texlive/2021/texmf-dist/f
@@ -1449,10 +1447,10 @@ c/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000
 .pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texliv
 e/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (8 pages, 371052 bytes).
+Output written on main.pdf (7 pages, 367670 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  72710 words of extra memory for PDF output out of 74296 (max. 10000000)
 

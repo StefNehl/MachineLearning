@@ -1,3 +1,7 @@
+"""
+@author: Nehl Stefan
+"""
+
 import math
 
 class BasicStatistics:
@@ -10,7 +14,6 @@ class BasicStatistics:
         self.dataSet = dataSet[:]
         self.sortedDataSet = dataSet[:]
         self.sortedDataSet.sort()
-
 
     def checkDataSet(self, dataSet):
         if dataSet == None:
@@ -27,7 +30,6 @@ class BasicStatistics:
         mean = sumValue / length
         return mean
 
-
     def getMedian(self):
         length = len(self.dataSet)
         mid = length // 2
@@ -41,7 +43,6 @@ class BasicStatistics:
 
         return median
 
-
     def getVariance(self):
         length = len(self.dataSet)
         mean = self.getMean()
@@ -52,7 +53,6 @@ class BasicStatistics:
         variance = sum(squareDeviations) / (length-1)
         return variance
 
-
     def getStandardDeviation(self):
         variance = self.getVariance()
         standardDeviation = math.sqrt(variance)
@@ -61,18 +61,17 @@ class BasicStatistics:
     def getMinValue(self):
         return self.sortedDataSet[0]
 
-
     def getMaxValue(self):
         return self.sortedDataSet[len(self.sortedDataSet) - 1]
 
-    def getNormalizeDataSet(self):
+    def getNormalizeDataSetOld(self):
         min = self.getMinValue()
         max = self.getMaxValue()
 
         dataNorm = [(i - min) / (max - min) for i in self.dataSet]
         return dataNorm
 
-    def getStandardizeDataSet(self):
+    def getNormalizeDataSet(self):
         mean = self.getMean()
         standardDeviation = self.getStandardDeviation()
         standardizeDataSet = [((x - mean)/standardDeviation) for x in self.dataSet]
