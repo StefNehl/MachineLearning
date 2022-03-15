@@ -1,70 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished Report">
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Assignment_1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Fibonacci.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/Nehl_00935188.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._literature.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._main.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._math_commands.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._pics" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._plot_template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._python_code.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._structure.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/pics/._example_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/pics/._example_plot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/assignment_1.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/literature.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main-blx.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.aux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.bbl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.blg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.dvi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.fdb_latexmk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.fls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.run.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.synctex.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/math_commands.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/pics/example_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/pics/example_plot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/pics/fibonacci_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/plot_template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/python_code.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/structure.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Assignment_2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/BasicStatistics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/BasicStatistics_Test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._literature.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._main.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._math_commands.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._pics" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._plot_template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._python_code.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._structure.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/pics/._example_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/pics/._example_plot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/assignment_1.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/literature.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main-blx.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.aux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.bbl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.blg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.fdb_latexmk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.fls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.run.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.synctex.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/math_commands.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/plot_template.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/python_code.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/structure.tex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_2/gauss.csv" beforeDir="false" />
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Refactoring of naming conventions">
+      <change afterPath="$PROJECT_DIR$/Assignment3/Assignment3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/Assignment2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/inference.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +48,7 @@
       <recent name="C:\Users\stefa\OneDrive\Documents\_Private\Uni 2022\Exercice Machine Learning\Assignments\Assignment_1\Source\Code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.BasicStatisticsTest">
+  <component name="RunManager" selected="Python.Assignment3">
     <configuration name="Assignment1" type="PythonConfigurationType" factoryName="Python">
       <module name="Source" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,6 +85,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2/Assignment2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Assignment3" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment3/Assignment3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,14 +159,39 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="inference" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modules" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modules/inference.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.Assignment3" />
       <item itemvalue="Python.Assignment1" />
       <item itemvalue="Python.Assignment2" />
+      <item itemvalue="Python.inference" />
       <item itemvalue="Python.BasicStatistics" />
       <item itemvalue="Python.BasicStatisticsTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.inference" />
         <item itemvalue="Python.BasicStatisticsTest" />
         <item itemvalue="Python.BasicStatistics" />
       </list>
@@ -228,7 +216,7 @@
       <workItem from="1646392475848" duration="2603000" />
       <workItem from="1646565644947" duration="3886000" />
       <workItem from="1646734735150" duration="1903000" />
-      <workItem from="1647347287816" duration="1442000" />
+      <workItem from="1647347287816" duration="8223000" />
     </task>
     <task id="LOCAL-00001" summary="Added solution">
       <created>1645528526271</created>
@@ -384,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646569739437</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Refactoring of naming conventions">
+      <created>1647348776691</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1647348776691</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,15 +423,19 @@
     <MESSAGE value="Changed Label" />
     <MESSAGE value="Changed basic statistic to store the data set in the class" />
     <MESSAGE value="Finished Report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Report" />
+    <MESSAGE value="Refactoring of naming conventions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring of naming conventions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_1.coverage" NAME="Assignment_1 Coverage Results" MODIFIED="1646080037790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_1" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1647354977811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment1.coverage" NAME="Assignment1 Coverage Results" MODIFIED="1647348710212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment1" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1647348691451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatisticsTest.coverage" NAME="BasicStatisticsTest Coverage Results" MODIFIED="1647348763889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$BasicStatistics_Test.coverage" NAME="BasicStatistics_Test Coverage Results" MODIFIED="1646084045183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatistics_Test.coverage" NAME="BasicStatistics_Test Coverage Results" MODIFIED="1646566780615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1646084619395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$inference.coverage" NAME="inference Coverage Results" MODIFIED="1647352915356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$BasicStatistics.coverage" NAME="BasicStatistics Coverage Results" MODIFIED="1646080691634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
   </component>
 </project>
