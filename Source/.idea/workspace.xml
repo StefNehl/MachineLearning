@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished Report">
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Assignment_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Fibonacci.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/Nehl_00935188.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._literature.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._main.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._math_commands.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._pics" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._plot_template.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._python_code.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/._structure.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/pics/._example_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/__MACOSX/pics/._example_plot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/assignment_1.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/literature.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main 1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main-blx.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.bbl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.blg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.dvi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.fdb_latexmk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.fls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.synctex.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/main.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/math_commands.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/pics/example_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/pics/example_plot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/pics/fibonacci_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/plot_template.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/python_code.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_1/Report_Assignment_1/structure.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Assignment_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/BasicStatistics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/BasicStatistics_Test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._literature.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._main.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._math_commands.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._pics" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._plot_template.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._python_code.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/._structure.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/pics/._example_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/__MACOSX/pics/._example_plot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/assignment_1.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/literature.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main 1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main-blx.bib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.bbl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.blg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.fdb_latexmk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.fls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.synctex.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/main.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/math_commands.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/plot_template.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/python_code.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/structure.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2/gauss.csv" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="25SdrCp3IxvP2LzLF6F5A2T8fHj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assignment_2/Report_Assignment_2/pics/result.png" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stefa\OneDrive\Documents\_Private\Uni 2022\Exercice Machine Learning\Assignments\Assignment_1\Source\Code" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.BasicStatisticsTest">
+    <configuration name="Assignment1" type="PythonConfigurationType" factoryName="Python">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment1/Assignment1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Assignment2" type="PythonConfigurationType" factoryName="Python">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\stefa\OneDrive\Documents\_Private\Uni 2022\Exercice Machine Learning\Assignments\Source\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment2" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2/Assignment2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BasicStatistics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2/BasicStatistics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BasicStatisticsTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment2/BasicStatisticsTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Assignment1" />
+      <item itemvalue="Python.Assignment2" />
+      <item itemvalue="Python.BasicStatistics" />
+      <item itemvalue="Python.BasicStatisticsTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.BasicStatisticsTest" />
+        <item itemvalue="Python.BasicStatistics" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="" />
+      <created>1645524617446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645524617446</updated>
+      <workItem from="1645558276941" duration="5000" />
+      <workItem from="1646079791606" duration="5243000" />
+      <workItem from="1646117116595" duration="553000" />
+      <workItem from="1646126951590" duration="7683000" />
+      <workItem from="1646293708414" duration="1256000" />
+      <workItem from="1646308752446" duration="2348000" />
+      <workItem from="1646330495670" duration="607000" />
+      <workItem from="1646381153626" duration="4889000" />
+      <workItem from="1646392475848" duration="2603000" />
+      <workItem from="1646565644947" duration="3886000" />
+      <workItem from="1646734735150" duration="1903000" />
+      <workItem from="1647347287816" duration="1442000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added solution">
+      <created>1645528526271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645528526271</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed to calculation from 1 to 30">
+      <created>1645535033153</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645535033153</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed issues">
+      <created>1645558950616</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645558950616</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Final Report">
+      <created>1646079678250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646079678250</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changed project structure">
+      <created>1646080079376</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646080079376</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Report to new structure">
+      <created>1646080102370</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646080102370</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added new Files">
+      <created>1646080209249</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646080209249</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implemented Mean and Median">
+      <created>1646082574000</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1646082574000</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Implemented rest of the methods">
+      <created>1646084057251</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646084057251</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added first plot">
+      <created>1646085046679</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646085046679</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changed size of charts">
+      <created>1646138100638</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1646138100638</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added Reports">
+      <created>1646138579637</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1646138579637</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Started report">
+      <created>1646141059796</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1646141059796</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implemented Normalization">
+      <created>1646294942049</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1646294942049</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Finished Histogram">
+      <created>1646309604949</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1646309604949</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added description for the statistic functions">
+      <created>1646388217876</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1646388217876</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added description of plotting and loading data">
+      <created>1646391043120</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1646391043120</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fixed Issue in dataSet, I am not allowed to order the data set">
+      <created>1646392843954</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1646392843954</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed issue in median">
+      <created>1646393079824</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1646393079824</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Changed Label">
+      <created>1646407849912</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1646407849912</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Changed basic statistic to store the data set in the class">
+      <created>1646567228691</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1646567228692</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Finished Report">
+      <created>1646569739437</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1646569739437</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
+    <MESSAGE value="Added solution" />
+    <MESSAGE value="Changed to calculation from 1 to 30" />
+    <MESSAGE value="Fixed issues" />
+    <MESSAGE value="Final Report" />
+    <MESSAGE value="Changed project structure" />
+    <MESSAGE value="Added Report to new structure" />
+    <MESSAGE value="Added new Files" />
+    <MESSAGE value="Implemented Mean and Median" />
+    <MESSAGE value="Implemented rest of the methods" />
+    <MESSAGE value="Added first plot" />
+    <MESSAGE value="Changed size of charts" />
+    <MESSAGE value="Added Reports" />
+    <MESSAGE value="Started report" />
+    <MESSAGE value="Implemented Normalization" />
+    <MESSAGE value="Finished Histogram" />
+    <MESSAGE value="Added description for the statistic functions" />
+    <MESSAGE value="Added description of plotting and loading data" />
+    <MESSAGE value="Fixed Issue in dataSet, I am not allowed to order the data set" />
+    <MESSAGE value="Fixed issue in median" />
+    <MESSAGE value="Changed Label" />
+    <MESSAGE value="Changed basic statistic to store the data set in the class" />
+    <MESSAGE value="Finished Report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Report" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_1.coverage" NAME="Assignment_1 Coverage Results" MODIFIED="1646080037790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_1" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment1.coverage" NAME="Assignment1 Coverage Results" MODIFIED="1647348710212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment1" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1647348691451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
+    <SUITE FILE_PATH="coverage/Assignment_1_py$BasicStatistics_Test.coverage" NAME="BasicStatistics_Test Coverage Results" MODIFIED="1646084045183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatistics_Test.coverage" NAME="BasicStatistics_Test Coverage Results" MODIFIED="1646566780615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
+    <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1646084619395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
+    <SUITE FILE_PATH="coverage/Assignment_1_py$BasicStatistics.coverage" NAME="BasicStatistics Coverage Results" MODIFIED="1646080691634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
+  </component>
+</project>
