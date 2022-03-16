@@ -7,21 +7,61 @@ from abc import ABC, abstractmethod
 
 class ContiniousDustribution():
 
-    @abstractmethod
-    def importCsv(self):
-        pass  # supresses compile errors
+    def __init__(self):
+        self.dataSet = []
+        self.mean = None
+        self.median = None
+        self.variance = None
+        self.standardDeviation = None
+        self.probabilityDensity = None
 
-    @abstractmethod
-    def exportCsv(self):
-        pass
+    def importCsv(self, filename):
+        if len(self.dataSet) != 0:
+            raise Exception('Data already added')
 
-    @abstractmethod
+        with open(filename, mode='r') as file:
+            csvFile = csv.reader(file)
+
+            for row in csvFile:
+                self.dataSet.append(row)
+
+    def exportCsv(self, filename):
+        if len(self.dataSet) == 0:
+            raise Exception('No Data added')
+
+        with open(filename, mode='w') as file:
+            csvWriter = csv.writer(file, delimiter =  ';')
+            csvWriter.writerows(self.dataSet)
+
+    def calculateMean(self):
+        self.mean = np.mean(self.dataSet)
+
     def getMean(self):
-        pass
+        return self.mean
 
-    @abstractmethod
+    def calculateVariance(self):
+        length = len(self.dataSet)
+        mean = self.getMean()
+
+        squareDeviations = [(x - mean) ** 2 for x in self.dataSet]
+
+        # Bessel's correction (n-1) instead of n for better results
+        self.variance = sum(squareDeviations) / (length - 1)
+        return self.variance
+
+    def getVariance(self):
+        return self.variance
+
+    def calculateStandardDeviation(self):
+        self.standardDeviation = math.sqrt(self.variance)
+        return self.standardDeviation
+
     def getStandardDeviation(self):
-        pass
+        return self.standardDeviation
+
+    def calculateProbabilityDensity(self, values, bins):
+        probabilityDensity, binEdges = np.histogram(values,bins=bins, density=True)
+        return probabilityDensity, binEdges
 
     @abstractmethod
     def generateSampels(self):
@@ -101,46 +141,8 @@ class ContiniousDustribution():
 class GaussDistribution(ContiniousDustribution):
 
     def __init__(self, dimension):
+        ContiniousDustribution.__init__(self)
         self.dimension = dimension
-        self.dataSet = []
-        self.mean = None
-        self.median = None
-
-    def importCsv(self, filename):
-        if len(self.dataSet) != 0:
-            raise Exception('Data already added')
-
-        with open(filename, mode='r') as file:
-            csvFile = csv.reader(file)
-
-            for row in csvFile:
-                self.dataSet.append(row)
-
-    def exportCsv(self, filename):
-        if len(self.dataSet) == 0:
-            raise Exception('No Data added')
-
-        with open(filename, mode='w') as file:
-            csvWriter = csv.writer(file, delimiter =  ';')
-            csvWriter.writerows(self.dataSet)
-
-    def getMean(self):
-        return np.mean(self.dataSet, 0)
-
-    def getVariance(self):
-        length = len(self.dataSet)
-        mean = self.getMean()
-
-        squareDeviations = [(x - mean) ** 2 for x in self.dataSet]
-
-        #Bessel's correction (n-1) instead of n for better results
-        variance = sum(squareDeviations) / (length-1)
-        return variance
-
-    def getStandardDeviation(self):
-        variance = self.getVariance()
-        standardDeviation = math.sqrt(variance)
-        return standardDeviation
 
     def generateSampels(self, mean, variance, numberOfPoints):
         if len(self.dataSet) != 0:
@@ -151,7 +153,6 @@ class GaussDistribution(ContiniousDustribution):
     def generateGaussen(self):
         if len(self.dataSet) == 0:
             raise Exception('No Data added')
-
 
         if self.dimension == 1:
             return self.generateGaussen1D()
@@ -208,3 +209,66 @@ class GaussDistribution(ContiniousDustribution):
         else:
             self.plotData2D(title, self.dataSet)
 
+class BetaDistribution(ContiniousDustribution):
+
+    def __init__(self, a, b):
+        ContiniousDustribution.__init__(self)
+        self.a = a
+        self.b = b
+
+    def generateSampels(self, numberOfPoints):
+        if len(self.dataSet) != 0:
+            raise Exception('Data already added')
+
+        self.dataSet = np.random.default_rng().beta(self.a, self.b, size=numberOfPoints)
+
+    def generateBetaDistribution(self):
+        betaFunction = (math.gamma(self.a + self.b) / (math.gamma(self.a) + math.gamma(self.b)))
+
+        resultArray =  []
+
+        for x in self.dataSet:
+            result = betaFunction * pow(x,(self.a-1)) * pow((1 - x), (self.b - 1))
+            resultArray.append(result)
+
+        return resultArray
+
+    def plotData(self, result):
+        plotRange = range(len(self.dataSet))
+        pdf, binEdges = self.calculateProbabilityDensity(self.dataSet, 60)
+
+        plt.figure(figsize=(8, 6))
+
+        plt.subplot(3, 1, 1)
+        plt.hist(self.dataSet, bins=60, density=True, label='Histogram')
+        plt.plot(binEdges[1:], pdf)
+
+        plt.title("Distribution")
+        plt.xlabel('Values')
+        plt.ylabel('Frequency')
+        plt.legend(loc="upper right")
+
+        plt.subplot(3, 1, 2)
+        plt.scatter(plotRange, self.dataSet, label='Data', s=2)
+        plt.plot(plotRange, result, 'y-')
+
+
+        plt.title(f"Raw data with n = {len(plotRange)} sample points")
+        plt.xlabel('Sample')
+        plt.ylabel('Value')
+        plt.legend(loc="best")
+
+        plt.subplot(3, 1, 3)
+        pdf, binEdges = self.calculateProbabilityDensity(result, 60)
+        plt.plot(binEdges[1:], pdf, 'y-')
+
+
+        plt.title(f"Raw data with n = {len(plotRange)} sample points")
+        plt.xlabel('Sample')
+        plt.ylabel('Value')
+        plt.legend(loc="best")
+
+        plt.suptitle("Test")
+
+        plt.tight_layout()
+        plt.show()
