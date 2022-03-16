@@ -6,9 +6,12 @@ import sys
 sys.path.insert(0, '../modules')
 import inference
 
-gaussDistr = inference.GaussDistribution(2)
+gaussDistr = inference.GaussDistribution(1)
 gaussDistr.generateSampels(2,3,1000)
-gaussDistr.plotData()
+mean = gaussDistr.getMean()
+result = gaussDistr.generateGaussen()
+
+gaussDistr.plotData(result)
 
 
 
