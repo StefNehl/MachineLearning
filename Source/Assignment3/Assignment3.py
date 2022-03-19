@@ -20,5 +20,8 @@ betaDistr.plotData()
 betaDistr = inference.BetaDistribution(5,2, numberOfSamplesToGenerate = 1000)
 betaDistr.plotData()
 
+settings = [(0.5, 0.5), (2, 5), (5, 2)]
+betaDistr.plotDataWithDifferentAlphasAndBetas(settings)
+
 
 
