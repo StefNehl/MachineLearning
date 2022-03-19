@@ -175,7 +175,7 @@ class GaussDistribution(ContiniousDustribution):
 
         plt.subplot(2, 1, 1)
         plt.hist(self.dataSet, bins=60, density=True, label="Histogram")
-        plt.plot(x, y, "r-", linewidth=1)
+        plt.plot(x, y, "r-", linewidth=1, label="Distribution")
 
         plt.title("Distribution")
         plt.xlabel("Value")
@@ -188,9 +188,9 @@ class GaussDistribution(ContiniousDustribution):
         plt.title("Raw Data")
         plt.xlabel("Sample")
         plt.ylabel("Value")
-        plt.legend(loc="upper right")
+        plt.legend(loc="best")
 
-        plt.suptitle(f"Gaus Distribution with [$\mu$] = {self.mean} and {self.variance}")
+        plt.suptitle(f"Gaus Distribution with $\mu$ = {self.mean} and $\sigma$ = {self.variance}")
 
         plt.tight_layout()
         plt.show()
