@@ -83,13 +83,14 @@ class GaussDistribution(ContiniousDustribution):
 
         if(fileName is not None):
             self.importCsv(fileName)
+            self.numberOfSamples = len(self.dataSet)
             self.calculateMean()
             self.calculateVariance()
 
         if(numberOfSamplesToGenerate is not None) & \
                 (mean is not None) & \
                 (variance is not None):
-            self.numberOfPoints = numberOfSamplesToGenerate
+            self.numberOfSamples = numberOfSamplesToGenerate
             self.mean = mean
             self.variance = variance
             self.generateSampels()
@@ -100,13 +101,12 @@ class GaussDistribution(ContiniousDustribution):
         self.calculateStandardDeviation()
         self.gaussen = []
         self.generateGaussen()
-        self.calculateProbabilityDensity(self.gaussen)
 
     def generateSampels(self):
         if len(self.dataSet) != 0:
             raise Exception("Data already added")
 
-        self.dataSet =  np.random.default_rng().normal(self.mean, self.variance, size=(self.numberOfPoints, self.dimension))
+        self.dataSet =  np.random.default_rng().normal(self.mean, self.variance, size=(self.numberOfSamples, self.dimension))
 
     def generateGaussen(self):
         if len(self.dataSet) == 0:
@@ -117,18 +117,17 @@ class GaussDistribution(ContiniousDustribution):
 
         return self.generateGaussen2D()
 
+    def calculateGaussen1D(self, x):
+        exponentialTerm = (-(1 / (2 * self.variance ** 2)) * (x - self.mean) ** 2)
+        denominator = (2 * math.pi * self.variance ** 2) ** (0.5)
+        return (1 / denominator) * math.e ** (exponentialTerm)
+
     def generateGaussen1D(self):
         vectorArray = np.array(self.dataSet)
-        mean = self.getMean()
-        variance = self.getVariance()
-
         self.gaussen = []
 
         for x in vectorArray:
-            exponentialTerm = (-(1/(2 * variance**2)) * (x-mean)**2)
-            denominator = (2 * math.pi * variance**2)**(0.5)
-            result = (1/denominator) * math.e**(exponentialTerm)
-            self.gaussen.append(result)
+            self.gaussen.append(self.calculateGaussen1D(x))
 
     def generateGaussen2D(self):
         vectorArray = np.array(self.dataSet)
@@ -161,43 +160,43 @@ class GaussDistribution(ContiniousDustribution):
         mean = self.getMean()
         variance = self.getVariance()
 
-        title = f"Gaus Distribution with [$\mu$] = {mean} and {variance}"
+
         if self.dimension == 1:
-            self.plotData1D(title, self.dataSet, self.gaussen)
+            self.plotData1D()
         else:
-            self.plotData2D(title, self.dataSet)
+            self.plotData2D()
 
-    def plotData1D(self, title, dataSet, result):
-        plotRange = range(len(dataSet))
+    def plotData1D(self):
+        plotRange = range(len(self.dataSet))
+        x = np.linspace(min(self.dataSet), max(self.dataSet), self.numberOfSamples)
+        y = self.calculateGaussen1D(x)
 
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(6, 6))
 
         plt.subplot(2, 1, 1)
-        plt.hist(dataSet, bins=60, density=True, label="Histogram")
+        plt.hist(self.dataSet, bins=60, density=True, label="Histogram")
+        plt.plot(x, y, "r-", linewidth=1)
 
         plt.title("Distribution")
-        plt.xlabel("Values")
+        plt.xlabel("Value")
         plt.ylabel("Frequency")
         plt.legend(loc="upper right")
 
         plt.subplot(2, 1, 2)
-        plt.scatter(plotRange, dataSet, label="Data", s=2)
-        plt.plot(plotRange, result, color="y")
+        plt.scatter(plotRange, self.dataSet, label="Data", s=2)
 
-
-        plt.title(f"Raw data with n = {len(plotRange)} sample points")
+        plt.title("Raw Data")
         plt.xlabel("Sample")
         plt.ylabel("Value")
-        plt.legend(loc="best")
+        plt.legend(loc="upper right")
 
-        plt.suptitle(title)
+        plt.suptitle(f"Gaus Distribution with [$\mu$] = {self.mean} and {self.variance}")
 
         plt.tight_layout()
         plt.show()
 
     def plotData2D(self, title, dataSet, result):
         plt.figure(figsize=(8, 12))
-
 
         hist, xedges, yedges = np.histogram2d(dataSet[:,0], dataSet[:,1], bins=60)
 
@@ -232,107 +231,6 @@ class GaussDistribution(ContiniousDustribution):
 
         plt.tight_layout()
         plt.show()
-
-class BetaDistribution(ContiniousDustribution):
-
-    def __init__(self, a, b, fileName = None, numberOfSamplesToGenerate = None):
-        if((fileName is not None) & (numberOfSamplesToGenerate is not None)):
-            raise Exception("Can't load data and generate samples")
-
-        if((fileName is None) & (numberOfSamplesToGenerate is None)):
-            raise Exception("No parameters for data")
-
-        ContiniousDustribution.__init__(self)
-        self.a = a
-        self.b = b
-        self.calculateAndSetBFromAAndB()
-        self.generatedBetaDistribution = []
-
-        if(numberOfSamplesToGenerate is not None):
-            self.numberOfSamples = numberOfSamplesToGenerate
-            self.generateSampels()
-
-        if (fileName is not None):
-            self.importCsv(fileName)
-            self.numberOfSamples = len(self.dataSet)
-
-        self.calculateMean()
-        self.calculateVariance()
-        self.calculateStandardDeviation()
-        self.generateBetaDistribution()
-
-    def generateSampels(self):
-        if len(self.dataSet) != 0:
-            raise Exception("Data already added")
-
-        self.dataSet = np.random.default_rng().beta(self.a, self.b, size=self.numberOfSamples)
-
-    def calculateAndSetBFromAAndB(self):
-        self.bFromAAndB = (math.gamma(self.a + self.b) / (math.gamma(self.a) + math.gamma(self.b)))
-
-    def calculateBetaFunction(self, x):
-        return self.bFromAAndB * pow(x, (self.a - 1)) * pow((1 - x), (self.b - 1))
-
-    def generateBetaDistribution(self):
-
-        self.generatedBetaDistribution = []
-
-        for x in self.dataSet:
-            result = self.calculateBetaFunction(x)
-            self.generatedBetaDistribution.append(result)
-
-    def plotData(self):
-        plotRange = range(len(self.dataSet))
-        x = np.linspace(0.01, 0.99, self.numberOfSamples)
-        y = self.calculateBetaFunction(x)
-
-        plt.figure(figsize=(6, 6))
-
-        plt.subplot(2, 1, 1)
-        plt.hist(self.dataSet, bins=60, density=True, label="Histogram")
-        plt.plot(x, y, "r-", linewidth=1, label=f"alpha = {self.a}, beta = {self.b}")
-
-        plt.title("Distribution")
-        plt.xlabel("Value")
-        plt.ylabel("Frequency")
-        plt.legend(loc="upper right")
-
-        plt.subplot(2, 1, 2)
-        plt.scatter(plotRange, self.dataSet, label="Data", s=2)
-
-        plt.title("Raw Data")
-        plt.xlabel("Sample")
-        plt.ylabel("Value")
-        plt.legend(loc="upper right")
-
-        plt.suptitle(f"Beta Distribution with alpha = {self.a} and beta = {self.b}")
-
-        plt.tight_layout()
-        plt.show()
-
-    def plotDataWithDifferentAlphasAndBetas(self, alphaAndBetas):
-        if len(alphaAndBetas) == 0:
-            return
-
-        plt.figure(figsize=(4, 4))
-        plt.title("Distribution")
-        plt.xlabel("Value")
-        plt.ylabel("Frequency")
-
-        for alphaAndBeta in alphaAndBetas:
-            self.a = alphaAndBeta[0]
-            self.b = alphaAndBeta[1]
-            self.calculateAndSetBFromAAndB()
-
-            x = np.linspace(0.01, 0.99, self.numberOfSamples)
-            y = self.calculateBetaFunction(x)
-            plt.plot(x, y, linewidth=1, label=f"alpha = {self.a}, beta = {self.b}")
-
-        plt.legend(loc = "best")
-
-        plt.tight_layout()
-        plt.show()
-
 
 
 

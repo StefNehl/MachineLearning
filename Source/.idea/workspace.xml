@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished Beta Distribution">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished Beta Distribution (Now really)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/Assignment3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/Assignment3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/inference.py" afterDir="false" />
@@ -240,7 +240,7 @@
       <workItem from="1647347287816" duration="8256000" />
       <workItem from="1647424990187" duration="25243000" />
       <workItem from="1647620425084" duration="1247000" />
-      <workItem from="1647687761131" duration="12386000" />
+      <workItem from="1647687761131" duration="14047000" />
     </task>
     <task id="LOCAL-00001" summary="Added solution">
       <created>1645528526271</created>
@@ -438,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647712562841</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Finished Beta Distribution (Now really)">
+      <created>1647714378606</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1647714378606</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +467,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Final Report" />
     <MESSAGE value="Changed project structure" />
     <MESSAGE value="Added Report to new structure" />
     <MESSAGE value="Added new Files" />
@@ -485,7 +491,8 @@
     <MESSAGE value="Added Beta Distribution" />
     <MESSAGE value="Refactoring of both classes (moved generation to the constructor)" />
     <MESSAGE value="Finished Beta Distribution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Beta Distribution" />
+    <MESSAGE value="Finished Beta Distribution (Now really)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Beta Distribution (Now really)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -496,7 +503,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_1.coverage" NAME="Assignment_1 Coverage Results" MODIFIED="1646080037790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_1" />
-    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1647714322633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1647715053085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment1.coverage" NAME="Assignment1 Coverage Results" MODIFIED="1647348710212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment1" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1647348691451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatisticsTest.coverage" NAME="BasicStatisticsTest Coverage Results" MODIFIED="1647348763889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
