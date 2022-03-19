@@ -9,11 +9,13 @@ class ContiniousDustribution():
 
     def __init__(self):
         self.dataSet = []
+        self.normalizeDataSet = []
         self.mean = None
         self.median = None
         self.variance = None
         self.standardDeviation = None
         self.probabilityDensity = None
+        self.binEdges = None
 
     def importCsv(self, filename):
         if len(self.dataSet) != 0:
@@ -59,9 +61,8 @@ class ContiniousDustribution():
     def getStandardDeviation(self):
         return self.standardDeviation
 
-    def calculateProbabilityDensity(self, values, bins):
-        probabilityDensity, binEdges = np.histogram(values,bins=bins, density=True)
-        return probabilityDensity, binEdges
+    def normalizeDataSet(self):
+        self.dataSet = [((x - self.mean)/self.standardDeviation) for x in self.dataSet]
 
     @abstractmethod
     def generateSampels(self, numberOfSamples):
@@ -97,9 +98,9 @@ class GaussDistribution(ContiniousDustribution):
             raise Exception("Could not generate data, verify parameters")
 
         self.calculateStandardDeviation()
-        #self.calculateProbabilityDensity()
         self.gaussen = []
         self.generateGaussen()
+        self.calculateProbabilityDensity(self.gaussen)
 
     def generateSampels(self):
         if len(self.dataSet) != 0:
@@ -244,6 +245,7 @@ class BetaDistribution(ContiniousDustribution):
         ContiniousDustribution.__init__(self)
         self.a = a
         self.b = b
+        self.betaFromAAndB = (math.gamma(self.a + self.b) / (math.gamma(self.a) + math.gamma(self.b)))
         self.generatedBetaDistribution = []
 
         if(numberOfSamplesToGenerate is not None):
@@ -252,6 +254,9 @@ class BetaDistribution(ContiniousDustribution):
         if (fileName is not None):
             self.importCsv(fileName)
 
+        self.calculateMean()
+        self.calculateVariance()
+        self.calculateStandardDeviation()
         self.generateBetaDistribution()
 
     def generateSampels(self, numberOfPoints):
@@ -260,24 +265,24 @@ class BetaDistribution(ContiniousDustribution):
 
         self.dataSet = np.random.default_rng().beta(self.a, self.b, size=numberOfPoints)
 
+    def calculateBetaFunction(self, x):
+        return self.betaFromAAndB * pow(x,(self.a-1)) * pow((1 - x), (self.b - 1))
+
     def generateBetaDistribution(self):
-        betaFunction = (math.gamma(self.a + self.b) / (math.gamma(self.a) + math.gamma(self.b)))
 
         self.generatedBetaDistribution = []
 
         for x in self.dataSet:
-            result = betaFunction * pow(x,(self.a-1)) * pow((1 - x), (self.b - 1))
+            result = self.calculateBetaFunction(x)
             self.generatedBetaDistribution.append(result)
 
     def plotData(self):
         plotRange = range(len(self.dataSet))
-        pdf, binEdges = self.calculateProbabilityDensity(self.dataSet, 60)
 
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(4, 8))
 
         plt.subplot(3, 1, 1)
         plt.hist(self.dataSet, bins=60, density=True, label="Histogram")
-        plt.plot(binEdges[1:], pdf)
 
         plt.title("Distribution")
         plt.xlabel("Values")
@@ -286,21 +291,16 @@ class BetaDistribution(ContiniousDustribution):
 
         plt.subplot(3, 1, 2)
         plt.scatter(plotRange, self.dataSet, label="Data", s=2)
-        plt.plot(plotRange, self.generatedBetaDistribution, "y-")
-
-        plt.title(f"Raw data with n = {len(plotRange)} sample points")
-        plt.xlabel("Sample")
-        plt.ylabel("Value")
-        plt.legend(loc="best")
+        # plt.plot(plotRange, self.generatedBetaDistribution, color="y")
 
         plt.subplot(3, 1, 3)
-        pdf, binEdges = self.calculateProbabilityDensity(self.generatedBetaDistribution, 60)
-        plt.plot(binEdges[1:], pdf, "y-")
+        x = np.linspace(0,1, 1000)
+        y = self.calculateBetaFunction(x)
+        plt.plot(x, y, "b-", linewidth=0.5, label=f"a = {self.a}, b = {self.b}")
 
-
-        plt.title(f"Raw data with n = {len(plotRange)} sample points")
-        plt.xlabel("Sample")
-        plt.ylabel("Value")
+        plt.title(f"Beta Distribution PDF")
+        plt.xlabel("x")
+        plt.ylabel("Probability")
         plt.legend(loc="best")
 
         plt.suptitle("Test")
