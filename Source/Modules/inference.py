@@ -17,9 +17,9 @@ class ContiniousDustribution():
 
     def importCsv(self, filename):
         if len(self.dataSet) != 0:
-            raise Exception('Data already added')
+            raise Exception("Data already added")
 
-        with open(filename, mode='r') as file:
+        with open(filename, mode="r") as file:
             csvFile = csv.reader(file)
 
             for row in csvFile:
@@ -27,10 +27,10 @@ class ContiniousDustribution():
 
     def exportCsv(self, filename):
         if len(self.dataSet) == 0:
-            raise Exception('No Data added')
+            raise Exception("No Data added")
 
-        with open(filename, mode='w') as file:
-            csvWriter = csv.writer(file, delimiter =  ';')
+        with open(filename, mode="w") as file:
+            csvWriter = csv.writer(file, delimiter =  ";")
             csvWriter.writerows(self.dataSet)
 
     def calculateMean(self):
@@ -64,95 +64,52 @@ class ContiniousDustribution():
         return probabilityDensity, binEdges
 
     @abstractmethod
-    def generateSampels(self):
+    def generateSampels(self, numberOfSamples):
         pass
 
     @abstractmethod
-    def plotData(self, result):
+    def plotData(self):
         pass
-
-    def plotData1D(self, title, dataSet, result):
-        plotRange = range(len(dataSet))
-
-        plt.figure(figsize=(8, 6))
-
-        plt.subplot(2, 1, 1)
-        plt.hist(dataSet, bins=60, density=True, label='Histogram')
-
-        plt.title("Distribution")
-        plt.xlabel('Values')
-        plt.ylabel('Frequency')
-        plt.legend(loc="upper right")
-
-        plt.subplot(2, 1, 2)
-        plt.scatter(plotRange, dataSet, label='Data', s=2)
-        plt.plot(plotRange, result, color='y')
-
-
-        plt.title(f"Raw data with n = {len(plotRange)} sample points")
-        plt.xlabel('Sample')
-        plt.ylabel('Value')
-        plt.legend(loc="best")
-
-        plt.suptitle(title)
-
-        plt.tight_layout()
-        plt.show()
-
-    def plotData2D(self, title, dataSet, result):
-        plt.figure(figsize=(8, 12))
-
-
-        hist, xedges, yedges = np.histogram2d(dataSet[:,0], dataSet[:,1], bins=60)
-
-        # Construct arrays for the anchor positions of the 16 bars.
-        xpos, ypos = np.meshgrid(xedges[:-1] + 0.25, yedges[:-1] + 0.25, indexing="ij")
-        xpos = xpos.ravel()
-        ypos = ypos.ravel()
-        zpos = 0
-
-        # Construct arrays with the dimensions for the 16 bars.
-        dx = dy = 0.5 * np.ones_like(zpos)
-        dz = hist.ravel()
-
-        ax = plt.subplot(2, 1, 1, projection='3d')
-        ax.bar3d(xpos, ypos, zpos, dx, dy, dz)
-        ax.set_zlabel('Frequency')
-        plt.title("Distribution")
-        plt.xlabel('X')
-        plt.ylabel('Y')
-        #plt.legend(loc="upper right")
-
-        ax = plt.subplot(2, 1, 2, projection='3d')
-        plotRange = range(len(dataSet))
-        ax.scatter3D(plotRange, dataSet[:, 0], dataSet[:, 1], label='Data', s=2)
-
-        plt.title(f"Raw data with n = {len(plotRange)} sample points")
-        plt.xlabel('Sample')
-        plt.ylabel('Value')
-        plt.legend(loc="best")
-
-        plt.suptitle(title)
-
-        plt.tight_layout()
-        plt.show()
-
 
 class GaussDistribution(ContiniousDustribution):
 
-    def __init__(self, dimension):
+    def __init__(self, dimension, fileName = None, numberOfSamplesToGenerate = None, mean = None, variance = None):
+        if((fileName is not None) & (numberOfSamplesToGenerate is not None)):
+            raise Exception("Can't load data and generate samples")
+
         ContiniousDustribution.__init__(self)
         self.dimension = dimension
 
-    def generateSampels(self, mean, variance, numberOfPoints):
-        if len(self.dataSet) != 0:
-            raise Exception('Data already added')
+        if(fileName is not None):
+            self.importCsv(fileName)
+            self.calculateMean()
+            self.calculateVariance()
 
-        self.dataSet =  np.random.default_rng().normal(mean, variance, size=(numberOfPoints, self.dimension))
+        if(numberOfSamplesToGenerate is not None) & \
+                (mean is not None) & \
+                (variance is not None):
+            self.numberOfPoints = numberOfSamplesToGenerate
+            self.mean = mean
+            self.variance = variance
+            self.generateSampels()
+
+        if(len(self.dataSet) == 0):
+            raise Exception("Could not generate data, verify parameters")
+
+        self.calculateStandardDeviation()
+        #self.calculateProbabilityDensity()
+        self.gaussen = []
+        self.generateGaussen()
+
+    def generateSampels(self):
+        if len(self.dataSet) != 0:
+            raise Exception("Data already added")
+
+        self.dataSet =  np.random.default_rng().normal(self.mean, self.variance, size=(self.numberOfPoints, self.dimension))
 
     def generateGaussen(self):
         if len(self.dataSet) == 0:
-            raise Exception('No Data added')
+            raise Exception("No Data added")
 
         if self.dimension == 1:
             return self.generateGaussen1D()
@@ -164,15 +121,13 @@ class GaussDistribution(ContiniousDustribution):
         mean = self.getMean()
         variance = self.getVariance()
 
-        resultArray = []
+        self.gaussen = []
 
         for x in vectorArray:
             exponentialTerm = (-(1/(2 * variance**2)) * (x-mean)**2)
             denominator = (2 * math.pi * variance**2)**(0.5)
             result = (1/denominator) * math.e**(exponentialTerm)
-            resultArray.append(result)
-
-        return resultArray
+            self.gaussen.append(result)
 
     def generateGaussen2D(self):
         vectorArray = np.array(self.dataSet)
@@ -196,76 +151,156 @@ class GaussDistribution(ContiniousDustribution):
 
         return resultArray
 
-    def plotData(self, result):
+
+
+    def plotData(self):
         if len(self.dataSet) == 0:
-            raise Exception('No Data added')
+            raise Exception("No Data added")
 
         mean = self.getMean()
         variance = self.getVariance()
 
-        title = f'Gaus Distribution with [$\mu$] = {mean} and {variance}'
+        title = f"Gaus Distribution with [$\mu$] = {mean} and {variance}"
         if self.dimension == 1:
-            self.plotData1D(title, self.dataSet, result)
+            self.plotData1D(title, self.dataSet, self.gaussen)
         else:
             self.plotData2D(title, self.dataSet)
 
+    def plotData1D(self, title, dataSet, result):
+        plotRange = range(len(dataSet))
+
+        plt.figure(figsize=(8, 6))
+
+        plt.subplot(2, 1, 1)
+        plt.hist(dataSet, bins=60, density=True, label="Histogram")
+
+        plt.title("Distribution")
+        plt.xlabel("Values")
+        plt.ylabel("Frequency")
+        plt.legend(loc="upper right")
+
+        plt.subplot(2, 1, 2)
+        plt.scatter(plotRange, dataSet, label="Data", s=2)
+        plt.plot(plotRange, result, color="y")
+
+
+        plt.title(f"Raw data with n = {len(plotRange)} sample points")
+        plt.xlabel("Sample")
+        plt.ylabel("Value")
+        plt.legend(loc="best")
+
+        plt.suptitle(title)
+
+        plt.tight_layout()
+        plt.show()
+
+    def plotData2D(self, title, dataSet, result):
+        plt.figure(figsize=(8, 12))
+
+
+        hist, xedges, yedges = np.histogram2d(dataSet[:,0], dataSet[:,1], bins=60)
+
+        # Construct arrays for the anchor positions of the 16 bars.
+        xpos, ypos = np.meshgrid(xedges[:-1] + 0.25, yedges[:-1] + 0.25, indexing="ij")
+        xpos = xpos.ravel()
+        ypos = ypos.ravel()
+        zpos = 0
+
+        # Construct arrays with the dimensions for the 16 bars.
+        dx = dy = 0.5 * np.ones_like(zpos)
+        dz = hist.ravel()
+
+        ax = plt.subplot(2, 1, 1, projection="3d")
+        ax.bar3d(xpos, ypos, zpos, dx, dy, dz)
+        ax.set_zlabel("Frequency")
+        plt.title("Distribution")
+        plt.xlabel("X")
+        plt.ylabel("Y")
+        #plt.legend(loc="upper right")
+
+        ax = plt.subplot(2, 1, 2, projection="3d")
+        plotRange = range(len(dataSet))
+        ax.scatter3D(plotRange, dataSet[:, 0], dataSet[:, 1], label="Data", s=2)
+
+        plt.title(f"Raw data with n = {len(plotRange)} sample points")
+        plt.xlabel("Sample")
+        plt.ylabel("Value")
+        plt.legend(loc="best")
+
+        plt.suptitle(title)
+
+        plt.tight_layout()
+        plt.show()
+
 class BetaDistribution(ContiniousDustribution):
 
-    def __init__(self, a, b):
+    def __init__(self, a, b, fileName = None, numberOfSamplesToGenerate = None):
+        if((fileName is not None) & (numberOfSamplesToGenerate is not None)):
+            raise Exception("Can't load data and generate samples")
+
+        if((fileName is None) & (numberOfSamplesToGenerate is None)):
+            raise Exception("No parameters for data")
+
         ContiniousDustribution.__init__(self)
         self.a = a
         self.b = b
+        self.generatedBetaDistribution = []
+
+        if(numberOfSamplesToGenerate is not None):
+            self.generateSampels(numberOfSamplesToGenerate)
+
+        if (fileName is not None):
+            self.importCsv(fileName)
+
+        self.generateBetaDistribution()
 
     def generateSampels(self, numberOfPoints):
         if len(self.dataSet) != 0:
-            raise Exception('Data already added')
+            raise Exception("Data already added")
 
         self.dataSet = np.random.default_rng().beta(self.a, self.b, size=numberOfPoints)
 
     def generateBetaDistribution(self):
         betaFunction = (math.gamma(self.a + self.b) / (math.gamma(self.a) + math.gamma(self.b)))
 
-        resultArray =  []
+        self.generatedBetaDistribution = []
 
         for x in self.dataSet:
             result = betaFunction * pow(x,(self.a-1)) * pow((1 - x), (self.b - 1))
-            resultArray.append(result)
+            self.generatedBetaDistribution.append(result)
 
-        return resultArray
-
-    def plotData(self, result):
+    def plotData(self):
         plotRange = range(len(self.dataSet))
         pdf, binEdges = self.calculateProbabilityDensity(self.dataSet, 60)
 
         plt.figure(figsize=(8, 6))
 
         plt.subplot(3, 1, 1)
-        plt.hist(self.dataSet, bins=60, density=True, label='Histogram')
+        plt.hist(self.dataSet, bins=60, density=True, label="Histogram")
         plt.plot(binEdges[1:], pdf)
 
         plt.title("Distribution")
-        plt.xlabel('Values')
-        plt.ylabel('Frequency')
+        plt.xlabel("Values")
+        plt.ylabel("Frequency")
         plt.legend(loc="upper right")
 
         plt.subplot(3, 1, 2)
-        plt.scatter(plotRange, self.dataSet, label='Data', s=2)
-        plt.plot(plotRange, result, 'y-')
-
+        plt.scatter(plotRange, self.dataSet, label="Data", s=2)
+        plt.plot(plotRange, self.generatedBetaDistribution, "y-")
 
         plt.title(f"Raw data with n = {len(plotRange)} sample points")
-        plt.xlabel('Sample')
-        plt.ylabel('Value')
+        plt.xlabel("Sample")
+        plt.ylabel("Value")
         plt.legend(loc="best")
 
         plt.subplot(3, 1, 3)
-        pdf, binEdges = self.calculateProbabilityDensity(result, 60)
-        plt.plot(binEdges[1:], pdf, 'y-')
+        pdf, binEdges = self.calculateProbabilityDensity(self.generatedBetaDistribution, 60)
+        plt.plot(binEdges[1:], pdf, "y-")
 
 
         plt.title(f"Raw data with n = {len(plotRange)} sample points")
-        plt.xlabel('Sample')
-        plt.ylabel('Value')
+        plt.xlabel("Sample")
+        plt.ylabel("Value")
         plt.legend(loc="best")
 
         plt.suptitle("Test")

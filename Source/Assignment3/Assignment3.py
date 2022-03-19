@@ -6,16 +6,15 @@ import sys
 sys.path.insert(0, '../modules')
 import inference
 
-# gaussDistr = inference.GaussDistribution(1)
+gaussDistr = inference.GaussDistribution(1, numberOfSamplesToGenerate = 1000, mean = 2, variance = 3)
+gaussDistr.plotData()
 # gaussDistr.generateSampels(2,3,1000)
 # result = gaussDistr.generateGaussen()
 
-# gaussDistr.plotData(result)
 
-betaDistr = inference.BetaDistribution(0.5,0.5)
-betaDistr.generateSampels(1000)
-result = betaDistr.generateBetaDistribution()
-betaDistr.plotData(result)
+
+# betaDistr = inference.BetaDistribution(0.5,0.5, numberOfSamplesToGenerate = 1000)
+# betaDistr.plotData()
 
 
 
