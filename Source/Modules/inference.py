@@ -38,12 +38,9 @@ class ContiniousDustribution():
     def calculateMean(self):
         self.mean = np.mean(self.dataSet)
 
-    def getMean(self):
-        return self.mean
-
     def calculateVariance(self):
         length = len(self.dataSet)
-        mean = self.getMean()
+        mean = self.mean
 
         squareDeviations = [(x - mean) ** 2 for x in self.dataSet]
 
@@ -51,14 +48,8 @@ class ContiniousDustribution():
         self.variance = sum(squareDeviations) / (length - 1)
         return self.variance
 
-    def getVariance(self):
-        return self.variance
-
     def calculateStandardDeviation(self):
         self.standardDeviation = math.sqrt(self.variance)
-        return self.standardDeviation
-
-    def getStandardDeviation(self):
         return self.standardDeviation
 
     def normalizeDataSet(self):
@@ -91,15 +82,15 @@ class GaussDistribution(ContiniousDustribution):
                 (mean is not None) & \
                 (variance is not None):
             self.numberOfSamples = numberOfSamplesToGenerate
-            self.mean = mean
-            self.variance = variance
+            self.mean = np.array(mean)
+            self.variance = np.array(variance)
             self.generateSampels()
 
         if(len(self.dataSet) == 0):
             raise Exception("Could not generate data, verify parameters")
 
         self.calculateStandardDeviation()
-        self.gaussen = []
+        self.gaussenDistribution = []
         self.generateGaussen()
 
     def generateSampels(self):
@@ -117,6 +108,12 @@ class GaussDistribution(ContiniousDustribution):
 
         return self.generateGaussen2D()
 
+    def calculateMean(self):
+        self.mean = np.mean(self.dataSet)
+
+    def calculateStandardDeviation(self):
+        self.standardDeviation = np.array((math.sqrt(self.mean[0]), math.sqrt(self.mean[1])))
+
     def calculateGaussen1D(self, x):
         exponentialTerm = (-(1 / (2 * self.variance ** 2)) * (x - self.mean) ** 2)
         denominator = (2 * math.pi * self.variance ** 2) ** (0.5)
@@ -129,37 +126,30 @@ class GaussDistribution(ContiniousDustribution):
         for x in vectorArray:
             self.gaussen.append(self.calculateGaussen1D(x))
 
+    def calculateGaussen2D(self, vector):
+        xs = [self.mean[0], 0]
+        ys = [0, self.mean[1]]
+        covariance = [xs, ys]
+        inverseCovariance = np.linalg.inv(covariance)
+        determinantCovariance = np.linalg.det(covariance)
+
+        # exponentialTerm = (-0.5 * np.transpose(vector - self.mean)) * inverseCovariance * (vector - self.mean)
+        exponentialTerm = -(np.linalg.solve(covariance, (vector - self.mean)).T.dot((vector - self.mean))) / 2
+        denominator = ((2 * math.pi) ** (self.dimension / 2)) * determinantCovariance ** (0.5)
+        result =  (1 / denominator) * math.exp(exponentialTerm)
+        return result
+
     def generateGaussen2D(self):
         vectorArray = np.array(self.dataSet)
-        mean = self.getMean()
 
-        resultArray = []
+        self.gaussenDistribution = []
 
         for vector in vectorArray:
-            xs = [vector[0], mean[0]]
-            ys = [vector[1], mean[1]]
-            # covariance = np.mean(vector[0], vector[1], axis=1) * np.mean(vector[0], axis=1) * np.mean(vector[1], axis=1)
-            covariance = np.cov(xs, ys, bias=True)
-            # covariance = np.mean(vector[0] * vector[1], axis=1) - np.mean(vector[0], axis=1) * np.mean(vector[1], axis=1)
-
-            inverseCovariance = np.linalg.inv(covariance)
-            determinantCovariance = np.linalg.det(covariance)
-
-            exponentialTerm = (-0.5 * np.transpose(vector - mean)) * inverseCovariance * (vector - mean)
-            denominator = (2 * math.pi) ** (self.dimension/2) * determinantCovariance ** (0.5)
-            result = (1/denominator) * math.e**(exponentialTerm)
-
-        return resultArray
-
-
+            self.gaussenDistribution.append(self.calculateGaussen2D(vector))
 
     def plotData(self):
         if len(self.dataSet) == 0:
             raise Exception("No Data added")
-
-        mean = self.getMean()
-        variance = self.getVariance()
-
 
         if self.dimension == 1:
             self.plotData1D()
@@ -185,7 +175,7 @@ class GaussDistribution(ContiniousDustribution):
         plt.subplot(2, 1, 2)
         plt.scatter(plotRange, self.dataSet, label="Data", s=2)
 
-        plt.title("Raw Data")
+        plt.title(f"Raw data with n = {self.numberOfSamples} sample points")
         plt.xlabel("Sample")
         plt.ylabel("Value")
         plt.legend(loc="best")
@@ -195,10 +185,10 @@ class GaussDistribution(ContiniousDustribution):
         plt.tight_layout()
         plt.show()
 
-    def plotData2D(self, title, dataSet, result):
+    def plotData2D(self):
         plt.figure(figsize=(8, 12))
 
-        hist, xedges, yedges = np.histogram2d(dataSet[:,0], dataSet[:,1], bins=60)
+        hist, xedges, yedges = np.histogram2d(self.dataSet[:,0], self.dataSet[:,1], bins=60)
 
         # Construct arrays for the anchor positions of the 16 bars.
         xpos, ypos = np.meshgrid(xedges[:-1] + 0.25, yedges[:-1] + 0.25, indexing="ij")
@@ -211,23 +201,29 @@ class GaussDistribution(ContiniousDustribution):
         dz = hist.ravel()
 
         ax = plt.subplot(2, 1, 1, projection="3d")
-        ax.bar3d(xpos, ypos, zpos, dx, dy, dz)
+        # ax.bar3d(xpos, ypos, zpos, dx, dy, dz)
         ax.set_zlabel("Frequency")
+
+        xy = np.linspace([min(self.dataSet[0]),min(self.dataSet[1])], [max(self.dataSet[0]), max(self.dataSet[1])], self.numberOfSamples)
+        # y = np.linspace(min(self.dataSet[1]), max(self.dataSet[1]), self.numberOfSamples)
+        z = np.array([self.calculateGaussen2D(v) for v in xy])
+        ax.plot_surface(xy[0], xy[1], z, )
+
         plt.title("Distribution")
         plt.xlabel("X")
         plt.ylabel("Y")
-        #plt.legend(loc="upper right")
+        plt.legend(loc="best")
 
         ax = plt.subplot(2, 1, 2, projection="3d")
-        plotRange = range(len(dataSet))
-        ax.scatter3D(plotRange, dataSet[:, 0], dataSet[:, 1], label="Data", s=2)
+        plotRange = range(self.numberOfSamples)
+        ax.scatter3D(plotRange, self.dataSet[:, 0], self.dataSet[:, 1], label="Data", s=2)
 
-        plt.title(f"Raw data with n = {len(plotRange)} sample points")
+        plt.title(f"Raw data with n = {self.numberOfSamples} sample points")
         plt.xlabel("Sample")
         plt.ylabel("Value")
         plt.legend(loc="best")
 
-        plt.suptitle(title)
+        plt.suptitle(f"Gaus Distribution with $\mu$ = {self.mean} and $\sigma$ = {self.variance}")
 
         plt.tight_layout()
         plt.show()
