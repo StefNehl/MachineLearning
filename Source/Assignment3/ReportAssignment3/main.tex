@@ -94,19 +94,94 @@ Both formulas are from the book An Introduction to Probabilistic Machine Learnin
 The implementation for the one dimensional plot was straightforward. I plotted a histogram of the generated data and the gauss distribution as a line above the histogram. Additional, I add the raw the of the generated samples. With the two dimensional plots I had some issues. I was able to create a 3d model of the raw data and the 3d bar chart of the distribution. I wanted to plot the surface of the two dimensional gauss distribution following the paper \citep{multiVariateNormalDistribution}, but unfortunately I failed to create the surface. 
 
 \section{Beta Distribution}
+The class \textit{BetaDistribution} has analogue to the class \textit{GaussDistribution} also a constructor for handling the initialization for the parameters. Also the limitation for file name for \textit{CSV} or generation of samples is the same. The difference is, that the beta distribution needs the parameter \textit{a} and \textit{b} and not the dimension for the distribution. 
 
 \subsection{Generating Samples}
+The generation for the samples was created again with the \textit{random()} function from the \textit{numpy} library. However, I changed the distribution to the beta distribution. 
+
+\lstinputlisting[linerange=33-39]{../../Modules/BetaDistribution.py}
 
 \subsection{Calculation}
+For the calculation I used the following formula. 
+\[
+Beta(x|a,b) = B(a,b)x\textsuperscript{a-1}(1 - x)\textsuperscript{b - 1}
+\]
+where a,b are in the constructor given parameters as a scalar and \textit{B(a,b)} the Beta function. 
+\[
+B(a,b) = \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)}
+\]
+where $\Gamma$ is the gamma function. The formulas are again from book An Introduction to Probabilistic Machine Learning.  
+\citep{bookMachineLearning}
+
 
 \subsection{Plotting}
+For plotting the results I used a histogram with the distribution and the raw data. In addition I created a plot with the beta distribution with different values for the parameters $\textit{alpha}$ and $\textit{beta}$. The values are displayed in Table 1. 
+\begin{table}[htbp]
+    \label{tab:alphaBetaParameters}
+	\caption{Values for alpha and beta}
+	\centering
+	\begin{tabular}{llr}
+		\cmidrule(r){1-2}
+		alpha & beta \\
+		\midrule
+		0.5 & 0.5 \\
+		5 & 2 \\
+		2 & 5 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+For the plotting of the parameters with different values I added a method named \textit{plotDataWithDifferentAlphasAndBetas} with a list of the different settings as a parameter. These function sets the values and generates the plots. 
 
 \section{Results}
+Figure 1 shows the gauss distribution for one dimension. It displays the values distribution and the frequencies of those values. The orange line displays the gauss distribution itself.
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/gauss1D.png}
+  \caption{Gauss Distribution for one dimension with the raw data}
+  \label{fig:fibonacciPlot}
+\end{figure}
+Figure 2 shows the gauss distribution for two dimensions in a three dimensional plot.
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/gauss2D.png}
+  \caption{Gauss Distribution for two dimensions with the raw data}
+  \label{fig:fibonacciPlot}
+\end{figure}
+The beta distribution is displayed in figure 3. This plot uses an alpha with 0.5 and a beta with 0.5. The result displays a higher frequency of the values around 0 and 1. This is also displayed in the scatter chart with the raw values of this distribution. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/beta_0_5.png}
+  \caption{Beta Distribution with alpha = 0.5 and beta = 0.5}
+  \label{fig:fibonacciPlot}
+\end{figure}
+Figure 4 displays the beta distribution with alpha 2 and beta 5. The frequency is now higher at the start of the plot with a maximum at around 0.2.
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/beta_2.png}
+  \caption{Beta Distribution with alpha = 2 and beta = 5}
+  \label{fig:fibonacciPlot}
+\end{figure}
+The beta distribution in figure 5 displays the frequency with the value for alpha 5 and beta 2. Therefore, the frequency is higher at the end of the plot near 0.8.
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/beta_5.png}
+  \caption{Beta Distribution with alpha = 5 and beta = 2}
+  \label{fig:fibonacciPlot}
+\end{figure}
+The last figure, Figure 5, displays the three settings for the beta distribution. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/beta_all.png}
+  \caption{Beta Distribution with the the different values for alpha and beta}
+  \label{fig:fibonacciPlot}
+\end{figure}
+
 
 \section{Conclusion}
+The implementation of the abstract class was straightforward. For the other classes I made some changes. I moved the classes to separate files to handle them better. Unfortunately, I was not able to create a satisfying plot for the gauss distribution for two dimensions. The whole code is in the appendix of this paper. 
 
 \section*{APPENDIX}
-
+\onecolumn\lstinputlisting{../Assignment3.py}
 \onecolumn\lstinputlisting[]{../../Modules/inference.py}
 \onecolumn\lstinputlisting[]{../../Modules/GaussDistribution.py}
 \onecolumn\lstinputlisting[]{../../Modules/BetaDistribution.py}

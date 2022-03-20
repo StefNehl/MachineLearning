@@ -1,3 +1,7 @@
+"""
+@author: Nehl Stefan
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import math
@@ -144,13 +148,14 @@ class GaussDistribution(ContiniousDustribution):
         dz = hist.ravel()
 
         ax = plt.subplot(2, 1, 1, projection="3d")
-        # ax.bar3d(xpos, ypos, zpos, dx, dy, dz)
+        ax.bar3d(xpos, ypos, zpos, dx, dy, dz)
         ax.set_zlabel("Frequency")
 
         xy = np.linspace([min(self.dataSet[0]),min(self.dataSet[1])], [max(self.dataSet[0]), max(self.dataSet[1])], self.numberOfSamples)
         # y = np.linspace(min(self.dataSet[1]), max(self.dataSet[1]), self.numberOfSamples)
         z = np.array([self.calculateGaussen2D(v) for v in xy])
-        ax.plot_surface(xy[0], xy[1], z, )
+        # does not work
+        # ax.plot_surface(xy[0], xy[1], z, )
 
         plt.title("Distribution")
         plt.xlabel("X")
