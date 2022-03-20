@@ -52,7 +52,10 @@ class GaussDistribution(ContiniousDustribution):
         self.mean = np.mean(self.dataSet)
 
     def calculateStandardDeviation(self):
-        self.standardDeviation = np.array((math.sqrt(self.mean[0]), math.sqrt(self.mean[1])))
+        if self.dimension == 1:
+            self.standardDeviation = np.std(self.dataSet)
+        else:
+            self.standardDeviation = np.array((math.sqrt(self.mean[0]), math.sqrt(self.mean[1])))
 
     def calculateGaussen1D(self, x):
         exponentialTerm = (-(1 / (2 * self.variance ** 2)) * (x - self.mean) ** 2)
