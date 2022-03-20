@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  20 MAR 2022 11:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  20 MAR 2022 13:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,16 +1238,23 @@ Package biblatex Info: Data encoding 'utf8' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'multiVariateNormalDistribution':
+(biblatex)                - Invalid format of field 'urldate'.
+
+)
 Package biblatex Info: Reference section=0 on input line 40.
 Package biblatex Info: Reference segment=0 on input line 40.
-
-(./python_code.tex (c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+ (./python_code.tex
+(c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 4
 3.
- (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
+
+(c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1315,72 +1322,103 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 57.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 57.
-LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 64.
-LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <12> not available
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/sl' tried instead on input line 64.
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 70.
+(../../Modules/GaussDistribution.py
+consecutive:
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 36.
+) [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+] [2
+
+]
+(../../Modules/inference.py
+LaTeX Font Info:    Trying to load font information for TS1+XCharter-TLF on inp
+ut line 43.
+
+(c:/texlive/2021/texmf-dist/tex/latex/xcharter/TS1XCharter-TLF.fd
+File: TS1XCharter-TLF.fd 2020/05/25 (msharpe) Font definitions for TS1/XCharter
+-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/XCharter-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 43.
+Package microtype Info: Character `textbardbl ' is missing
+(microtype)             in font `TS1/XCharter-TLF/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textcelsius ' is missing
+(microtype)             in font `TS1/XCharter-TLF/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
+
+])
+[4] (../../Modules/GaussDistribution.py
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7])
+[8] (../../Modules/BetaDistribution.py
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9
+
+])
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
-[][][]\T1/XCharter-TLF/m/n/10 (+20) (n.d.[b]). \T1/XCharter-TLF/m/it/10 (+20) M
-e-dian\T1/XCharter-TLF/m/n/10 (+20) . \T1/XCharter-TLF/m/sc/10 (+20) url\T1/XCh
-arter-TLF/m/n/10 (+20) : $\T1/cmtt/m/n/10 https : / /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
-\T1/cmtt/m/n/10 knowledge / other / median/$ \T1/XCharter-TLF/m/n/10 (+20) (vis
--ited on
- []
-
-[1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
 
 AED: lastpage setting LastPage
-[2
-
-] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
+[10] (./main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21467 strings out of 478278
- 377185 string characters out of 5850546
- 1100997 words of memory out of 5000000
- 39214 multiletter control sequences out of 15000+600000
- 580868 words of font info for 171 fonts, out of 8000000 for 9000
+ 22268 strings out of 478278
+ 386671 string characters out of 5850546
+ 1403210 words of memory out of 5000000
+ 39949 multiletter control sequences out of 15000+600000
+ 592676 words of font info for 203 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,11n,75p,1903b,1733s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,75p,1903b,1731s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc}{c:/texlive/2021/te
-xmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvip
-s/xcharter/xch_rydp4l.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/xchart
-er/XCharter-Bold.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XC
-harter-Italic.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XChar
-ter-Roman.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.
-pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive
-/2021/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2021/texmf-di
-st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (2 pages, 222268 bytes).
+xmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{c:/texlive/2021/texmf-dist/f
+onts/enc/dvips/base/8r.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter
+/xch_rydp4l.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharte
+r-Bold.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Ita
+lic.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Roman.
+pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/20
+21/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2021/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/te
+xlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2021
+/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fon
+ts/type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/h
+elvetic/uhvro8a.pfb>
+Output written on main.pdf (10 pages, 332125 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 48641 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 56833 words of extra memory for PDF output out of 61914 (max. 10000000)
 

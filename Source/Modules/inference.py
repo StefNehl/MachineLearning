@@ -9,13 +9,11 @@ class ContiniousDustribution():
 
     def __init__(self):
         self.dataSet = []
-        self.normalizeDataSet = []
+        self.normalizedDataSet = []
         self.mean = None
         self.median = None
         self.variance = None
         self.standardDeviation = None
-        self.probabilityDensity = None
-        self.binEdges = None
 
     def importCsv(self, filename):
         if len(self.dataSet) != 0:
