@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chair of Cyber-Physical-Systems
+% Univ.-Prof. Dr. Elmar Rueckert
+% Montanuniversität Leoben, Austria
+% Latest Update: Feb. 2022
+%
+% Disclaimer: The materials and source code are for personal use only. The material is intended for educational purposes only. Reproduction of the material for any purposes other than what is intended is prohibited. The content is to be used for educational and non-commercial purposes only and is not to be changed, altered, or used for any commercial endeavor without the express written permission of Professor Rueckert. 
+% 
+% Original Version by Frits Wenneker, 28/2/17,  License: CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
+
+\input{structure.tex} % Specifies the document structure and loads requires packages
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Assignment III: Gauss and Beta Distribution} % The article title
+
+\author{
+	\coursetitle{Exercises in Machine Learning (190.013), SS2022}
+	\authorstyle{Stefan Nehl\textsuperscript{1}} % Authors
+	\newline\newline % Space before institutions
+	\textsuperscript{1}\textit{stefan-christopher.nehl@stud.unileoben.ac.at, MNr: 00935188}, \institution{Montanuniversität Leoben, Austria}\\ % Institution 1
+	\newline\submissiondate{\today} % Add a date here
+}
+
+% Example of a one line author/institution relationship
+%\author{\newauthor{John Marston} \newinstitution{Universidad Nacional Autónoma de México, Mexico City, Mexico}}
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\input{python_code.tex} % To print Python code
+
+\maketitle % Print the title
+
+\thispagestyle{firstpage} % Apply the page style for the first page (no headers and footers)
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\lettrineabstract{In the third assignment, I had to create the abstract class ContinuousDistribution. This class contains functions for importing and exporting the data to CSV files, compute the mean and standard deviation, generating samples and visualize the given data. Furthermore, I had to implement two additional classes, GaussDistribution and BetaDistribution which inheritances the class ContinuousDistribution and implement gauss and beta distribution. Finally, I plotted the result of this distributions.}
+
+%----------------------------------------------------------------------------------------
+%	REPORT CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+The gauss and beta distributions are often used in machine learning to generate random variables. The target of this assignment was to create a module \textit{inference} which implements this two different distributions. 
+
+\section{Implementation}
+For the implementation I created a module with the name \textit{inference}. In this module i implemented the abstract class \textit{ContinuousDistribution} with it's abstract methods. 
+
+\subsection{Abstract class \textit{ContinuousDistribution}}
+
+\subsection{Median}
+
+\subsection{Variance}
+
+\subsection{Standard Deviation}
+
+\subsection{Normalize Data}
+
+\subsection{Testing the functions}
+                                                                                                                                                                                                                                                              
+\subsection{Loading the data}
+
+\subsection{Plotting the results}
+
+\section{Results}
+
+\section{Conclusion}
+
+\section*{APPENDIX}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

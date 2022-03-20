@@ -1,0 +1,168 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{meanCFI}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=ICF}{%
+         family={Institute},
+         familyi={I\bibinitperiod},
+         given={Corporate\bibnamedelima Finance},
+         giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Corporate Finance Institute}%
+    }
+    \strng{namehash}{ICF1}
+    \strng{fullhash}{ICF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{extradate}{1}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Mean}
+    \verb{url}
+    \verb https://corporatefinanceinstitute.com/resources/knowledge/other/mean/
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{medianCFI}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=ICF}{%
+         family={Institute},
+         familyi={I\bibinitperiod},
+         given={Corporate\bibnamedelima Finance},
+         giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Corporate Finance Institute}%
+    }
+    \strng{namehash}{ICF1}
+    \strng{fullhash}{ICF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{extradate}{2}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Median}
+    \verb{url}
+    \verb https://corporatefinanceinstitute.com/resources/knowledge/other/media
+    \verb n/
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{standardizeDataBuildIn}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=JZ}{%
+         family={Jaadi},
+         familyi={J\bibinitperiod},
+         given={Zakaria},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Built In}%
+    }
+    \strng{namehash}{JZ1}
+    \strng{fullhash}{JZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Standardization}
+    \verb{url}
+    \verb https://builtin.com/data-science/when-and-why-standardize-your-data
+    \endverb
+    \field{year}{2019}
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{varianceAndStandardDeviationStack}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=RLP}{%
+         family={Ramos},
+         familyi={R\bibinitperiod},
+         given={Leodanis\bibnamedelima Pozo},
+         giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Stack Abuse}%
+    }
+    \strng{namehash}{RLP1}
+    \strng{fullhash}{RLP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Calculating Variance and Standard Deviation in Python}
+    \verb{url}
+    \verb https://stackabuse.com/calculating-variance-and-standard-deviation-in
+    \verb -python/
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+
+  \entry{normalizeDataStatology}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=Z}{%
+         family={Zach},
+         familyi={Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Statology}%
+    }
+    \strng{namehash}{Z1}
+    \strng{fullhash}{Z1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{title}{How to Normalize Data in Python}
+    \verb{url}
+    \verb https://www.statology.org/normalize-data-in-python/
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{03}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
+\enddatalist
+\endinput
