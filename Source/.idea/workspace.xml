@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Implemented Task 1">
-      <change afterPath="$PROJECT_DIR$/Modules/ContiniousDustribution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/BetaDistribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/BetaDistribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/GaussDistribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussDistribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/inference.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
       <recent name="C:\Users\stefa\OneDrive\Documents\_Private\Uni 2022\Exercice Machine Learning\Assignments\Assignment_1\Source\Code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Task1_BayesTheorem">
+  <component name="RunManager" selected="Python.Task3_RidgeRegression">
     <configuration name="Assignment1" type="PythonConfigurationType" factoryName="Python">
       <module name="Source" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,7 +159,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Task1_BayesTheorem" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Task1_BayesTheorem" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment4/Task1_BayesTheorem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Task3_RidgeRegression" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Source" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,7 +191,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment4/Task1_BayesTheorem.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -224,17 +245,17 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Task3_RidgeRegression" />
       <item itemvalue="Python.Assignment3" />
       <item itemvalue="Python.Assignment1" />
       <item itemvalue="Python.Assignment2" />
+      <item itemvalue="Python.Task1_BayesTheorem" />
       <item itemvalue="Python.inference" />
       <item itemvalue="Python.BasicStatistics" />
       <item itemvalue="Python.BasicStatisticsTest" />
-      <item itemvalue="Python.Task1_BayesTheorem" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Task1_BayesTheorem" />
         <item itemvalue="Python.inference" />
         <item itemvalue="Python.BasicStatisticsTest" />
         <item itemvalue="Python.BasicStatistics" />
@@ -599,7 +620,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_1.coverage" NAME="Assignment_1 Coverage Results" MODIFIED="1646080037790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_1" />
-    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1650725181433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1650728417533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment1.coverage" NAME="Assignment1 Coverage Results" MODIFIED="1647348710212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment1" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1647348691451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatisticsTest.coverage" NAME="BasicStatisticsTest Coverage Results" MODIFIED="1647348763889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
@@ -607,6 +628,7 @@
     <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatistics_Test.coverage" NAME="BasicStatistics_Test Coverage Results" MODIFIED="1646566780615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1646084619395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$inference.coverage" NAME="inference Coverage Results" MODIFIED="1647352915356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Task3_RidgeRegression.coverage" NAME="Task3_RidgeRegression Coverage Results" MODIFIED="1650731445407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment4" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$BasicStatistics.coverage" NAME="BasicStatistics Coverage Results" MODIFIED="1646080691634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment2.coverage" NAME="Assignment2 Coverage Results" MODIFIED="1647471558344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
   </component>

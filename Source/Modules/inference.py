@@ -39,7 +39,39 @@ class ContiniousDustribution():
     def plotData(self):
         pass
 
+class Regression():
 
+    @abstractmethod
+    def importData(self):
+        pass
+
+    @abstractmethod
+    def generateTrainingSubset(self):
+        pass
+
+    @abstractmethod
+    def computeLinearRidgeRegression(self, lambdaValue):
+        pass
+
+    @abstractmethod
+    def testModel(self, weight):
+        pass
+
+    @abstractmethod
+    def computeError(self, yStar):
+        pass
+
+    @abstractmethod
+    def plotError(self):
+        pass
+
+    @abstractmethod
+    def plotHeatMap(self):
+        pass
+
+    @abstractmethod
+    def computMeanOfError(self):
+        pass
 
 
 
