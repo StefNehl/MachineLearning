@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished report">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Implemented Task 1">
+      <change afterPath="$PROJECT_DIR$/Modules/ContiniousDustribution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/BetaDistribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/BetaDistribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/GaussDistribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussDistribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/inference.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +266,7 @@
       <workItem from="1647687761131" duration="23427000" />
       <workItem from="1647767231802" duration="702000" />
       <workItem from="1647771341380" duration="8367000" />
-      <workItem from="1650717686638" duration="2995000" />
+      <workItem from="1650717686638" duration="3955000" />
     </task>
     <task id="LOCAL-00001" summary="Added solution">
       <created>1645528526271</created>
@@ -530,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647780924973</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Implemented Task 1">
+      <created>1650725636972</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1650725636972</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +563,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Implemented Normalization" />
     <MESSAGE value="Finished Histogram" />
     <MESSAGE value="Added description for the statistic functions" />
     <MESSAGE value="Added description of plotting and loading data" />
@@ -577,7 +587,8 @@
     <MESSAGE value="Finished Extraction of gauss class" />
     <MESSAGE value="Added gauss distribution to report" />
     <MESSAGE value="Finished report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished report" />
+    <MESSAGE value="Implemented Task 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Task 1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

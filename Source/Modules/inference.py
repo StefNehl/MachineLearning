@@ -7,51 +7,29 @@ from abc import ABC, abstractmethod
 
 class ContiniousDustribution():
 
-    def __init__(self):
-        self.dataSet = []
-        self.normalizedDataSet = []
-        self.mean = None
-        self.median = None
-        self.variance = None
-        self.standardDeviation = None
-
+    @abstractmethod
     def importCsv(self, filename):
-        if len(self.dataSet) != 0:
-            raise Exception("Data already added")
+        pass
 
-        with open(filename, mode="r") as file:
-            csvFile = csv.reader(file)
-
-            for row in csvFile:
-                self.dataSet.append(row)
-
+    @abstractmethod
     def exportCsv(self, filename):
-        if len(self.dataSet) == 0:
-            raise Exception("No Data added")
+        pass
 
-        with open(filename, mode="w") as file:
-            csvWriter = csv.writer(file, delimiter =  ";")
-            csvWriter.writerows(self.dataSet)
-
+    @abstractmethod
     def calculateMean(self):
-        self.mean = np.mean(self.dataSet)
+        pass
 
+    @abstractmethod
     def calculateVariance(self):
-        length = len(self.dataSet)
-        mean = self.mean
+        pass
 
-        squareDeviations = [(x - mean) ** 2 for x in self.dataSet]
-
-        # Bessel's correction (n-1) instead of n for better results
-        self.variance = sum(squareDeviations) / (length - 1)
-        return self.variance
-
+    @abstractmethod
     def calculateStandardDeviation(self):
-        self.standardDeviation = math.sqrt(self.variance)
-        return self.standardDeviation
+        pass
 
+    @abstractmethod
     def normalizeDataSet(self):
-        self.dataSet = [((x - self.mean)/self.standardDeviation) for x in self.dataSet]
+        pass
 
     @abstractmethod
     def generateSampels(self):

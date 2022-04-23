@@ -5,7 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-from inference import ContiniousDustribution
+from ContiniousDustribution import ContiniousDustribution
 
 class BetaDistribution(ContiniousDustribution):
 
