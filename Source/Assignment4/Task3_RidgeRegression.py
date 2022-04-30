@@ -5,3 +5,4 @@ from RidgeRegression import RidgeRegression
 ridgeRegression = RidgeRegression(4)
 ridgeRegression.importData()
 ridgeRegression.generateTrainingSubset()
+ridgeRegression.plotRawData()
