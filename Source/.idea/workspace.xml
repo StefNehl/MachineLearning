@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added import, split up plotting for test and real data">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Try and error...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/GaussDistribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussDistribution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/RidgeRegression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +294,8 @@
       <workItem from="1651559371681" duration="10099000" />
       <workItem from="1651574242343" duration="8271000" />
       <workItem from="1651589007105" duration="8304000" />
-      <workItem from="1651599276196" duration="835000" />
+      <workItem from="1651599276196" duration="1005000" />
+      <workItem from="1651607711596" duration="5566000" />
     </task>
     <task id="LOCAL-00001" summary="Added solution">
       <created>1645528526271</created>
@@ -606,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651589072227</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Try and error...">
+      <created>1651606888234</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1651606888234</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +634,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Changed Label" />
     <MESSAGE value="Changed basic statistic to store the data set in the class" />
     <MESSAGE value="Finished Report" />
     <MESSAGE value="Refactoring of naming conventions" />
@@ -653,32 +658,40 @@
     <MESSAGE value="Added Ridge Regression for test Dataset" />
     <MESSAGE value="Clean Up (Removed predict and iteration)" />
     <MESSAGE value="Added import, split up plotting for test and real data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added import, split up plotting for test and real data" />
+    <MESSAGE value="Try and error..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Try and error..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Modules/RidgeRegression.py</url>
-          <line>137</line>
+          <line>145</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Modules/RidgeRegression.py</url>
-          <line>141</line>
+          <line>149</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Modules/RidgeRegression.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="79" />
+          <line>105</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Modules/RidgeRegression.py</url>
-          <line>91</line>
-          <option name="timeStamp" value="80" />
+          <line>69</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
@@ -691,7 +704,7 @@
     <SUITE FILE_PATH="coverage/Assignment_2_py$BasicStatistics_Test.coverage" NAME="BasicStatistics_Test Coverage Results" MODIFIED="1646566780615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1646084619395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$inference.coverage" NAME="inference Coverage Results" MODIFIED="1647352915356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules" />
-    <SUITE FILE_PATH="coverage/Assignment_2_py$Task3_RidgeRegression.coverage" NAME="Task3_RidgeRegression Coverage Results" MODIFIED="1651599436512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment4" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$Task3_RidgeRegression.coverage" NAME="Task3_RidgeRegression Coverage Results" MODIFIED="1651613832356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment4" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$BasicStatistics.coverage" NAME="BasicStatistics Coverage Results" MODIFIED="1646080691634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_2" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment2.coverage" NAME="Assignment2 Coverage Results" MODIFIED="1647471558344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
   </component>

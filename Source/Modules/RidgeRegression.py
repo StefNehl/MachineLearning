@@ -42,7 +42,7 @@ class RidgeRegression(Regression):
         self.numberOfSamples = len(self.inputValues)
 
         #init Gauss Distribution
-        self.gaussDistr = GaussDistribution(2, dataArray=self.inputValues)
+        #self.gaussDistr = GaussDistribution(2, dataArray=self.inputValues)
 
     def generateTestDate1D(self):
         self.hasGenerated1DTestData = True
@@ -60,6 +60,7 @@ class RidgeRegression(Regression):
 
     def createPolynomialFeatureVector(self, xVector):
         featureVector = []
+
         featureVector.append(1)
 
         for i in range(1, self.order):
@@ -67,11 +68,9 @@ class RidgeRegression(Regression):
             featureVector.append(newXVector)
 
         featureVector = np.array(featureVector)
-        return featureVector
+        return np.transpose(featureVector)
 
     def calculateGaussBasisFunction(self, xVector):
-
-        self.mu = [0.2,0.2]
 
         if(len(xVector.shape) == 0):
             return self.calculateGaussBasisFunction1D(xVector)
@@ -87,13 +86,22 @@ class RidgeRegression(Regression):
         return result
 
     def calculateGaussBasisFunction2D(self, xVector):
-        covariance = np.cov(xVector - self.mu)
+        xs = [np.mean(xVector[0] - self.mu[0]), 0]
+        ys = [0, np.mean(xVector[1] - self.mu[1])]
+        covariance = [xs, ys]
 
-        exponent = -0.5 * np.transpose(xVector - self.mu) * np.linalg.inv(covariance)
-        result = np.exp(exponent)
+        xMU = (xVector - self.mu)
+        xMUT = np.transpose(xMU)
+        covarianceInv = np.linalg.inv(covariance)
+
+        exponent = (-0.5) * (xMUT @ covarianceInv @ xMU)
+        result = np.e ** exponent
         return result
 
     def computeLinearRidgeRegression(self, lambdaValue):
+
+        self.mu = [np.mean(self.inputValues[:,0]),np.mean(self.inputValues[:,1])]
+
         X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.inputValues]))
         Y = np.vstack(([y for y in self.outputValues]))
 
