@@ -136,21 +136,22 @@ class RidgeRegression(Regression):
         plt.show()
 
     def predict(self, xVector):
-        y = self.weightVector[0]
-        for w in range(1,self.weightVector.shape[0]):
-            y = y + (xVector * self.weightVector[w])**(w)
+        featureVector = self.createPolynomialFeatureVector(xVector)
+        y = np.transpose(featureVector) @ self.weightVector
 
         return y
 
     def plot2DData(self):
-        ys = self.weightVector[0]
-        for w in range(1,self.weightVector.shape[0]):
-            ys = ys + (self.trainSubsetInput * self.weightVector[w])**(w)
 
-        ys = np.array(ys)
+        ys = np.hstack([x @ self.weightVector for x in self.x_test])
+
+        y_error = np.transpose(ys - self.y_test)
+        np.argsort(y_error)
+        x_error = range(y_error.shape[0])
 
         plt.figure(figsize=(8, 8))
         plt.subplot(2, 2, 1)
+        plt.plot(x_error, y_error)
 
         plt.title("Distribution")
         plt.xlabel("Input")
