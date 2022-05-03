@@ -27,10 +27,6 @@ class RidgeRegression(Regression):
         self.outputValues = c1 * self.inputValues ** 2 + c1 * self.inputValues + c0 + 500.0 * np.random.rand(len(self.inputValues))
 
     def generateTrainingSubset(self):
-        #if self.hasGeneratedTestData:
-        #    self.trainSubsetInput = self.inputValues
-        #    self.trainSubsetOutput = self.outputValues
-        #    return
         self.trainSubsetInput = np.array(self.inputValues[0:len(self.inputValues):self.trainStep])
         self.trainSubsetOutput = np.array(self.outputValues[0:len(self.outputValues):self.trainStep])
 
@@ -42,7 +38,6 @@ class RidgeRegression(Regression):
             newXVector = xVector ** i
             featureVector = np.hstack((featureVector, newXVector))
 
-        # featureVector = np.hstack(([1.0], xVector, np.square(xVector)))
         return featureVector
 
 
@@ -50,36 +45,10 @@ class RidgeRegression(Regression):
         X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.inputValues]))
         Y = np.vstack(([y for y in self.outputValues]))
 
-        #AT = np.transpose(A)
-        #I = np.identity(A.shape[1])
-        #ATAwithLambda = np.matmul(AT,A) + lambdaValue * I
-        #result = ATAwithLambda.dot(AT)
         XT = np.transpose(X)
         XTX = np.matmul(XT, X) + lambdaValue * np.identity(X.shape[1])
         self.weightVector = np.matmul(np.matmul(np.linalg.inv(XTX), XT), Y)
         return self.weightVector
-
-
-    def updateWeight(self, xVector, weightVector):
-        yVectorPred = self.predict(weightVector)
-
-        X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.trainSubsetInput]))
-        Y = np.vstack(([y for y in self.trainSubsetOutput]))
-
-        XT = np.transpose(X)
-        XTXwithLamda = np.matmul(XT, X) + lambdaValue * np.identity(X.shape[1])
-        weightVector = np.matmul(np.matmul(np.linalg.inv(XTXwithLamda), XT), Y)
-
-        n, m = dataSet.shape()
-        I = np.identity(m)
-
-        return np.dot(
-            np.dot(
-                np.linalg.inv(
-                    np.dot(dataSet.T, A) + lambdaValue * I), dataSet.T), yVectorPred)
-
-    def predict(self,xVector, weightVector):
-        return xVector.dot(weightVector)
 
     def plotRawData(self):
         ys = self.weightVector[0]
