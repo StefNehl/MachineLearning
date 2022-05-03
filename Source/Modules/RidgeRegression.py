@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from inference import Regression
+from GaussDistribution import GaussDistribution
 
 class RidgeRegression(Regression):
 
@@ -16,26 +17,32 @@ class RidgeRegression(Regression):
         dataDictonary =  sio.loadmat("AssignmentIV_data_set.mat")
 
         tempTimeData = dataDictonary.get("TempField")
-        tempData = np.array(tempTimeData[:,:, 0])
+        self.tempData = np.array(tempTimeData[:,:, 0])
 
         longData = dataDictonary.get("LongitudeScale") #x-value: Long
         latData = dataDictonary.get("LatitudeScale") #y-value: Lat
 
+        self.x_test = np.array(dataDictonary.get("x_test")) # Testdata from DataSet
+        self.y_test = np.array(dataDictonary.get("y_test")) # Testdata from DataSet
+
         longLatData = []
         arrayValues = []
 
-        for y in range(len(tempData)):
-            for x in range(len(tempData[y])):
-                value = tempData[y,x]
+        for y in range(len(self.tempData)):
+            for x in range(len(self.tempData[y])):
+                value = self.tempData[y,x]
                 if np.isnan(value):
                     continue
 
                 arrayValues.append(value)
-                longLatData.append((longData[x][0],latData[y][0])) #[0] needed because of strange import of long/latData
+                longLatData.append((latData[y][0], longData[x][0])) #[0] needed because of strange import of long/latData
 
         self.inputValues = np.array(longLatData)
         self.outputValues = np.array(arrayValues)
         self.numberOfSamples = len(self.inputValues)
+
+        #init Gauss Distribution
+        self.gaussDistr = GaussDistribution(2, dataArray=self.inputValues)
 
     def generateTestDate1D(self):
         self.hasGenerated1DTestData = True
@@ -44,6 +51,7 @@ class RidgeRegression(Regression):
         c0 = 3.456
         self.inputValues = np.linspace(-10.0, 20.2, 200)
         self.outputValues = c1 * self.inputValues ** 2 + c1 * self.inputValues + c0 + 500.0 * np.random.rand(len(self.inputValues))
+        self.gaussDistr = GaussDistribution(1, dataArray=self.inputValues)
 
     def generateTrainingSubset(self):
         self.trainSubsetInput = np.array(self.inputValues[0:len(self.inputValues):self.trainStep])
@@ -51,14 +59,39 @@ class RidgeRegression(Regression):
 
 
     def createPolynomialFeatureVector(self, xVector):
-        featureVector = np.ones(xVector.shape)
+        featureVector = []
+        featureVector.append(1)
 
         for i in range(1, self.order):
-            newXVector = xVector ** i
-            featureVector = np.hstack((featureVector, newXVector))
+            newXVector = self.calculateGaussBasisFunction(xVector) ** i
+            featureVector.append(newXVector)
 
+        featureVector = np.array(featureVector)
         return featureVector
 
+    def calculateGaussBasisFunction(self, xVector):
+
+        self.mu = [0.2,0.2]
+
+        if(len(xVector.shape) == 0):
+            return self.calculateGaussBasisFunction1D(xVector)
+        else:
+            return self.calculateGaussBasisFunction2D(xVector)
+
+    def calculateGaussBasisFunction1D(self, x):
+        return x
+        variance = np.var(x)
+
+        exponent = -(1 / (2 * variance ** 2)) * (x - self.mu) ** 2
+        result = np.exp(exponent)
+        return result
+
+    def calculateGaussBasisFunction2D(self, xVector):
+        covariance = np.cov(xVector - self.mu)
+
+        exponent = -0.5 * np.transpose(xVector - self.mu) * np.linalg.inv(covariance)
+        result = np.exp(exponent)
+        return result
 
     def computeLinearRidgeRegression(self, lambdaValue):
         X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.inputValues]))
@@ -73,7 +106,7 @@ class RidgeRegression(Regression):
         if self.hasGenerated1DTestData:
             self.plot1DTestData()
         else:
-            self.plotRawData()
+            self.plot2DData()
 
     def plot1DTestData(self):
         ys = self.weightVector[0]
@@ -94,7 +127,14 @@ class RidgeRegression(Regression):
         plt.tight_layout()
         plt.show()
 
-    def plotRawData(self):
+    def predict(self, xVector):
+        y = self.weightVector[0]
+        for w in range(1,self.weightVector.shape[0]):
+            y = y + (xVector * self.weightVector[w])**(w)
+
+        return y
+
+    def plot2DData(self):
         ys = self.weightVector[0]
         for w in range(1,self.weightVector.shape[0]):
             ys = ys + (self.trainSubsetInput * self.weightVector[w])**(w)
@@ -103,8 +143,6 @@ class RidgeRegression(Regression):
 
         plt.figure(figsize=(8, 8))
         plt.subplot(2, 2, 1)
-        plt.scatter(self.inputValues, self.outputValues, label="RawData")
-        plt.plot(self.trainSubsetInput, ys, '-r', label="Learned")
 
         plt.title("Distribution")
         plt.xlabel("Input")
@@ -112,19 +150,19 @@ class RidgeRegression(Regression):
         plt.legend()
 
         plt.subplot(2, 2, 3)
-        #hm = plt.imshow(self.inputValues,cmap='Reds', interpolation='none',
-        #                extent=[0,400,0,400])
+        hm = plt.imshow(self.tempData,cmap='Reds', interpolation='none',
+                        extent=[0,400,0,400])
 
-        #plt.colorbar(hm)
+        plt.colorbar(hm)
         plt.title(f"Raw data")
         plt.xlabel("Latitude coordinate")
         plt.ylabel("Longitude coordinate")
 
         plt.subplot(2, 2, 4)
-        #hm = plt.imshow(self.outputValues,cmap='Reds', interpolation='none',
-        #                extent=[0,400,0,400])
+        hm = plt.imshow(self.tempData,cmap='Reds', interpolation='none',
+                        extent=[0,400,0,400])
 
-        #plt.colorbar(hm)
+        plt.colorbar(hm)
         plt.title(f"Train Subset")
         plt.xlabel("Latitude coordinate")
         plt.ylabel("Longitude coordinate")

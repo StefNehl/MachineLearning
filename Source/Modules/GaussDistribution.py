@@ -9,8 +9,8 @@ from ContiniousDustribution import ContiniousDustribution
 
 class GaussDistribution(ContiniousDustribution):
 
-    def __init__(self, dimension, fileName = None, numberOfSamplesToGenerate = None, mean = None, variance = None):
-        if((fileName is not None) & (numberOfSamplesToGenerate is not None)):
+    def __init__(self, dimension, fileName = None, numberOfSamplesToGenerate = None, dataArray = None, mean = None, variance = None):
+        if((fileName is not None) & (numberOfSamplesToGenerate is not None) & (dataArray is not None)):
             raise Exception("Can't load data and generate samples")
 
         ContiniousDustribution.__init__(self)
@@ -18,6 +18,12 @@ class GaussDistribution(ContiniousDustribution):
 
         if(fileName is not None):
             self.importCsv(fileName)
+            self.numberOfSamples = len(self.dataSet)
+            self.calculateMean()
+            self.calculateVariance()
+
+        if(dataArray is not None):
+            self.dataSet = dataArray
             self.numberOfSamples = len(self.dataSet)
             self.calculateMean()
             self.calculateVariance()
@@ -53,7 +59,13 @@ class GaussDistribution(ContiniousDustribution):
         return self.generateGaussen2D()
 
     def calculateMean(self):
-        self.mean = np.mean(self.dataSet)
+        if self.dimension == 1:
+            self.mean = np.mean(self.dataSet)
+        elif self.dimension == 2:
+            self.mean = np.array(np.mean(self.dataSet, axis=0))
+        else:
+            raise Exception("Not implemented yet")
+
 
     def calculateStandardDeviation(self):
         if self.dimension == 1:
