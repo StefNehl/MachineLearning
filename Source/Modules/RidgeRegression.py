@@ -9,17 +9,36 @@ class RidgeRegression(Regression):
     def __init__(self, trainStep, trainingsIterations, order):
         self.trainStep = trainStep
         self.trainingsIteration = trainingsIterations
-        self.hasGeneratedTestData = False
+        self.hasGenerated1DTestData = False
         self.order = order
 
     def importData(self):
         dataDictonary =  sio.loadmat("AssignmentIV_data_set.mat")
-        tempData = dataDictonary.get("TempField")
-        self.dataSet = np.array(tempData[:,:, 0]) #x * y
-        self.numberOfSamples = len(self.dataSet)
 
-    def generateTestDate(self):
-        self.hasGeneratedTestData = True
+        tempTimeData = dataDictonary.get("TempField")
+        tempData = np.array(tempTimeData[:,:, 0])
+
+        longData = dataDictonary.get("LongitudeScale") #x-value: Long
+        latData = dataDictonary.get("LatitudeScale") #y-value: Lat
+
+        longLatData = []
+        arrayValues = []
+
+        for y in range(len(tempData)):
+            for x in range(len(tempData[y])):
+                value = tempData[y,x]
+                if np.isnan(value):
+                    continue
+
+                arrayValues.append(value)
+                longLatData.append((longData[x][0],latData[y][0])) #[0] needed because of strange import of long/latData
+
+        self.inputValues = np.array(longLatData)
+        self.outputValues = np.array(arrayValues)
+        self.numberOfSamples = len(self.inputValues)
+
+    def generateTestDate1D(self):
+        self.hasGenerated1DTestData = True
         c2 = 0.01
         c1 = 1.3
         c0 = 3.456
@@ -49,6 +68,31 @@ class RidgeRegression(Regression):
         XTX = np.matmul(XT, X) + lambdaValue * np.identity(X.shape[1])
         self.weightVector = np.matmul(np.matmul(np.linalg.inv(XTX), XT), Y)
         return self.weightVector
+
+    def plotData(self):
+        if self.hasGenerated1DTestData:
+            self.plot1DTestData()
+        else:
+            self.plotRawData()
+
+    def plot1DTestData(self):
+        ys = self.weightVector[0]
+        for w in range(1,self.weightVector.shape[0]):
+            ys = ys + (self.trainSubsetInput * self.weightVector[w])**(w)
+
+        ys = np.array(ys)
+
+        plt.figure(figsize=(8, 8))
+        plt.scatter(self.inputValues, self.outputValues, label="RawData")
+        plt.plot(self.trainSubsetInput, ys, '-r', label="Learned")
+
+        plt.title("Distribution")
+        plt.xlabel("Input")
+        plt.ylabel("Output")
+        plt.legend()
+
+        plt.tight_layout()
+        plt.show()
 
     def plotRawData(self):
         ys = self.weightVector[0]
