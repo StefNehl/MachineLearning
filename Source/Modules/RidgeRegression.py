@@ -1,6 +1,10 @@
+import matplotlib.pyplot
 import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import seaborn as sbr
+import pandas as pd
 
 from inference import Regression
 from GaussDistribution import GaussDistribution
@@ -40,9 +44,7 @@ class RidgeRegression(Regression):
         self.inputValues = np.array(longLatData)
         self.outputValues = np.array(arrayValues)
         self.numberOfSamples = len(self.inputValues)
-
-        #init Gauss Distribution
-        #self.gaussDistr = GaussDistribution(2, dataArray=self.inputValues)
+        self.mu = [np.mean(self.inputValues[:, 0]), np.mean(self.inputValues[:, 1])]
 
     def generateTestDate1D(self):
         self.hasGenerated1DTestData = True
@@ -51,20 +53,30 @@ class RidgeRegression(Regression):
         c0 = 3.456
         self.inputValues = np.linspace(-10.0, 20.2, 200)
         self.outputValues = c1 * self.inputValues ** 2 + c1 * self.inputValues + c0 + 500.0 * np.random.rand(len(self.inputValues))
-        self.gaussDistr = GaussDistribution(1, dataArray=self.inputValues)
+        self.mu = np.mean(self.inputValues)
+        self.calculateVariance1D()
+
+    def calculateVariance1D(self):
+        length = len(self.inputValues)
+        mean = np.mean(self.inputValues)
+
+        squareDeviations = [(x - mean) ** 2 for x in self.inputValues]
+
+        # Bessel's correction (n-1) instead of n for better results
+        self.variance = sum(squareDeviations) / (length - 1)
 
     def generateTrainingSubset(self):
         self.trainSubsetInput = np.array(self.inputValues[0:len(self.inputValues):self.trainStep])
         self.trainSubsetOutput = np.array(self.outputValues[0:len(self.outputValues):self.trainStep])
 
 
-    def createPolynomialFeatureVector(self, xVector):
+    def createPolynomialFeatureVector(self, x):
         featureVector = []
 
         featureVector.append(1)
 
         for i in range(1, self.order):
-            newXVector = self.calculateGaussBasisFunction(xVector) ** i
+            newXVector = self.calculateGaussBasisFunction(x) ** i
             featureVector.append(newXVector)
 
         featureVector = np.array(featureVector)
@@ -78,10 +90,7 @@ class RidgeRegression(Regression):
             return self.calculateGaussBasisFunction2D(xVector)
 
     def calculateGaussBasisFunction1D(self, x):
-        return x
-        variance = np.var(x)
-
-        exponent = -(1 / (2 * variance ** 2)) * (x - self.mu) ** 2
+        exponent = -(1 / (2 * self.variance ** 2)) * (x - self.mu) ** 2
         result = np.exp(exponent)
         return result
 
@@ -100,10 +109,8 @@ class RidgeRegression(Regression):
 
     def computeLinearRidgeRegression(self, lambdaValue):
 
-        self.mu = [np.mean(self.inputValues[:,0]),np.mean(self.inputValues[:,1])]
-
-        X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.inputValues]))
-        Y = np.vstack(([y for y in self.outputValues]))
+        X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.trainSubsetInput]))
+        Y = np.vstack(([y for y in self.trainSubsetOutput]))
 
         XT = np.transpose(X)
         XTX = np.matmul(XT, X) + lambdaValue * np.identity(X.shape[1])
@@ -145,36 +152,35 @@ class RidgeRegression(Regression):
 
         ys = np.hstack([x @ self.weightVector for x in self.x_test])
 
-        y_error = np.transpose(ys - self.y_test)
-        np.argsort(y_error)
-        x_error = range(y_error.shape[0])
+        self.y_error = np.transpose(abs(ys - self.y_test))
+        x_error = range(self.y_error.shape[0])
 
-        plt.figure(figsize=(8, 8))
-        plt.subplot(2, 2, 1)
-        plt.plot(x_error, y_error)
+        tempErrorData = \
+            {
+                'Lat': [round(long,2) for long in self.x_test[:, 1]],
+                'Long': [round(lat,2) for lat in self.x_test[:, 2]],
+                'error':[error[0] for error in self.y_error]
+            }
 
-        plt.title("Distribution")
-        plt.xlabel("Input")
-        plt.ylabel("Output")
-        plt.legend()
 
-        plt.subplot(2, 2, 3)
-        hm = plt.imshow(self.tempData,cmap='Reds', interpolation='none',
-                        extent=[0,400,0,400])
+        tempDataFrame = pd.DataFrame(tempErrorData)
+        tempDataFrame = tempDataFrame.pivot("Long", "Lat", "error")
+        reversedTempErrorData = tempDataFrame.sort_values(("Long"), ascending=False)
 
-        plt.colorbar(hm)
-        plt.title(f"Raw data")
-        plt.xlabel("Latitude coordinate")
-        plt.ylabel("Longitude coordinate")
+        reversedArray = np.sort(self.y_error)[::-1]
+        errorDataFrame = pd.DataFrame({
+            'samples':range(len(reversedArray)),
+            'error':[error[0] for error in reversedArray]
+        })
 
-        plt.subplot(2, 2, 4)
-        hm = plt.imshow(self.tempData,cmap='Reds', interpolation='none',
-                        extent=[0,400,0,400])
+        errorPlot = sbr.relplot(data=errorDataFrame, kind="line", x="samples", y="error")
+        matplotlib.pyplot.show()
 
-        plt.colorbar(hm)
-        plt.title(f"Train Subset")
-        plt.xlabel("Latitude coordinate")
-        plt.ylabel("Longitude coordinate")
 
-        plt.tight_layout()
-        plt.show()
+        def fmt(x, y):
+            return '{:,.2f}'.format(x)
+
+        plt.figure(figsize=(8,6))
+        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm")
+        ax = errorHeatMap.axes
+        matplotlib.pyplot.show()
