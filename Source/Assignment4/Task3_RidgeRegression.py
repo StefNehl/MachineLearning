@@ -12,3 +12,13 @@ print("Train")
 weightVector = ridgeRegression.computeLinearRidgeRegression(0.1)
 print("plot")
 ridgeRegression.plotData()
+
+print("Train")
+weightVector = ridgeRegression.computeLinearRidgeRegression(0.5)
+print("plot")
+ridgeRegression.plotData()
+
+print("Train")
+weightVector = ridgeRegression.computeLinearRidgeRegression(1)
+print("plot")
+ridgeRegression.plotData()

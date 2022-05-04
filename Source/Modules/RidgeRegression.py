@@ -108,12 +108,12 @@ class RidgeRegression(Regression):
         return result
 
     def computeLinearRidgeRegression(self, lambdaValue):
-
+        self.lambdaValue = lambdaValue
         X = np.vstack(([self.createPolynomialFeatureVector(x) for x in self.trainSubsetInput]))
         Y = np.vstack(([y for y in self.trainSubsetOutput]))
 
         XT = np.transpose(X)
-        XTX = np.matmul(XT, X) + lambdaValue * np.identity(X.shape[1])
+        XTX = np.matmul(XT, X) + self.lambdaValue * np.identity(X.shape[1])
         self.weightVector = np.matmul(np.matmul(np.linalg.inv(XTX), XT), Y)
         return self.weightVector
 
@@ -169,11 +169,15 @@ class RidgeRegression(Regression):
 
         reversedArray = np.sort(self.y_error)[::-1]
         errorDataFrame = pd.DataFrame({
-            'samples':range(len(reversedArray)),
-            'error':[error[0] for error in reversedArray]
+            'values':range(len(reversedArray)),
+            'error [°C]':[error[0] for error in reversedArray]
         })
 
-        errorPlot = sbr.relplot(data=errorDataFrame, kind="line", x="samples", y="error")
+        plt.figure(figsize=(8, 6))
+        errorPlot = sbr.relplot(data=errorDataFrame, kind="line", x="values", y="error [°C]")
+
+        plt.title("Error with lambda: " + str(self.lambdaValue))
+        plt.tight_layout()
         matplotlib.pyplot.show()
 
 
@@ -181,6 +185,9 @@ class RidgeRegression(Regression):
             return '{:,.2f}'.format(x)
 
         plt.figure(figsize=(8,6))
-        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm")
+        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"[°C]"})
         ax = errorHeatMap.axes
+
+        plt.title("Error with lambda: " + str(self.lambdaValue))
+        plt.tight_layout()
         matplotlib.pyplot.show()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Implemented Error">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Sorted heatmap correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/RidgeRegression.py" afterDir="false" />
@@ -295,7 +295,7 @@
       <workItem from="1651599276196" duration="1005000" />
       <workItem from="1651607711596" duration="6710000" />
       <workItem from="1651644131640" duration="9111000" />
-      <workItem from="1651653472095" duration="13390000" />
+      <workItem from="1651653472095" duration="14147000" />
     </task>
     <task id="LOCAL-00001" summary="Added solution">
       <created>1645528526271</created>
@@ -626,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651615002559</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Sorted heatmap correctly">
+      <created>1651673649473</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1651673649474</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +655,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Refactoring of naming conventions" />
     <MESSAGE value="Implemented Generation of Samples" />
     <MESSAGE value="Implemented Plotting and 1D Gauss" />
     <MESSAGE value="Added Beta Distribution" />
@@ -673,7 +679,8 @@
     <MESSAGE value="Try and error..." />
     <MESSAGE value="Added Ridged Regression for 2D" />
     <MESSAGE value="Implemented Error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Error" />
+    <MESSAGE value="Sorted heatmap correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sorted heatmap correctly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
