@@ -4,8 +4,8 @@ from RidgeRegression import RidgeRegression
 
 ridgeRegression = RidgeRegression(100, 100, 3)
 print("import data")
-ridgeRegression.importData()
-#ridgeRegression.generateTestDate1D()
+#ridgeRegression.importData()
+ridgeRegression.generateTestDate1D()
 print("generate Trainingset")
 ridgeRegression.generateTrainingSubset()
 print("Train")

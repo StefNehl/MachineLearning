@@ -13,5 +13,5 @@ pB = covTestSpecific
 pBA = covTestSensitivity
 
 #BayersTheorem
-pAB = pBA * pA / pB
+pAB = pBA * pAInfected / pB
 print(pAB)

@@ -90,6 +90,7 @@ class RidgeRegression(Regression):
             return self.calculateGaussBasisFunction2D(xVector)
 
     def calculateGaussBasisFunction1D(self, x):
+        return x
         exponent = -(1 / (2 * self.variance ** 2)) * (x - self.mu) ** 2
         result = np.exp(exponent)
         return result

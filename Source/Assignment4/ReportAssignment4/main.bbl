@@ -1,0 +1,72 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{multiVariateNormalDistribution}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=RP}{%
+         family={Roelants},
+         familyi={R\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Built In}%
+    }
+    \strng{namehash}{RP1}
+    \strng{fullhash}{RP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Multivariate normal distribution}
+    \verb{url}
+    \verb https://peterroelants.github.io/posts/multivariate-normal-primer/
+    \endverb
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'urldate'}
+  \endentry
+
+  \entry{bookMachineLearning}{book}{}
+    \name{author}{1}{}{%
+      {{hash=RE}{%
+         family={Rueckert},
+         familyi={R\bibinitperiod},
+         given={Elmar},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elmar Rueckert}%
+    }
+    \strng{namehash}{RE1}
+    \strng{fullhash}{RE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{An Introduction to Probabilistic Machine Learning}
+    \field{year}{2022}
+  \endentry
+\enddatalist
+\endinput

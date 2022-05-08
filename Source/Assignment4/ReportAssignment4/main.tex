@@ -1,0 +1,192 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chair of Cyber-Physical-Systems
+% Univ.-Prof. Dr. Elmar Rueckert
+% Montanuniversität Leoben, Austria
+% Latest Update: Feb. 2022
+%
+% Disclaimer: The materials and source code are for personal use only. The material is intended for educational purposes only. Reproduction of the material for any purposes other than what is intended is prohibited. The content is to be used for educational and non-commercial purposes only and is not to be changed, altered, or used for any commercial endeavor without the express written permission of Professor Rueckert. 
+% 
+% Original Version by Frits Wenneker, 28/2/17,  License: CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
+
+\input{structure.tex} % Specifies the document structure and loads requires packages
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Assignment IV: Bayes'Theorem and Ridge Regression} % The article title
+
+\author{
+	\coursetitle{Exercises in Machine Learning (190.013), SS2022}
+	\authorstyle{Stefan Nehl\textsuperscript{1}} % Authors
+	\newline\newline % Space before institutions
+	\textsuperscript{1}\textit{stefan-christopher.nehl@stud.unileoben.ac.at, MNr: 00935188}, \institution{Montanuniversität Leoben, Austria}\\ % Institution 1
+	\newline\submissiondate{\today} % Add a date here
+}
+
+% Example of a one line author/institution relationship
+%\author{\newauthor{John Marston} \newinstitution{Universidad Nacional Autónoma de México, Mexico City, Mexico}}
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\input{python_code.tex} % To print Python code
+
+\maketitle % Print the title
+
+\thispagestyle{firstpage} % Apply the page style for the first page (no headers and footers)
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\lettrineabstract{In the fourth assignment, I had to solve three different task. First, calculate the probability for a positive test results with the Bayes' Theorem, next describe the ridge regression and derive the weight update for with the least squares regression and last implement the ridge regression. The implementation of the ridge regression also includes testing the model and plotting it's results.}
+
+%----------------------------------------------------------------------------------------
+%	REPORT CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Task 1: Bayes'Theorem}
+The Bayes'Theorem is a mathematical formula which describes the probability of an event. Furthermore, it is used for calculating conditional probabilities. \citep{bayesTheoremHist}
+
+\[
+p(A|B) = \frac{p(B|A)p(A)}{p(B)}
+\]
+
+\citep{bookMachineLearning}
+
+I used this formula to calculate the probability to be infected with SARS CoV2 and having a positive test result of an antigen test. Let A $\in$ [infected, non-infected] the event, which defines if a person is infected or not, and B $\in$ [+,-] the event, which defines the result of the antigen test.
+
+\subsection{Implementation}
+First, I created the following variables with the values.
+
+\begin{table}[htbp]
+    \label{tab:alphaBetaParameters}
+	\caption{Variables and Values}
+	\centering
+	\begin{tabular}{llr}
+		\cmidrule(r){1-2}
+		name & value \\
+		\midrule
+		\textit{populationAustria} & 9095538 \\
+		\textit{activeCases} & 441098 \\
+		\textit{covTestSensitivity} & 0.971 \\
+		\textit{covTestSpecific} & 0.995 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Next I calculated the value for p(A). 
+\[
+p(A) = \textit{activeCases} / \textit{populationAustria}
+\]
+and stored the value in the variable \textit{pAInfected}. Next, I set the value \textit{p(B)} to \textit{covTestSpecific} and \textit{p(B|A)} to \textit{covTestSensitivity} and used the Bayes'Theorem to calculate \textit{p(A|B)}. 
+
+\subsection{Result}
+The result for \textit{p(A|B)} was $0.04732 \approx 4.73\%$. Which means there is a $4.73\%$ chance to be infected with covid and get a positive test result. 
+
+\section{Task 2: Ridge Regression}
+Ridge regression is used for parameter estimation to address the collinearity problem in multiple linear regression. 
+\citep{ridgeRegression} The Ridge Regression adds the quadratic regularization term 
+$\frac{\lambda}{2}(\textbf{\omega}\textsuperscript{T}\textbf{\omega})$
+
+
+\section{Task 3: Implementation of Ridge Regression}
+
+\section{Gauss Distribution}
+The class \textit{GaussDistribution} has a constructor with the parameters \textit{dimension}, sets the dimension of this gauss distribution and the optional parameters \textit{fileName}, for importing a \textit{CSV} file, \textit{numberOfSamplesToGenerate}, number of samples generated by the class, \textit{mean} and  \textit{variance}. Important to mention here is, that the importing of a file and the generating of samples is excluding each other. Only one parameter can be set otherwise the class throws an exception. The construction also sets the data and calculate the needed values like mean and standard deviation and generates the gauss distribution. 
+
+\subsection{Generating Samples}
+As already mentioned, the generating of samples needs to be implemented for each class separately. For the generation I used the \textit{random()} function from the \textit{numpy} library with the values of the mean and the variance for the generation and the dimension with the number of samples for the amount of data. 
+
+\subsection{Calculation}
+For the calculation I implemented two different methods. One for the one dimensional calculation, \textit{generateGaussen1D}, and for the two dimensional calculation, \textit{calculateGaussen2D}. For the one dimensional implementation I used the following formula. 
+\[
+N(x|\mu,\sigma) = \frac{1}{(2\pi\sigma\textsuperscript{2})\textsuperscript{1/2}}\:exp
+\textsuperscript{$-\frac{1}{2\sigma\textsuperscript{2}}(x-\mu)\textsuperscript{2}$}
+\]
+Where $\mu$ stands for the mean and $\sigma$ for the standard deviation. For the two dimensional implementation I used the following formula. 
+\[
+N(x|\mu,\sigma) = \frac{1}{(2\pi)\textsuperscript{D/2} \vert\Sigma\vert\textsuperscript{1/2}}\:exp\textsuperscript{$-\frac{1}{2}(x-\mu)\textsuperscript{T}\Sigma\textsuperscript{-1}(x-\mu)$}
+\]
+Where D is the dimension, $\Sigma$ the covariance and $\vert\Sigma\vert$ the determinant of the covariance.For the covariance I used created a vector with the mean and zeros.
+$\begin{pmatrix}
+\sigma & 0\\
+0 & \sigma
+\end{pmatrix}$
+Both formulas are from the book An Introduction to Probabilistic Machine Learning.  
+\citep{bookMachineLearning}
+
+\subsection{Plotting}
+The implementation for the one dimensional plot was straightforward. I plotted a histogram of the generated data and the gauss distribution as a line above the histogram. Additional, I add the raw the of the generated samples. With the two dimensional plots I had some issues. I was able to create a 3d model of the raw data and the 3d bar chart of the distribution. I wanted to plot the surface of the two dimensional gauss distribution following the paper \citep{multiVariateNormalDistribution}, but unfortunately I failed to create the surface. 
+
+\section{Beta Distribution}
+The class \textit{BetaDistribution} has analogue to the class \textit{GaussDistribution} also a constructor for handling the initialization for the parameters. Also the limitation for file name for \textit{CSV} or generation of samples is the same. The difference is, that the beta distribution needs the parameter \textit{a} and \textit{b} and not the dimension for the distribution. 
+
+\subsection{Generating Samples}
+The generation for the samples was created again with the \textit{random()} function from the \textit{numpy} library. However, I changed the distribution to the beta distribution. 
+
+\subsection{Calculation}
+For the calculation I used the following formula. 
+\[
+Beta(x|a,b) = B(a,b)x\textsuperscript{a-1}(1 - x)\textsuperscript{b - 1}
+\]
+where a,b are in the constructor given parameters as a scalar and \textit{B(a,b)} the Beta function. 
+\[
+B(a,b) = \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)}
+\]
+where $\Gamma$ is the gamma function. The formulas are again from book An Introduction to Probabilistic Machine Learning.  
+\citep{bookMachineLearning}
+
+
+\subsection{Plotting}
+For plotting the results I used a histogram with the distribution and the raw data. In addition I created a plot with the beta distribution with different values for the parameters $\textit{alpha}$ and $\textit{beta}$. The values are displayed in Table 1. 
+\begin{table}[htbp]
+    \label{tab:alphaBetaParameters}
+	\caption{Values for alpha and beta}
+	\centering
+	\begin{tabular}{llr}
+		\cmidrule(r){1-2}
+		alpha & beta \\
+		\midrule
+		0.5 & 0.5 \\
+		5 & 2 \\
+		2 & 5 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+For the plotting of the parameters with different values I added a method named \textit{plotDataWithDifferentAlphasAndBetas} with a list of the different settings as a parameter. These function sets the values and generates the plots. 
+
+\section{Results}
+Figure 1 shows the gauss distribution for one dimension. It displays the values distribution and the frequencies of those values. The orange line displays the gauss distribution itself.
+
+
+\section{Conclusion}
+The implementation of the abstract class was straightforward. For the other classes I made some changes. I moved the classes to separate files to handle them better. Unfortunately, I was not able to create a satisfying plot for the gauss distribution for two dimensions. The whole code is in the appendix of this paper. 
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
+
+%----------------------------------------------------------------------------------------
+
+\section*{APPENDIX}
+%\onecolumn\lstinputlisting{../Task1_BayesTheorem.py}
+%\onecolumn\lstinputlisting{../Task3_RidgeRegression.py}
+%\onecolumn\lstinputlisting[]{../../Modules/RidgeRegression.py}
+
+
+
+
+
+\end{document}
