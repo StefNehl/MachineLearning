@@ -75,6 +75,14 @@ class RidgeRegression(Regression):
 
     def computeError(self, yStar):
         self.yError = np.transpose(abs(self.yResult - yStar))
+        reversedArray = np.flip(np.sort(self.yError, 0))
+        self.errorDataFrame = pd.DataFrame({
+            'values': range(len(reversedArray)),
+            'error': [error[0] for error in reversedArray]
+        })
+
+    def getDescSortedError(self):
+        return self.errorDataFrame
 
     def computMeanOfError(self):
         self.meanError = np.mean(self.yError)
@@ -83,16 +91,12 @@ class RidgeRegression(Regression):
         return self.meanError
 
     def plotError(self):
-        reversedArray = np.flip(np.sort(self.yError, 0))
-        errorDataFrame = pd.DataFrame({
-            'values': range(len(reversedArray)),
-            'error [°C]': [error[0] for error in reversedArray]
-        })
-
         plt.figure(figsize=(8, 6))
-        errorPlot = sbr.barplot(data=errorDataFrame, x="values", y="error [°C]", palette="coolwarm_r")
+        errorPlot = sbr.barplot(data=self.errorDataFrame, x="values", y="error", palette="coolwarm_r")
 
-        plt.title("Error with lambda: " + str(self.lambdaValue))
+        plt.xlabel("Descending Sorted Y Errors")
+        plt.ylabel("Error |yResult - yStar| [°C]")
+        plt.title("Error |yResult - yStar| [°C] with Lambda: " + str(self.lambdaValue))
         plt.tight_layout()
         matplotlib.pyplot.show()
 
@@ -112,10 +116,12 @@ class RidgeRegression(Regression):
             return '{:,.2f}'.format(x)
 
         plt.figure(figsize=(8,6))
-        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"[°C]"})
+        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"Error |yResult - yStar| [°C]"})
         ax = errorHeatMap.axes
 
-        plt.title("Error with lambda: " + str(self.lambdaValue))
+        plt.xlabel("Longitude")
+        plt.ylabel("Latitude")
+        plt.title("Error |yResult - yStar| [°C] with Lambda: " + str(self.lambdaValue))
         plt.tight_layout()
         matplotlib.pyplot.show()
 
