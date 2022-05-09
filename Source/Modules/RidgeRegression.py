@@ -95,8 +95,8 @@ class RidgeRegression(Regression):
         errorPlot = sbr.barplot(data=self.errorDataFrame, x="values", y="error", palette="coolwarm_r")
 
         plt.xlabel("Descending Sorted Y Errors")
-        plt.ylabel("Error |yResult - yStar| [°C]")
-        plt.title("Error |yResult - yStar| [°C] with Lambda: " + str(self.lambdaValue))
+        plt.ylabel("Error |yResult - yStar| [C]")
+        plt.title("Error |yResult - yStar| [C] with Lambda: " + str(self.lambdaValue))
         plt.tight_layout()
         matplotlib.pyplot.show()
 
@@ -116,12 +116,12 @@ class RidgeRegression(Regression):
             return '{:,.2f}'.format(x)
 
         plt.figure(figsize=(8,6))
-        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"Error |yResult - yStar| [°C]"})
+        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"Error |yResult - yStar| [C]"})
         ax = errorHeatMap.axes
 
         plt.xlabel("Longitude")
         plt.ylabel("Latitude")
-        plt.title("Error |yResult - yStar| [°C] with Lambda: " + str(self.lambdaValue))
+        plt.title("Error |yResult - yStar| [C] with Lambda: " + str(self.lambdaValue))
         plt.tight_layout()
         matplotlib.pyplot.show()
 

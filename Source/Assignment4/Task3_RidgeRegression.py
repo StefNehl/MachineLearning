@@ -54,7 +54,7 @@ for testSet in firstTrainSetErrors:
 
 plt.title("Errors with different Lambdas and TrainStep")
 plt.xlabel("Descending Sorted Y Errors")
-plt.ylabel("Error |yResult - yStar| [°C]")
+plt.ylabel("Error |yResult - yStar| [C]")
 plt.tight_layout()
 plt.legend()
 plt.show()

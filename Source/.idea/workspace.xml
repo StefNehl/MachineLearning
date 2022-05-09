@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Applied structure to ridge">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added pics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/RidgeRegression.py" afterDir="false" />
     </list>
@@ -294,21 +300,7 @@
       <workItem from="1651644131640" duration="9111000" />
       <workItem from="1651653472095" duration="15005000" />
       <workItem from="1652019063244" duration="11669000" />
-      <workItem from="1652085996877" duration="10161000" />
-    </task>
-    <task id="LOCAL-00005" summary="Changed project structure">
-      <created>1646080079376</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1646080079376</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added Report to new structure">
-      <created>1646080102370</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1646080102370</updated>
+      <workItem from="1652085996877" duration="12626000" />
     </task>
     <task id="LOCAL-00007" summary="Added new Files">
       <created>1646080209249</created>
@@ -639,7 +631,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652098317391</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Finished plotting">
+      <created>1652107978044</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1652107978044</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Added pics">
+      <created>1652108010190</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1652108010190</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,8 +667,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Finished Beta Distribution (Now really)" />
-    <MESSAGE value="Added Gaussen for 1D" />
     <MESSAGE value="Fixed smaller issues in title" />
     <MESSAGE value="Changes in Gauss 2D" />
     <MESSAGE value="Added Report" />
@@ -686,17 +690,12 @@
     <MESSAGE value="Finished Implementation from Task 3" />
     <MESSAGE value="Added Bayes Theorem" />
     <MESSAGE value="Applied structure to ridge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Applied structure to ridge" />
+    <MESSAGE value="Finished plotting" />
+    <MESSAGE value="Added pics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Modules/RidgeRegression.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
