@@ -29,9 +29,9 @@ pPositiveNotInfected = pNotInfectedAndPositive / pNotInfected
 #BayersTheorem
 pInfectedPositive = pPositiveInfected * pInfected / pPositive
 
-print("p(-|infected): " + str(pNegativeInfected))
-print("p(+|non-infected): " + str(pPositiveNotInfected))
-print("p(infected): " + str(pInfected))
-print("p(non-infected): " + str(pNotInfected))
+print("p(-|inf): " + str(pNegativeInfected))
+print("p(+|nInf): " + str(pPositiveNotInfected))
+print("p(inf): " + str(pInfected))
+print("p(nInf): " + str(pNotInfected))
 print("p(+): " + str(pPositive))
-print("p(infected|+): " + str(pInfectedPositive))
+print("p(inf|+): " + str(pInfectedPositive))

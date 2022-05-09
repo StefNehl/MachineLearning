@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  8 MAY 2022 23:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  9 MAY 2022 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1241,23 +1241,16 @@ Package biblatex Info: Data encoding 'utf8' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
-
-Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'multiVariateNormalDistribution':
-(biblatex)                - Invalid format of field 'urldate'.
-
-)
+ (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 40.
 Package biblatex Info: Reference segment=0 on input line 40.
- (./python_code.tex
-(c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+
+(./python_code.tex (c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 4
 3.
-
-(c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
+ (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1325,10 +1318,6 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 57.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 57.
-
-LaTeX Warning: Citation 'bayesTheoremHist' on page 1 undefined on input line 58
-.
-
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 68.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
@@ -1338,63 +1327,48 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 73.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 91.
+(Font)              scaled to size 5.0pt on input line 90.
 
-Overfull \hbox (29.75235pt too wide) detected at line 102
-\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 infected\OT1/cmr/m/n/10 &\O
-ML/cmm/m/it/10 negative\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\
-OML/cmm/m/it/10 infected\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10
- p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 infected\OT1/cmr/m/n/10 &\OML/cmm/m/it/10 p
-ositive\OT1/cmr/m/n/10 )
+Underfull \hbox (badness 1371) in paragraph at lines 115--117
+\T1/XCharter-TLF/m/n/10 (+20) Last, I used the Bayes'Theorem to cal-cu-late the
+
  []
 
-
-LaTeX Warning: Citation 'ridgeRegression' on page 1 undefined on input line 112
-.
+[1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 117--117
+]
+Underfull \hbox (badness 3758) in paragraph at lines 196--196
 []\OT1/phv/b/n/14.4 Task 3: Im-ple-men-ta-tion of
  []
 
-
-Underfull \vbox (badness 1205) has occurred while \output is active []
-
- [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-] [2]
+[2]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
+ 
 AED: lastpage setting LastPage
 [3
 
 ] (./main.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21559 strings out of 478278
- 379284 string characters out of 5850546
- 1109379 words of memory out of 5000000
- 39226 multiletter control sequences out of 15000+600000
- 625207 words of font info for 225 fonts, out of 8000000 for 9000
+ 21605 strings out of 478278
+ 380383 string characters out of 5850546
+ 1110358 words of memory out of 5000000
+ 39244 multiletter control sequences out of 15000+600000
+ 640521 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,11n,75p,1903b,1728s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
@@ -1403,21 +1377,20 @@ xmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{c:/texlive/2021/texmf-dist/fo
 nts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/xchart
 er/XCharter-Bold.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XC
 harter-Italic.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XChar
-ter-Roman.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/
-texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/20
-21/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
-pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/te
-xlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texm
-f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (3 pages, 310661 bytes).
+ter-Roman.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/s
+ftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:
+/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (3 pages, 301628 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66561 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 68609 words of extra memory for PDF output out of 74296 (max. 10000000)
 

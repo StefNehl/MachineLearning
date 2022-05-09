@@ -83,106 +83,133 @@ First, I created the following variables with the values.
 		\bottomrule
 	\end{tabular}
 \end{table}
-
-First, I set the variable for \textit{p(+|infected)} to the value of \textit{covTestSensitivity} and the variable for \textit{p(-|non-infected)} tp the value of \textit{covTestSpecific}.
-Next, I calculated the value for \textit{p(infected)}, \textit{p(non-infected} and stored the values in the variables 
+First, I set the variable for \textit{p(+|inf)} to the value of \textit{covTestSensitivity} and the variable for \textit{p(-|nInf)} tp the value of \textit{covTestSpecific}.
+Next, I calculated the value for \textit{p(inf)}, \textit{p(nInf} and stored the values in the variables 
 \textit{pInfected} and \textit{pNotInfected}. 
 \[
-p(infected) = \textit{activeCases} / \textit{populationAustria}
+p(inf) = \textit{activeCases} / \textit{populationAustria}
 \]
 \[
-p(non-infected) = \textit{activeCases} / \textit{populationAustria}
+p(nInf) = 1 -  p(inf)
 \]
+The variable \textit{p(inf)} defines the value for the probability to be infected with covid and \textit{p(nInf)} not. 
+Furthermore, the abbreviation for infected is \textit{inf} and for non infected \textit{nInf}.The abbreviation for having a positive test result is $+$ and for a negative test result $-$.
 Next, I initialized the following variables and calculated there values with the following formulas.
 \[
-p(infected \& positive) = p(infected) * p(+|infected)
+p(nInf \& -) = p(nInf) * p(-|non-infected)
 \]
 \[
-p(infected \& negative) = p(infected) - p(infected \& positive)
+p(-) = p(inf \& -) + p(nInf \& -)
+\]
+\[
+p(nInf \& +) = p(nInf) - p(nInf\& -)
+\]
+\[
+p(+) = p(inf \& +) + p(nInf \& +)
+\]
+\[
+p(-|inf) = \frac{p(inf \& -)}{p(-)}
+\]
+\[
+p(+|nInf) = \frac{p(nInf\& +)}{p(nInf)}
+\]
+Last, I used the Bayes'Theorem to calculate the $p(infected|+)$ value.
+\[
+p(inf|+) = \frac{p(+|inf) * p(inf)} {p(nInf)}
 \]
 
 
-\subsection{Result}
-The result for \textit{p(A|B)} was $0.04732 \approx 4.73\%$. Which means there is a $4.73\%$ chance to be infected with covid and get a positive test result. 
+\subsection{Result and Conclusion}
+The results of the calculation is displayed in Table 2.
+\begin{table}[htbp]
+    \label{tab:alphaBetaParameters}
+	\caption{Results}
+	\centering
+	\begin{tabular}{llr}
+		\cmidrule(r){1-2}
+		name & value \\
+		\midrule
+		\textit{p(-|inf)}  & 00.15\% \\
+		\textit{p(+|nInf)} & 02.90\% \\
+		\textit{p(inf)}    & 04.85\% \\
+		\textit{p(nInf)}   & 95.15\% \\
+		\textit{p(+)}      & 07.47\% \\
+		\textit{p(inf|+)}  & 63.05\% \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+The result for \textit{p(inf|+)} is $0.630525 \approx 63.05\%$. Which means there is a $63.05\%$ chance to be infected with covid and get a positive test result. The implemented code can be found in the appendix of this paper.
 
 \section{Task 2: Ridge Regression}
 Ridge regression is used for parameter estimation to address the collinearity problem in multiple linear regression. 
 \citep{ridgeRegression} The Ridge Regression adds the quadratic regularization term 
 $\frac{\lambda}{2}$
-(\textbf{$\omega$}\textsuperscript{T}\textbf{$\omega$}).
+$(\boldsymbol{\omega}\textsuperscript{T}\boldsymbol{\omega})$ to the objective $\textbf{J}_{LS}$.
+\citep{bookMachineLearning}
+
+\subsection{Derivation of the Least Squares Solution}
+For the derivation of the least squares I defined the vectors $\textbf{y} \in \mathbb{R}$,
+$\textbf{A} \in \mathbb{R}^{nxM}$ and
+$\textbf{$\omega$} \in \mathbb{R}^{M}$ where M is the dimension and n the number of samples.
+
+\[
+\frac{\partial \textbf{$J_{LS}$}}{\partial \boldsymbol{\omega}} = 
+\frac{\partial}{\partial \boldsymbol{\omega}}
+\{1/2\sigma^{-2}
+(\textbf{y} - \textbf{A}\boldsymbol{\omega})^{T}
+(\textbf{y} - \textbf{A}\boldsymbol{\omega})
+\}
+\]
+After the partial deviation we receive the following equation. 
+\[
+\frac{\partial \textbf{$J_{LS}$}}{\partial \boldsymbol{\omega}} = 
+1/2\sigma^{-2}
+(-2 \textbf{y}^{T} \textbf{A} + 2 \boldsymbol{\omega}^{T}\textbf{A}^{T}\textbf{A})
+\]
+I set this equation to zero to calculate the least square solution. 
+\[
+\frac{\partial \textbf{$J_{LS}$}}{\partial \boldsymbol{\omega}} = 0,
+\]
+\[
+1/2\sigma^{-2}
+(-2 \textbf{y}^{T} \textbf{A} + 2 \boldsymbol{\omega}^{T}\textbf{A}^{T}\textbf{A}) = 0,
+\]
+\[
+1/2\sigma^{-2}
+(-2 \textbf{y}^{T} \textbf{A} + 2 \boldsymbol{\omega}^{T}\textbf{A}^{T}\textbf{A}) = 0,
+\]
+\[
+-\textbf{y}^{T} \textbf{A} + \boldsymbol{\omega}^{T} \textbf{A}^{T}\textbf{A}\boldsymbol{w} = 0,
+\]
+\[
+ \boldsymbol{\omega} = (\textbf{A}^{T}\textbf{A})^{-1}\textbf{A}^{T}\textbf{y}.
+\]
+\citep{bookMachineLearning}
+Important here is, that the matrix \textbf{A} has a full rank and is invertible. If this is not the case I would use 
+the Moore–Penrose inverse which is described in the following formula. 
+\[
+\textbf{A}^{+} = (\textbf{A}^{T}\textbf{A})^{-1}\textbf{A}{T}.
+\]
+\citep{bookMachineLearning}
 
 
 \section{Task 3: Implementation of Ridge Regression}
+The last task was to implement the ridge regression for a given dataset. The dataset includes longitude and latitude of a map with the corresponding temperature data. 
+\subsection{Import Data and Implementation}
+For the implementation I first created the abstract class \textit{Regression} which includes the abstract methods \textit{importData}, \textit{generateTrainingSubset}, \textit{computeLinearRidgeRegression}, \textit{testModel}, 
+\textit{computeError}, \textit{plotError}, \textit{plotHeatMap}, \textit{computMeanOfError}
+Then i created the class \textit{RidgeRegression} which implements those methods and has the parameter \textit{trainStep} which indicates the size of the training data. For importing the data I used the scipy.io library which is able to read \textit{MatLab} files and load this data. I used only the first dataset of the time series data to create the model. The method \textit{generateTrainingSubset} creates the training data with the parameter \textit{trainStep}. The parameter \textit{trainStep} defines the size of the training set. For example, if the value is set to 4 every 4. values is used for the calculation of the weight values. 
 
-\section{Gauss Distribution}
-The class \textit{GaussDistribution} has a constructor with the parameters \textit{dimension}, sets the dimension of this gauss distribution and the optional parameters \textit{fileName}, for importing a \textit{CSV} file, \textit{numberOfSamplesToGenerate}, number of samples generated by the class, \textit{mean} and  \textit{variance}. Important to mention here is, that the importing of a file and the generating of samples is excluding each other. Only one parameter can be set otherwise the class throws an exception. The construction also sets the data and calculate the needed values like mean and standard deviation and generates the gauss distribution. 
-
-\subsection{Generating Samples}
-As already mentioned, the generating of samples needs to be implemented for each class separately. For the generation I used the \textit{random()} function from the \textit{numpy} library with the values of the mean and the variance for the generation and the dimension with the number of samples for the amount of data. 
-
-\subsection{Calculation}
-For the calculation I implemented two different methods. One for the one dimensional calculation, \textit{generateGaussen1D}, and for the two dimensional calculation, \textit{calculateGaussen2D}. For the one dimensional implementation I used the following formula. 
-\[
-N(x|\mu,\sigma) = \frac{1}{(2\pi\sigma\textsuperscript{2})\textsuperscript{1/2}}\:exp
-\textsuperscript{$-\frac{1}{2\sigma\textsuperscript{2}}(x-\mu)\textsuperscript{2}$}
-\]
-Where $\mu$ stands for the mean and $\sigma$ for the standard deviation. For the two dimensional implementation I used the following formula. 
-\[
-N(x|\mu,\sigma) = \frac{1}{(2\pi)\textsuperscript{D/2} \vert\Sigma\vert\textsuperscript{1/2}}\:exp\textsuperscript{$-\frac{1}{2}(x-\mu)\textsuperscript{T}\Sigma\textsuperscript{-1}(x-\mu)$}
-\]
-Where D is the dimension, $\Sigma$ the covariance and $\vert\Sigma\vert$ the determinant of the covariance.For the covariance I used created a vector with the mean and zeros.
-$\begin{pmatrix}
-\sigma & 0\\
-0 & \sigma
-\end{pmatrix}$
-Both formulas are from the book An Introduction to Probabilistic Machine Learning.  
-\citep{bookMachineLearning}
+\subsection{Ridge Regression}
+For the Implementation of the Ridge Regression calculation I added the method \textit{computeLinearRidgeRegression} and made the calculation. I followed the formula from chapter 2 and used the \textit{numpy} library to do the matrix calculations. I added a helper method which I used to create the feature vector for the calculation. The method is name \textit{createFeatureVector} and takes the parameter \textit{x}. The parameter \textit{x} is the vector of the current y-value. In our case it's a two dimensional vector with the longitude and latitude. I augmented this vector and created the new vector \textit{featureVector} which is a three dimensional vector. The first dimension contains a 1, the second the latitude and the third the longitude. This vector was then returned from the method. After the creation of the feature vectors, the method \textit{computeLinearRidgeRegression} finishes it's calculations and returns the weight vector.  
 
 \subsection{Plotting}
-The implementation for the one dimensional plot was straightforward. I plotted a histogram of the generated data and the gauss distribution as a line above the histogram. Additional, I add the raw the of the generated samples. With the two dimensional plots I had some issues. I was able to create a 3d model of the raw data and the 3d bar chart of the distribution. I wanted to plot the surface of the two dimensional gauss distribution following the paper \citep{multiVariateNormalDistribution}, but unfortunately I failed to create the surface. 
 
-\section{Beta Distribution}
-The class \textit{BetaDistribution} has analogue to the class \textit{GaussDistribution} also a constructor for handling the initialization for the parameters. Also the limitation for file name for \textit{CSV} or generation of samples is the same. The difference is, that the beta distribution needs the parameter \textit{a} and \textit{b} and not the dimension for the distribution. 
-
-\subsection{Generating Samples}
-The generation for the samples was created again with the \textit{random()} function from the \textit{numpy} library. However, I changed the distribution to the beta distribution. 
-
-\subsection{Calculation}
-For the calculation I used the following formula. 
-\[
-Beta(x|a,b) = B(a,b)x\textsuperscript{a-1}(1 - x)\textsuperscript{b - 1}
-\]
-where a,b are in the constructor given parameters as a scalar and \textit{B(a,b)} the Beta function. 
-\[
-B(a,b) = \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)}
-\]
-where $\Gamma$ is the gamma function. The formulas are again from book An Introduction to Probabilistic Machine Learning.  
-\citep{bookMachineLearning}
-
-
-\subsection{Plotting}
-For plotting the results I used a histogram with the distribution and the raw data. In addition I created a plot with the beta distribution with different values for the parameters $\textit{alpha}$ and $\textit{beta}$. The values are displayed in Table 1. 
-\begin{table}[htbp]
-    \label{tab:alphaBetaParameters}
-	\caption{Values for alpha and beta}
-	\centering
-	\begin{tabular}{llr}
-		\cmidrule(r){1-2}
-		alpha & beta \\
-		\midrule
-		0.5 & 0.5 \\
-		5 & 2 \\
-		2 & 5 \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-For the plotting of the parameters with different values I added a method named \textit{plotDataWithDifferentAlphasAndBetas} with a list of the different settings as a parameter. These function sets the values and generates the plots. 
-
-\section{Results}
+\subsection{Results}
 Figure 1 shows the gauss distribution for one dimension. It displays the values distribution and the frequencies of those values. The orange line displays the gauss distribution itself.
 
 
-\section{Conclusion}
+\subsection{Conclusion}
 The implementation of the abstract class was straightforward. For the other classes I made some changes. I moved the classes to separate files to handle them better. Unfortunately, I was not able to create a satisfying plot for the gauss distribution for two dimensions. The whole code is in the appendix of this paper. 
 
 %----------------------------------------------------------------------------------------

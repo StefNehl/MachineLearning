@@ -11,10 +11,9 @@ from GaussDistribution import GaussDistribution
 
 class RidgeRegression(Regression):
 
-    def __init__(self, trainStep, order):
+    def __init__(self, trainStep):
         self.trainStep = trainStep
         self.hasGenerated1DTestData = False
-        self.order = order
 
     def importData(self):
         dataDictonary =  sio.loadmat("AssignmentIV_data_set.mat")
@@ -68,31 +67,26 @@ class RidgeRegression(Regression):
         self.weightVector = np.matmul(np.matmul(np.linalg.inv(XTX), XT), Y)
         return self.weightVector
 
-    def plotData(self):
-        self.plot2DData()
+    def testModel(self, weight):
+        self.yResult = np.hstack([x @ self.weightVector for x in self.x_test])
 
-    def plot2DData(self):
+    def getYTestData(self):
+        return self.y_test
 
-        ys = np.hstack([x @ self.weightVector for x in self.x_test])
+    def computeError(self, yStar):
+        self.yError = np.transpose(abs(self.yResult - yStar))
 
-        self.y_error = np.transpose(abs(ys - self.y_test))
-        x_error = range(self.y_error.shape[0])
+    def computMeanOfError(self):
+        self.meanError = np.mean(self.yError)
 
-        tempErrorData = \
-            {
-                'Lat': [round(long,2) for long in self.x_test[:, 1]],
-                'Long': [round(lat,2) for lat in self.x_test[:, 2]],
-                'error':[error[0] for error in self.y_error]
-            }
+    def getMeanError(self):
+        return self.meanError
 
-        tempDataFrame = pd.DataFrame(tempErrorData)
-        tempDataFrame = tempDataFrame.pivot("Long", "Lat", "error")
-        reversedTempErrorData = tempDataFrame.sort_values(("Long"), ascending=False)
-
-        reversedArray = np.flip(np.sort(self.y_error,0))
+    def plotError(self):
+        reversedArray = np.flip(np.sort(self.yError, 0))
         errorDataFrame = pd.DataFrame({
-            'values':range(len(reversedArray)),
-            'error [°C]':[error[0] for error in reversedArray]
+            'values': range(len(reversedArray)),
+            'error [°C]': [error[0] for error in reversedArray]
         })
 
         plt.figure(figsize=(8, 6))
@@ -102,6 +96,17 @@ class RidgeRegression(Regression):
         plt.tight_layout()
         matplotlib.pyplot.show()
 
+    def plotHeatMap(self):
+        tempErrorData = \
+            {
+                'Lat': [round(long,2) for long in self.x_test[:, 1]],
+                'Long': [round(lat,2) for lat in self.x_test[:, 2]],
+                'error':[error[0] for error in self.yError]
+            }
+
+        tempDataFrame = pd.DataFrame(tempErrorData)
+        tempDataFrame = tempDataFrame.pivot("Long", "Lat", "error")
+        reversedTempErrorData = tempDataFrame.sort_values(("Long"), ascending=False)
 
         def fmt(x, y):
             return '{:,.2f}'.format(x)
@@ -113,3 +118,5 @@ class RidgeRegression(Regression):
         plt.title("Error with lambda: " + str(self.lambdaValue))
         plt.tight_layout()
         matplotlib.pyplot.show()
+
+
