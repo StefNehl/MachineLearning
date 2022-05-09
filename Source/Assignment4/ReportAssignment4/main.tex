@@ -84,11 +84,23 @@ First, I created the following variables with the values.
 	\end{tabular}
 \end{table}
 
-Next I calculated the value for p(A). 
+First, I set the variable for \textit{p(+|infected)} to the value of \textit{covTestSensitivity} and the variable for \textit{p(-|non-infected)} tp the value of \textit{covTestSpecific}.
+Next, I calculated the value for \textit{p(infected)}, \textit{p(non-infected} and stored the values in the variables 
+\textit{pInfected} and \textit{pNotInfected}. 
 \[
-p(A) = \textit{activeCases} / \textit{populationAustria}
+p(infected) = \textit{activeCases} / \textit{populationAustria}
 \]
-and stored the value in the variable \textit{pAInfected}. Next, I set the value \textit{p(B)} to \textit{covTestSpecific} and \textit{p(B|A)} to \textit{covTestSensitivity} and used the Bayes'Theorem to calculate \textit{p(A|B)}. 
+\[
+p(non-infected) = \textit{activeCases} / \textit{populationAustria}
+\]
+Next, I initialized the following variables and calculated there values with the following formulas.
+\[
+p(infected \& positive) = p(infected) * p(+|infected)
+\]
+\[
+p(infected \& negative) = p(infected) - p(infected \& positive)
+\]
+
 
 \subsection{Result}
 The result for \textit{p(A|B)} was $0.04732 \approx 4.73\%$. Which means there is a $4.73\%$ chance to be infected with covid and get a positive test result. 
@@ -96,7 +108,8 @@ The result for \textit{p(A|B)} was $0.04732 \approx 4.73\%$. Which means there i
 \section{Task 2: Ridge Regression}
 Ridge regression is used for parameter estimation to address the collinearity problem in multiple linear regression. 
 \citep{ridgeRegression} The Ridge Regression adds the quadratic regularization term 
-$\frac{\lambda}{2}(\textbf{\omega}\textsuperscript{T}\textbf{\omega})$
+$\frac{\lambda}{2}$
+(\textbf{$\omega$}\textsuperscript{T}\textbf{$\omega$}).
 
 
 \section{Task 3: Implementation of Ridge Regression}
