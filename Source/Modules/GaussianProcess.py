@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sbr
 import pandas as pd
+import GPy
 
 from inference import Regression
 from GaussDistribution import GaussDistribution
@@ -47,13 +48,31 @@ class GaussianProcess(Regression):
         self.trainSubsetInput = np.array(self.inputValues[0:len(self.inputValues):self.trainStep])
         self.trainSubsetOutput = np.array(self.outputValues[0:len(self.outputValues):self.trainStep])
 
-    def computeLinearRidgeRegression(self, lambdaValue):
-        self.lambdaValue = lambdaValue
-        self.weightVector = np.array((1,1,1))
-        return self.weightVector
+    def createFeatureVector(self, x):
+        featureVector = []
 
-    def testModel(self, weight):
-        self.yResult = np.hstack([x @ self.weightVector for x in self.x_test])
+        for i in range(len(x)):
+            newXVector = x[i]
+            featureVector.append(newXVector)
+
+        return featureVector
+
+    def computeGaussianProcessRegression(self, lambdaValue):
+        self.lambdaValue = lambdaValue
+
+        X = np.vstack(([self.createFeatureVector(x) for x in self.trainSubsetInput]))
+        Y = np.vstack(([y for y in self.trainSubsetOutput]))
+        #Y = Y[:, np.newaxis]
+
+        #kernel = GPy.kern.RBF(2, ARD=True, useGPU=False)
+        kernel = GPy.kern.Matern52(2, ARD=True) + GPy.kern.White(2)
+        self.model = GPy.models.GPRegression(X=X, Y=Y, kernel=kernel)
+        self.model.optimize(messages=True, max_iters=1000)
+
+        return self.model
+
+    def testModel(self):
+        self.yResult = self.model.Y
 
     def getYTestData(self):
         return self.y_test
@@ -86,26 +105,11 @@ class GaussianProcess(Regression):
         matplotlib.pyplot.show()
 
     def plotHeatMap(self):
-        tempErrorData = \
-            {
-                'Lat': [round(long,2) for long in self.x_test[:, 1]],
-                'Long': [round(lat,2) for lat in self.x_test[:, 2]],
-                'error':[error[0] for error in self.yError]
-            }
 
-        tempDataFrame = pd.DataFrame(tempErrorData)
-        tempDataFrame = tempDataFrame.pivot("Long", "Lat", "error")
-        reversedTempErrorData = tempDataFrame.sort_values(("Long"), ascending=False)
-
-        def fmt(x, y):
-            return '{:,.2f}'.format(x)
-
-        plt.figure(figsize=(8,6))
-        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"Error |yResult - yStar| [C]"})
-        ax = errorHeatMap.axes
+        GPy.plotting.change_plotting_library("matplotlib")
+        fig = self.model.plot()
 
         plt.xlabel("Longitude")
         plt.ylabel("Latitude")
-        plt.title("Error |yResult - yStar| [C] with Lambda: " + str(self.lambdaValue))
-        plt.tight_layout()
         matplotlib.pyplot.show()
+        return

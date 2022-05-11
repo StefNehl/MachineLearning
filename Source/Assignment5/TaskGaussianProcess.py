@@ -12,8 +12,8 @@ def doTest(lambdaValue, trainStep, plot=False):
     print("generate Trainingset")
     ridgeRegression.generateTrainingSubset()
     print("Train")
-    weightVector = ridgeRegression.computeLinearRidgeRegression(lambdaValue)
-    ridgeRegression.testModel(weightVector)
+    ridgeRegression.computeGaussianProcessRegression(lambdaValue)
+    ridgeRegression.testModel()
     print("Calculate Error")
     yTest = ridgeRegression.getYTestData()
     ridgeRegression.computeError(yTest)
@@ -30,7 +30,7 @@ def doTest(lambdaValue, trainStep, plot=False):
 
 firstTrainSetErrors = []
 
-trainStep = 4
+trainStep = 100
 firstTrainSetErrors.append((0.1, trainStep,(doTest(0.1, trainStep, plot=True))))\
 #%firstTrainSetErrors.append((0.5, trainStep, (doTest(0.5, trainStep))))
 #firstTrainSetErrors.append((1, trainStep, (doTest(1, trainStep))))
@@ -57,4 +57,4 @@ plt.xlabel("Descending Sorted Y Errors")
 plt.ylabel("Error |yResult - yStar| [C]")
 plt.tight_layout()
 plt.legend()
-plt.show()
+#plt.show()
