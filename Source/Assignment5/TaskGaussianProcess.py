@@ -6,20 +6,20 @@ sys.path.insert(0, '../modules')
 from GaussianProcess import GaussianProcess
 from GaussianProcess import KernelSetting
 
-def doTest(lambdaValue, trainStep, plot=False):
+def doTest(trainStep, plot=False):
     ridgeRegression = GaussianProcess(trainStep)
     print("import data")
     ridgeRegression.importData()
     print("generate Trainingset")
     ridgeRegression.generateTrainingSubset()
     print("Train")
-    ridgeRegression.computeGaussianProcessRegression(KernelSetting.LinearKernel)
+    ridgeRegression.computeGaussianProcessRegression(KernelSetting.Matern52)
     ridgeRegression.testModel()
     print("Calculate Error")
     yTest = ridgeRegression.getYTestData()
     ridgeRegression.computeError(yTest)
     ridgeRegression.computMeanOfError()
-    print("Mean Error with Lambda " + str(lambdaValue) + ": " + str(ridgeRegression.getMeanError()))
+    print("Mean Error with Lambda " )
 
     if plot:
         print("plot error")
@@ -31,8 +31,8 @@ def doTest(lambdaValue, trainStep, plot=False):
 
 firstTrainSetErrors = []
 
-trainStep = 100
-firstTrainSetErrors.append((0.1, trainStep,(doTest(0.1, trainStep, plot=True))))\
+trainStep = 200
+firstTrainSetErrors.append((0.1, trainStep,(doTest(trainStep, plot=True))))\
 #%firstTrainSetErrors.append((0.5, trainStep, (doTest(0.5, trainStep))))
 #firstTrainSetErrors.append((1, trainStep, (doTest(1, trainStep))))
 #firstTrainSetErrors.append((10, trainStep, (doTest(10, trainStep))))

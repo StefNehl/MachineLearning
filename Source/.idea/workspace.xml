@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added Selection for Kernel">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added title for plots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/GaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussianProcess.py" afterDir="false" />
@@ -347,14 +347,7 @@
       <workItem from="1652085996877" duration="12926000" />
       <workItem from="1652272431199" duration="3908000" />
       <workItem from="1652276632681" duration="3998000" />
-      <workItem from="1652294632388" duration="657000" />
-    </task>
-    <task id="LOCAL-00012" summary="Added Reports">
-      <created>1646138579637</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1646138579637</updated>
+      <workItem from="1652294632388" duration="1888000" />
     </task>
     <task id="LOCAL-00013" summary="Started report">
       <created>1646141059796</created>
@@ -692,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652293992949</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Added title for plots">
+      <created>1652295336708</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1652295336709</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -714,7 +714,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Finished Extraction of gauss class" />
     <MESSAGE value="Added gauss distribution to report" />
     <MESSAGE value="Finished report" />
     <MESSAGE value="Implemented Task 1" />
@@ -739,7 +738,8 @@
     <MESSAGE value="Added assignment 5" />
     <MESSAGE value="Implemented first Model and Tested Data" />
     <MESSAGE value="Added Selection for Kernel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Selection for Kernel" />
+    <MESSAGE value="Added title for plots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added title for plots" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

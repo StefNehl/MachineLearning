@@ -67,23 +67,26 @@ class GaussianProcess(Regression):
         X = np.vstack(([self.createFeatureVector(x) for x in self.trainSubsetInput]))
         Y = np.vstack(([y for y in self.trainSubsetOutput]))
 
+
+        self.kernelSetting = kernelSetting
+        self.ard = True
+        self.iterations = 1000
+
         kernel = object
-        ard = True
-        self.settingsString = (f"Train Step: {self.trainStep}, Kernel: {kernelSetting.value}, ARD: {ard}")
-        if kernelSetting == KernelSetting.LinearKernel:
+        if self.kernelSetting == KernelSetting.LinearKernel:
             kernel = GPy.kern.Linear(2, ARD=ard)
 
-        if kernelSetting == KernelSetting.RBF:
+        if self.kernelSetting == KernelSetting.RBF:
             kernel = GPy.kern.RBF(2, ARD=ard, useGPU=False)
 
-        if kernelSetting == KernelSetting.RBFWithGpu:
+        if self.kernelSetting == KernelSetting.RBFWithGpu:
             kernel = GPy.kern.RBF(2, ARD=ard, useGPU=True)
 
-        if kernelSetting == KernelSetting.Matern52:
-            kernel = GPy.kern.Matern52(2, ARD=ard)
+        if self.kernelSetting == KernelSetting.Matern52:
+            kernel = GPy.kern.Matern52(2, ARD=self.ard)
 
         self.model = GPy.models.GPRegression(X=X, Y=Y, kernel=kernel)
-        self.model.optimize(messages=True, max_iters=1000)
+        self.model.optimize(messages=True, max_iters=self.iterations)
 
         return self.model
 
@@ -106,6 +109,13 @@ class GaussianProcess(Regression):
 
     def computMeanOfError(self):
         self.meanError = np.mean(self.yError)
+        self.settingsString = (f"Train Step: {self.trainStep}, "
+                               f"Kernel: {self.kernelSetting.value}, "
+                               f"Iterations: {self.iterations}, "
+                               f"ARD: {self.ard}, "
+                               f"Mean Error: {self.meanError}")
+    def getSettingsString(self):
+        return self.settingsString
 
     def getMeanError(self):
         return self.meanError
@@ -116,17 +126,20 @@ class GaussianProcess(Regression):
 
         plt.xlabel("Descending Sorted Y Errors")
         plt.ylabel("Error |yResult - yStar| [C]")
-        plt.title("Error |yResult - yStar| [C] with " + self.settingsString)
+        plt.title(self.settingsString)
         plt.tight_layout()
         matplotlib.pyplot.show()
 
     def plotHeatMap(self):
 
         GPy.plotting.change_plotting_library("matplotlib")
+
+        plt.figure(figsize=(8, 6))
         fig = self.model.plot()
 
         plt.xlabel("Longitude")
         plt.ylabel("Latitude")
         plt.title(self.settingsString)
+        plt.tight_layout()
         matplotlib.pyplot.show()
         return
