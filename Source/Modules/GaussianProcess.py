@@ -9,12 +9,18 @@ import GPy
 
 from inference import Regression
 from GaussDistribution import GaussDistribution
+from enum import Enum
+
+class KernelSetting(Enum):
+    LinearKernel = 1
+    RBFWithGpu = 2
+    RBF = 3
+    Matern52 = 4
 
 class GaussianProcess(Regression):
 
     def __init__(self, trainStep):
         self.trainStep = trainStep
-        self.hasGenerated1DTestData = False
 
     def importData(self):
         dataDictonary =  sio.loadmat("AssignmentIV_data_set.mat")
@@ -57,15 +63,24 @@ class GaussianProcess(Regression):
 
         return featureVector
 
-    def computeGaussianProcessRegression(self, lambdaValue):
-        self.lambdaValue = lambdaValue
-
+    def computeGaussianProcessRegression(self, kernelSetting:KernelSetting):
         X = np.vstack(([self.createFeatureVector(x) for x in self.trainSubsetInput]))
         Y = np.vstack(([y for y in self.trainSubsetOutput]))
-        #Y = Y[:, np.newaxis]
 
-        #kernel = GPy.kern.RBF(2, ARD=True, useGPU=False)
-        kernel = GPy.kern.Matern52(2, ARD=True) + GPy.kern.White(2)
+        kernel = object
+        ard = True
+        if kernelSetting == KernelSetting.LinearKernel:
+            kernel = GPy.kern.Linear(2, ARD=ard)
+
+        if kernelSetting == KernelSetting.RBF:
+            kernel = GPy.kern.RBF(2, ARD=ard, useGPU=False)
+
+        if kernelSetting == KernelSetting.RBFWithGpu:
+            kernel = GPy.kern.RBF(2, ARD=ard, useGPU=True)
+
+        if kernelSetting == KernelSetting.Matern52:
+            kernel = GPy.kern.Matern52(2, ARD=ard)
+
         self.model = GPy.models.GPRegression(X=X, Y=Y, kernel=kernel)
         self.model.optimize(messages=True, max_iters=1000)
 
@@ -100,7 +115,7 @@ class GaussianProcess(Regression):
 
         plt.xlabel("Descending Sorted Y Errors")
         plt.ylabel("Error |yResult - yStar| [C]")
-        plt.title("Error |yResult - yStar| [C] with Lambda: " + str(self.lambdaValue))
+        plt.title("Error |yResult - yStar| [C] with Lambda: ")
         plt.tight_layout()
         matplotlib.pyplot.show()
 

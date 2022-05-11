@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 sys.path.insert(0, '../modules')
 from GaussianProcess import GaussianProcess
+from GaussianProcess import KernelSetting
 
 def doTest(lambdaValue, trainStep, plot=False):
     ridgeRegression = GaussianProcess(trainStep)
@@ -12,7 +13,7 @@ def doTest(lambdaValue, trainStep, plot=False):
     print("generate Trainingset")
     ridgeRegression.generateTrainingSubset()
     print("Train")
-    ridgeRegression.computeGaussianProcessRegression(lambdaValue)
+    ridgeRegression.computeGaussianProcessRegression(KernelSetting.Matern52)
     ridgeRegression.testModel()
     print("Calculate Error")
     yTest = ridgeRegression.getYTestData()

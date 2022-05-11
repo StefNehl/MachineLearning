@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added assignment 5">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Implemented first Model and Tested Data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/GaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussianProcess.py" afterDir="false" />
@@ -346,14 +346,7 @@
       <workItem from="1652019063244" duration="11669000" />
       <workItem from="1652085996877" duration="12926000" />
       <workItem from="1652272431199" duration="3908000" />
-      <workItem from="1652276632681" duration="1307000" />
-    </task>
-    <task id="LOCAL-00010" summary="Added first plot">
-      <created>1646085046679</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1646085046679</updated>
+      <workItem from="1652276632681" duration="3536000" />
     </task>
     <task id="LOCAL-00011" summary="Changed size of charts">
       <created>1646138100638</created>
@@ -691,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652273375865</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Implemented first Model and Tested Data">
+      <created>1652277974349</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1652277974350</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +713,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Fixed Issue for gauss 1D" />
     <MESSAGE value="Extracted GaussDistribution to separate class" />
     <MESSAGE value="Finished Extraction of gauss class" />
     <MESSAGE value="Added gauss distribution to report" />
@@ -738,17 +737,11 @@
     <MESSAGE value="Finished Report" />
     <MESSAGE value="Smaller bug fixes" />
     <MESSAGE value="Added assignment 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added assignment 5" />
+    <MESSAGE value="Implemented first Model and Tested Data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented first Model and Tested Data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
