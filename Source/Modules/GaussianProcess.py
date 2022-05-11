@@ -12,10 +12,10 @@ from GaussDistribution import GaussDistribution
 from enum import Enum
 
 class KernelSetting(Enum):
-    LinearKernel = 1
-    RBFWithGpu = 2
-    RBF = 3
-    Matern52 = 4
+    LinearKernel = "Linear Kernel"
+    RBFWithGpu = "RBF with GPU"
+    RBF = "RBF"
+    Matern52 = "Matern 52"
 
 class GaussianProcess(Regression):
 
@@ -69,6 +69,7 @@ class GaussianProcess(Regression):
 
         kernel = object
         ard = True
+        self.settingsString = (f"Train Step: {self.trainStep}, Kernel: {kernelSetting.value}, ARD: {ard}")
         if kernelSetting == KernelSetting.LinearKernel:
             kernel = GPy.kern.Linear(2, ARD=ard)
 
@@ -115,7 +116,7 @@ class GaussianProcess(Regression):
 
         plt.xlabel("Descending Sorted Y Errors")
         plt.ylabel("Error |yResult - yStar| [C]")
-        plt.title("Error |yResult - yStar| [C] with Lambda: ")
+        plt.title("Error |yResult - yStar| [C] with " + self.settingsString)
         plt.tight_layout()
         matplotlib.pyplot.show()
 
@@ -126,5 +127,6 @@ class GaussianProcess(Regression):
 
         plt.xlabel("Longitude")
         plt.ylabel("Latitude")
+        plt.title(self.settingsString)
         matplotlib.pyplot.show()
         return

@@ -13,7 +13,7 @@ def doTest(lambdaValue, trainStep, plot=False):
     print("generate Trainingset")
     ridgeRegression.generateTrainingSubset()
     print("Train")
-    ridgeRegression.computeGaussianProcessRegression(KernelSetting.Matern52)
+    ridgeRegression.computeGaussianProcessRegression(KernelSetting.LinearKernel)
     ridgeRegression.testModel()
     print("Calculate Error")
     yTest = ridgeRegression.getYTestData()
