@@ -74,13 +74,13 @@ class GaussianProcess(Regression):
 
         kernel = object
         if self.kernelSetting == KernelSetting.LinearKernel:
-            kernel = GPy.kern.Linear(2, ARD=ard)
+            kernel = GPy.kern.Linear(2, ARD=self.ard)
 
         if self.kernelSetting == KernelSetting.RBF:
-            kernel = GPy.kern.RBF(2, ARD=ard, useGPU=False)
+            kernel = GPy.kern.RBF(2, ARD=self.ard, useGPU=False)
 
         if self.kernelSetting == KernelSetting.RBFWithGpu:
-            kernel = GPy.kern.RBF(2, ARD=ard, useGPU=True)
+            kernel = GPy.kern.RBF(2, ARD=self.ard, useGPU=True)
 
         if self.kernelSetting == KernelSetting.Matern52:
             kernel = GPy.kern.Matern52(2, ARD=self.ard)
@@ -114,9 +114,7 @@ class GaussianProcess(Regression):
         self.meanError = np.mean(self.yError)
         self.settingsString = (f"Train Step: {self.trainStep}, "
                                f"Kernel: {self.kernelSetting.value}, "
-                               f"Iterations: {self.iterations}, "
-                               f"ARD: {self.ard}, "
-                               f"Mean Error: {self.meanError}")
+                               f"Mean Error: {round(self.meanError, 5)}")
     def getSettingsString(self):
         return self.settingsString
 

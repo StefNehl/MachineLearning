@@ -86,9 +86,16 @@ class RidgeRegression(Regression):
 
     def computMeanOfError(self):
         self.meanError = np.mean(self.yError)
+        self.settingsString = (f"Train Step: {self.trainStep}, "
+                               f"Lambda: {self.lambdaValue}, "
+                               f"Kernel: Ridge Regression, "
+                               f"Mean Error: {round(self.meanError, 5)}")
 
     def getMeanError(self):
         return self.meanError
+
+    def getSettingsString(self):
+        return self.settingsString
 
     def plotError(self):
         plt.figure(figsize=(8, 6))
@@ -96,8 +103,7 @@ class RidgeRegression(Regression):
 
         plt.xlabel("Descending Sorted Y Errors")
         plt.ylabel("Error |yResult - yStar| [C]")
-        plt.title("Error |yResult - yStar| [C] with Lambda: " + str(self.lambdaValue))
-        plt.tight_layout()
+        plt.title(self.settingsString)
         matplotlib.pyplot.show()
 
     def plotHeatMap(self):
@@ -121,7 +127,7 @@ class RidgeRegression(Regression):
 
         plt.xlabel("Longitude")
         plt.ylabel("Latitude")
-        plt.title("Error |yResult - yStar| [C] with Lambda: " + str(self.lambdaValue))
+        plt.title(self.settingsString)
         plt.tight_layout()
         matplotlib.pyplot.show()
 
