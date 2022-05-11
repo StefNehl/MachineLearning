@@ -6,7 +6,7 @@ sys.path.insert(0, '../modules')
 from RidgeRegression import RidgeRegression
 
 def doTest(lambdaValue, trainStep, plot=False):
-    ridgeRegression = RidgeRegression(100)
+    ridgeRegression = RidgeRegression(trainStep)
     print("import data")
     ridgeRegression.importData()
     print("generate Trainingset")

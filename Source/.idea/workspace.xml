@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added pics">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished Report">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/ReportAssignment4/main.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/RidgeRegression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +45,7 @@
       <recent name="C:\Users\stefa\OneDrive\Documents\_Private\Uni 2022\Exercice Machine Learning\Assignments\Assignment_1\Source\Code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Task3_RidgeRegression">
+  <component name="RunManager" selected="Python.TaskGaussianProcess">
     <configuration name="Assignment1" type="PythonConfigurationType" factoryName="Python">
       <module name="Source" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,10 +156,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="GaussianProcess" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modules" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modules/GaussianProcess.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Task1_BayesTheorem" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Source" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment4" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -194,6 +208,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment4/Task3_RidgeRegression.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TaskGaussianProcess" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Source" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -247,17 +280,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.TaskGaussianProcess" />
       <item itemvalue="Python.Task3_RidgeRegression" />
       <item itemvalue="Python.Assignment3" />
       <item itemvalue="Python.Assignment1" />
       <item itemvalue="Python.Assignment2" />
       <item itemvalue="Python.Task1_BayesTheorem" />
+      <item itemvalue="Python.GaussianProcess" />
       <item itemvalue="Python.inference" />
       <item itemvalue="Python.BasicStatistics" />
       <item itemvalue="Python.BasicStatisticsTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GaussianProcess" />
         <item itemvalue="Python.inference" />
         <item itemvalue="Python.BasicStatisticsTest" />
         <item itemvalue="Python.BasicStatistics" />
@@ -300,14 +336,8 @@
       <workItem from="1651644131640" duration="9111000" />
       <workItem from="1651653472095" duration="15005000" />
       <workItem from="1652019063244" duration="11669000" />
-      <workItem from="1652085996877" duration="12626000" />
-    </task>
-    <task id="LOCAL-00007" summary="Added new Files">
-      <created>1646080209249</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1646080209249</updated>
+      <workItem from="1652085996877" duration="12926000" />
+      <workItem from="1652272431199" duration="767000" />
     </task>
     <task id="LOCAL-00008" summary="Implemented Mean and Median">
       <created>1646082574000</created>
@@ -645,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652108010190</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Finished Report">
+      <created>1652111366120</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1652111366120</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +704,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Fixed smaller issues in title" />
     <MESSAGE value="Changes in Gauss 2D" />
     <MESSAGE value="Added Report" />
     <MESSAGE value="Fixed Issue for gauss 1D" />
@@ -692,7 +728,8 @@
     <MESSAGE value="Applied structure to ridge" />
     <MESSAGE value="Finished plotting" />
     <MESSAGE value="Added pics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pics" />
+    <MESSAGE value="Finished Report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Report" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,6 +750,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Assignment_2_py$TaskGaussianProcess.coverage" NAME="TaskGaussianProcess Coverage Results" MODIFIED="1652273020521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment5" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_1.coverage" NAME="Assignment_1 Coverage Results" MODIFIED="1646080037790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_1" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1652100385611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1647348691451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />
