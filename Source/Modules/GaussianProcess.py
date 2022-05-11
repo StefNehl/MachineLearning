@@ -91,7 +91,10 @@ class GaussianProcess(Regression):
         return self.model
 
     def testModel(self):
-        self.yResult = self.model.Y
+        xNew = self.x_test[0:,1:]
+        result = self.model.predict(xNew)
+        self.yResult = np.array(result[0])
+
 
     def getYTestData(self):
         return self.y_test
@@ -131,15 +134,26 @@ class GaussianProcess(Regression):
         matplotlib.pyplot.show()
 
     def plotHeatMap(self):
+        tempErrorData = \
+            {
+                'Lat': [round(long,2) for long in self.x_test[:, 1]],
+                'Long': [round(lat,2) for lat in self.x_test[:, 2]],
+                'error':[error[0] for error in self.yError]
+            }
 
-        GPy.plotting.change_plotting_library("matplotlib")
+        tempDataFrame = pd.DataFrame(tempErrorData)
+        tempDataFrame = tempDataFrame.pivot("Long", "Lat", "error")
+        reversedTempErrorData = tempDataFrame.sort_values(("Long"), ascending=False)
 
-        plt.figure(figsize=(8, 6))
-        fig = self.model.plot()
+        def fmt(x, y):
+            return '{:,.2f}'.format(x)
+
+        plt.figure(figsize=(8,6))
+        errorHeatMap = sbr.heatmap(reversedTempErrorData, vmin=0.0, cmap="coolwarm", cbar_kws={"label":"Error |yResult - yStar| [C]"})
+        ax = errorHeatMap.axes
 
         plt.xlabel("Longitude")
         plt.ylabel("Latitude")
         plt.title(self.settingsString)
         plt.tight_layout()
         matplotlib.pyplot.show()
-        return

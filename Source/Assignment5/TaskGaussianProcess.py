@@ -31,7 +31,7 @@ def doTest(trainStep, plot=False):
 
 firstTrainSetErrors = []
 
-trainStep = 200
+trainStep = 100
 firstTrainSetErrors.append((0.1, trainStep,(doTest(trainStep, plot=True))))\
 #%firstTrainSetErrors.append((0.5, trainStep, (doTest(0.5, trainStep))))
 #firstTrainSetErrors.append((1, trainStep, (doTest(1, trainStep))))
