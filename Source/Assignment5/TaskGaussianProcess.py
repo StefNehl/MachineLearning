@@ -74,6 +74,7 @@ firstTrainSetErrors.append(doTestRidge(trainStep, 1))
 #firstTrainSetErrors.append((10, trainStep, (doTest(10, trainStep))))
 #firstTrainSetErrors.append((50, trainStep, (doTest(50, trainStep))))
 
+plt.figure(figsize=(8, 8))
 for testSet in firstTrainSetErrors:
     errors = testSet[0]
     settings = testSet[1]
@@ -84,6 +85,7 @@ for testSet in firstTrainSetErrors:
 plt.title("Errors with different Lambdas and TrainStep")
 plt.xlabel("Descending Sorted Y Errors")
 plt.ylabel("Error |yResult - yStar| [C]")
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
+          fancybox=True, shadow=True, ncol=1)
 plt.tight_layout()
-plt.legend()
 plt.show()

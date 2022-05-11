@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished first prediction">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Adjusted Ridge Regression for compare">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/GaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussianProcess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/RidgeRegression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,14 +346,7 @@
       <workItem from="1652085996877" duration="12926000" />
       <workItem from="1652272431199" duration="3908000" />
       <workItem from="1652276632681" duration="3998000" />
-      <workItem from="1652294632388" duration="7843000" />
-    </task>
-    <task id="LOCAL-00015" summary="Finished Histogram">
-      <created>1646309604949</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1646309604949</updated>
+      <workItem from="1652294632388" duration="8208000" />
     </task>
     <task id="LOCAL-00016" summary="Added description for the statistic functions">
       <created>1646388217876</created>
@@ -693,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652301118762</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Adjusted Ridge Regression for compare">
+      <created>1652302569161</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1652302569162</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -715,7 +713,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Implemented Task 1" />
     <MESSAGE value="Implemented Plotting for raw data and train subset" />
     <MESSAGE value="Added Ridge Regression (not finished for 1D input)" />
     <MESSAGE value="Added Ridge Regression for test Dataset" />
@@ -740,7 +737,8 @@
     <MESSAGE value="Added title for plots" />
     <MESSAGE value="Fixed title issue" />
     <MESSAGE value="Finished first prediction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished first prediction" />
+    <MESSAGE value="Adjusted Ridge Regression for compare" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted Ridge Regression for compare" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
