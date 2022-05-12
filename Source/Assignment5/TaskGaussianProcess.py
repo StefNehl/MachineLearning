@@ -55,9 +55,10 @@ def doTestRidge(trainStep, lambdaValue, plot=False):
 
 firstTrainSetErrors = []
 
-trainStep = 100
+trainStep = 50
 firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.Matern52))
 firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.RBF))
+#firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.RBFWithGpu))
 firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.LinearKernel))
 firstTrainSetErrors.append(doTestRidge(trainStep, 0.1))
 firstTrainSetErrors.append(doTestRidge(trainStep, 0.5))

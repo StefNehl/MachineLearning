@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Adjusted Ridge Regression for compare">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Adjusted Legend of error plot">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
     </list>
@@ -346,14 +346,8 @@
       <workItem from="1652085996877" duration="12926000" />
       <workItem from="1652272431199" duration="3908000" />
       <workItem from="1652276632681" duration="3998000" />
-      <workItem from="1652294632388" duration="8208000" />
-    </task>
-    <task id="LOCAL-00016" summary="Added description for the statistic functions">
-      <created>1646388217876</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1646388217876</updated>
+      <workItem from="1652294632388" duration="8231000" />
+      <workItem from="1652338490178" duration="434000" />
     </task>
     <task id="LOCAL-00017" summary="Added description of plotting and loading data">
       <created>1646391043120</created>
@@ -691,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652302569162</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Adjusted Legend of error plot">
+      <created>1652302926505</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1652302926505</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +714,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Implemented Plotting for raw data and train subset" />
     <MESSAGE value="Added Ridge Regression (not finished for 1D input)" />
     <MESSAGE value="Added Ridge Regression for test Dataset" />
     <MESSAGE value="Clean Up (Removed predict and iteration)" />
@@ -738,7 +738,8 @@
     <MESSAGE value="Fixed title issue" />
     <MESSAGE value="Finished first prediction" />
     <MESSAGE value="Adjusted Ridge Regression for compare" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted Ridge Regression for compare" />
+    <MESSAGE value="Adjusted Legend of error plot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted Legend of error plot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
