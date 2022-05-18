@@ -8,6 +8,7 @@ import pandas as pd
 import GPy
 
 from inference import Regression
+from BasicStatistics import BasicStatistics
 from GaussDistribution import GaussDistribution
 from enum import Enum
 
@@ -46,7 +47,10 @@ class GaussianProcess(Regression):
                 arrayValues.append(value)
                 longLatData.append((latData[y][0], longData[x][0])) #[0] needed because of strange import of long/latData
 
-        self.inputValues = np.array(longLatData)
+        self.inputValues = longLatData
+
+        #normalizedYValues =  BasicStatistics(arrayValues)
+        #self.outputValues = np.array(normalizedYValues.getNormalizeDataSet())
         self.outputValues = np.array(arrayValues)
         self.numberOfSamples = len(self.inputValues)
 

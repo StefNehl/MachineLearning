@@ -2,7 +2,7 @@
 @author: Nehl Stefan
 """
 
-from BasicStatistics import BasicStatistics
+from Modules.BasicStatistics import BasicStatistics
 
 dataSet1 = [1, 2, 3, 4, 5]
 dataSet2 = [1, 2, 3, 4, 5, 6]

@@ -5,8 +5,7 @@
 import csv
 
 import matplotlib.pyplot as plt
-import numpy
-from BasicStatistics import BasicStatistics
+from Modules.BasicStatistics import BasicStatistics
 
 dataSet = []
 

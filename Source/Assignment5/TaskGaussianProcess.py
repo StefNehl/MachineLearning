@@ -56,7 +56,7 @@ def doTestRidge(trainStep, lambdaValue, plot=False):
 firstTrainSetErrors = []
 
 trainStep = 100
-variances = {0.1,0.5,1,5}
+variances = {0.1,0.5}
 
 for i in variances:
     firstTrainSetErrors.append(doTestGauss(trainStep,variance=i, kernelSetting=KernelSetting.RBF))
