@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Adjusted Legend of error plot">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added Test for pycuda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/GaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussianProcess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,14 +348,10 @@
       <workItem from="1652272431199" duration="3908000" />
       <workItem from="1652276632681" duration="3998000" />
       <workItem from="1652294632388" duration="8231000" />
-      <workItem from="1652338490178" duration="434000" />
-    </task>
-    <task id="LOCAL-00017" summary="Added description of plotting and loading data">
-      <created>1646391043120</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1646391043120</updated>
+      <workItem from="1652338490178" duration="1146000" />
+      <workItem from="1652775911405" duration="834000" />
+      <workItem from="1652812555126" duration="1169000" />
+      <workItem from="1652897746883" duration="1294000" />
     </task>
     <task id="LOCAL-00018" summary="Fixed Issue in dataSet, I am not allowed to order the data set">
       <created>1646392843954</created>
@@ -692,7 +689,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652302926505</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Added Test for pycuda">
+      <created>1652339042480</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1652339042480</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -714,7 +718,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Added Ridge Regression (not finished for 1D input)" />
     <MESSAGE value="Added Ridge Regression for test Dataset" />
     <MESSAGE value="Clean Up (Removed predict and iteration)" />
     <MESSAGE value="Added import, split up plotting for test and real data" />
@@ -739,10 +742,18 @@
     <MESSAGE value="Finished first prediction" />
     <MESSAGE value="Adjusted Ridge Regression for compare" />
     <MESSAGE value="Adjusted Legend of error plot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted Legend of error plot" />
+    <MESSAGE value="Added Test for pycuda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Test for pycuda" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Modules/GaussianProcess.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -759,7 +770,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Assignment_2_py$TaskGaussianProcess.coverage" NAME="TaskGaussianProcess Coverage Results" MODIFIED="1652301781794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment5" />
+    <SUITE FILE_PATH="coverage/Assignment_2_py$TaskGaussianProcess.coverage" NAME="TaskGaussianProcess Coverage Results" MODIFIED="1652813414313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment5" />
     <SUITE FILE_PATH="coverage/Assignment_1_py$Assignment_1.coverage" NAME="Assignment_1 Coverage Results" MODIFIED="1646080037790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment_1" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment3.coverage" NAME="Assignment3 Coverage Results" MODIFIED="1652100385611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment3" />
     <SUITE FILE_PATH="coverage/Assignment_2_py$Assignment_2.coverage" NAME="Assignment_2 Coverage Results" MODIFIED="1647348691451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Assignment2" />

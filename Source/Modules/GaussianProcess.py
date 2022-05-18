@@ -63,27 +63,28 @@ class GaussianProcess(Regression):
 
         return featureVector
 
-    def computeGaussianProcessRegression(self, kernelSetting:KernelSetting):
+    def computeGaussianProcessRegression(self, kernelSetting:KernelSetting, variance:float):
         X = np.vstack(([self.createFeatureVector(x) for x in self.trainSubsetInput]))
         Y = np.vstack(([y for y in self.trainSubsetOutput]))
 
 
         self.kernelSetting = kernelSetting
-        self.ard = True
-        self.iterations = 1000
+        self.ard = False
+        self.iterations = 100
+        self.variance = variance
 
         kernel = object
         if self.kernelSetting == KernelSetting.LinearKernel:
-            kernel = GPy.kern.Linear(2, ARD=self.ard)
+            kernel = GPy.kern.Linear(2, variances=variance, ARD=self.ard)
 
         if self.kernelSetting == KernelSetting.RBF:
-            kernel = GPy.kern.RBF(2, ARD=self.ard, useGPU=False)
+            kernel = GPy.kern.RBF(2, variance=variance, ARD=self.ard, useGPU=False)
 
         if self.kernelSetting == KernelSetting.RBFWithGpu:
-            kernel = GPy.kern.RBF(2, ARD=self.ard, useGPU=True)
+            kernel = GPy.kern.RBF(2, variance=variance, ARD=self.ard, useGPU=True)
 
         if self.kernelSetting == KernelSetting.Matern52:
-            kernel = GPy.kern.Matern52(2, ARD=self.ard)
+            kernel = GPy.kern.Matern52(2, variance=variance, ARD=self.ard)
 
         self.model = GPy.models.GPRegression(X=X, Y=Y, kernel=kernel)
         self.model.optimize(messages=True, max_iters=self.iterations)
@@ -114,6 +115,7 @@ class GaussianProcess(Regression):
         self.meanError = np.mean(self.yError)
         self.settingsString = (f"Train Step: {self.trainStep}, "
                                f"Kernel: {self.kernelSetting.value}, "
+                               f"Variance: {self.variance}, "
                                f"Mean Error: {round(self.meanError, 5)}")
     def getSettingsString(self):
         return self.settingsString

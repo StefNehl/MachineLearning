@@ -7,14 +7,14 @@ from RidgeRegression import RidgeRegression
 from GaussianProcess import GaussianProcess
 from GaussianProcess import KernelSetting
 
-def doTestGauss(trainStep, kernelSetting, plot=False):
+def doTestGauss(trainStep, kernelSetting:KernelSetting, variance:float, plot=False):
     gausRegression = GaussianProcess(trainStep)
     print("import data")
     gausRegression.importData()
     print("generate Trainingset")
     gausRegression.generateTrainingSubset()
     print("Train")
-    gausRegression.computeGaussianProcessRegression(kernelSetting)
+    gausRegression.computeGaussianProcessRegression(kernelSetting, variance=variance)
     gausRegression.testModel()
     print("Calculate Error")
     yTest = gausRegression.getYTestData()
@@ -55,25 +55,19 @@ def doTestRidge(trainStep, lambdaValue, plot=False):
 
 firstTrainSetErrors = []
 
-trainStep = 50
-firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.Matern52))
-firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.RBF))
-#firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.RBFWithGpu))
-firstTrainSetErrors.append(doTestGauss(trainStep, kernelSetting=KernelSetting.LinearKernel))
+trainStep = 100
+variances = {0.1,0.5,1,5}
+
+for i in variances:
+    firstTrainSetErrors.append(doTestGauss(trainStep,variance=i, kernelSetting=KernelSetting.RBF))
+    firstTrainSetErrors.append(doTestGauss(trainStep, variance=i, kernelSetting=KernelSetting.Matern52))
+    firstTrainSetErrors.append(doTestGauss(trainStep, variance=i, kernelSetting=KernelSetting.LinearKernel))
+
+
 firstTrainSetErrors.append(doTestRidge(trainStep, 0.1))
 firstTrainSetErrors.append(doTestRidge(trainStep, 0.5))
 firstTrainSetErrors.append(doTestRidge(trainStep, 1))
-#%firstTrainSetErrors.append((0.5, trainStep, (doTest(0.5, trainStep))))
-#firstTrainSetErrors.append((1, trainStep, (doTest(1, trainStep))))
-#firstTrainSetErrors.append((10, trainStep, (doTest(10, trainStep))))
-#firstTrainSetErrors.append((50, trainStep, (doTest(50, trainStep, plot=True))))
 
-#trainStep = 1
-#firstTrainSetErrors.append((0.1, trainStep,(doTest(0.1, trainStep))))
-#firstTrainSetErrors.append((0.5, trainStep, (doTest(0.5, trainStep))))
-#firstTrainSetErrors.append((1, trainStep, (doTest(1, trainStep))))
-#firstTrainSetErrors.append((10, trainStep, (doTest(10, trainStep))))
-#firstTrainSetErrors.append((50, trainStep, (doTest(50, trainStep))))
 
 plt.figure(figsize=(8, 8))
 for testSet in firstTrainSetErrors:
