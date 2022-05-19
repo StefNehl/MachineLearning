@@ -16,7 +16,7 @@ class BasicStatistics:
         self.sortedDataSet.sort()
 
     def checkDataSet(self, dataSet):
-        if dataSet == None:
+        if dataSet is None:
             return False
 
         if len(dataSet) == 0:

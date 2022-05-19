@@ -33,7 +33,9 @@ class GaussianProcess(Regression):
         latData = dataDictonary.get("LatitudeScale") #y-value: Lat
 
         self.x_test = np.array(dataDictonary.get("x_test")) # Testdata from DataSet
-        self.y_test = np.array(dataDictonary.get("y_test")) # Testdata from DataSet
+
+        normalizedY_TestValues = BasicStatistics(dataDictonary.get("y_test")[0]).getNormalizeDataSet()
+        self.y_test = np.array(normalizedY_TestValues) # Testdata from DataSet
 
         longLatData = []
         arrayValues = []
@@ -49,8 +51,8 @@ class GaussianProcess(Regression):
 
         self.inputValues = longLatData
 
-        #normalizedYValues =  BasicStatistics(arrayValues)
-        #self.outputValues = np.array(normalizedYValues.getNormalizeDataSet())
+        normalizedYValues =  BasicStatistics(arrayValues)
+        self.outputValues = np.array(normalizedYValues.getNormalizeDataSet())
         self.outputValues = np.array(arrayValues)
         self.numberOfSamples = len(self.inputValues)
 
@@ -74,7 +76,7 @@ class GaussianProcess(Regression):
 
         self.kernelSetting = kernelSetting
         self.ard = False
-        self.iterations = 100
+        self.iterations = 1000
         self.variance = variance
 
         kernel = object
@@ -97,7 +99,7 @@ class GaussianProcess(Regression):
 
     def testModel(self):
         xNew = self.x_test[0:,1:]
-        result = self.model.predict(xNew)
+        result = self.model.predict(self.x_test)
         self.yResult = np.array(result[0])
 
 
@@ -105,7 +107,7 @@ class GaussianProcess(Regression):
         return self.y_test
 
     def computeError(self, yStar):
-        self.yError = np.transpose(abs(self.yResult - yStar))
+        self.yError = np.transpose(abs(self.yResult - self.y_test))
         reversedArray = np.flip(np.sort(self.yError, 0))
         self.errorDataFrame = pd.DataFrame({
             'values': range(len(reversedArray)),
