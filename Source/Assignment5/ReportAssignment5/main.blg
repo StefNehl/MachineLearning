@@ -64,24 +64,24 @@ Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end f
 while executing---line 2815 of file biblatex.bst
 You've used 7 entries,
             6399 wiz_defined-function locations,
-            1242 strings with 9860 characters,
-and the built_in function-call counts, 46773 in all, are:
-= -- 3329
+            1242 strings with 9859 characters,
+and the built_in function-call counts, 46872 in all, are:
+= -- 3340
 > -- 1466
 < -- 279
-+ -- 1510
++ -- 1511
 - -- 905
-* -- 3173
-:= -- 5078
+* -- 3184
+:= -- 5089
 add.period$ -- 0
 call.type$ -- 7
 change.case$ -- 151
 chr.to.int$ -- 114
 cite$ -- 12
 duplicate$ -- 3805
-empty$ -- 4237
+empty$ -- 4248
 format.name$ -- 308
-if$ -- 9437
+if$ -- 9459
 int.to.chr$ -- 0
 int.to.str$ -- 18
 missing$ -- 0
@@ -93,7 +93,7 @@ purify$ -- 166
 quote$ -- 0
 skip$ -- 1364
 stack$ -- 0
-substring$ -- 6711
+substring$ -- 6743
 swap$ -- 959
 text.length$ -- 200
 text.prefix$ -- 6

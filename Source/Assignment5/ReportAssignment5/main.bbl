@@ -17,6 +17,33 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
+  \entry{maternKernel}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CERCKIW}{%
+         family={C.\bibnamedelima E.\bibnamedelima Rasmussen},
+         familyi={C\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
+  R\bibinitperiod},
+         given={C.\bibnamedelima K. I.\bibnamedelima Williams},
+         giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim
+  I\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{CERCKIW1}
+    \strng{fullhash}{CERCKIW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2006}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{85}
+    \field{title}{Gaussian Processes for Machine Learning}
+    \field{year}{2006}
+  \endentry
+
   \entry{linearKernel}{article}{}
     \name{author}{2}{}{%
       {{hash=GXYCHH}{%
@@ -161,33 +188,6 @@
     \endverb
     \field{year}{2020}
     \warn{\item Invalid format of field 'urldate'}
-  \endentry
-
-  \entry{maternKernel}{book}{}
-    \name{author}{1}{}{%
-      {{hash=WCERCKI}{%
-         family={Williams},
-         familyi={W\bibinitperiod},
-         given={C.\bibnamedelima E. Rasmussen & C. K.\bibnamedelima I.},
-         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
-  R\bibinitperiod\bibinitdelim \bibinitperiod\bibinitdelim
-  C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim I\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {MIT Press}%
-    }
-    \strng{namehash}{WCERCKI1}
-    \strng{fullhash}{WCERCKI1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2006}
-    \field{labeldatesource}{}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{pages}{85}
-    \field{title}{Gaussian Processes for Machine Learning}
-    \field{year}{2006}
   \endentry
 \enddatalist
 \endinput

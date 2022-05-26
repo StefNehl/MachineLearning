@@ -117,6 +117,25 @@ It looks like, the positive parameter $l$ is set to 1. As additional hyper param
 The \textit{GPy} library has for every kernel a variance parameter. This parameter is a hyper parameter to adjust improve the prediction result. If I set the parameter to a lower value the values for the learning are in a smaller gap. If I increase $\sigma^2$ the gab increases. So if the variance of my data is high, an increased value for the parameter variance makes sense.
 
 \subsection{Implementation}
+For the implementation of the \textit{Gaussian Process Regression} i created a the class \textit{GaussianProcess} which derived from the class \textit{Regression} and reused the functions, \textit{importData}, \textit{generateTrainingSubset}, \textit{createFeatureVector}, \textit{testModel}, \textit{computMeanOfError}, \textit{getMeanError}, \textit{plotError} and \textit{plotHeatMap} from the last assignment about \textit{Ridge Regression}. I implemented than the function \textit{computeGaussianProcessRegression} which takes the parameters \textit{kernelSetting} and \textit{variance}. The parameter \textit{kernelSetting} is an enum with the following values: 
+\begin{table}[htbp]
+    \label{tab:kernelSettings}
+	\caption{Values for the kernel settings}
+	\centering
+	\begin{tabular}{llr}
+		\cmidrule(r){1-2}
+		Value & String \\
+		\midrule
+		LinearKernel & Linear Kernel \\
+		RBFWithGpu & RBF with GPU \\
+		RBF & RBF \\				
+		Matern52 & Matern 52 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+I checked those values with an if and set the kernel to the corresponding value.
+The kernel function, \textit{GPY.kern.KernelName} got 2 more parameters. One was the dimension of the data and the other one the variance, which is the hyper parameter. The dimension was set to two and for the variance I tried different values. After the kernel I created the model with the function \textit{GPY.models.GPRegression} which takes the x and y values and the kernel as a parameter. The y values where normalized to have a mean of zero in the data and I used only a subset of the training data to overcome the performance issues. After the model creation I optimized the model with the \textit{model.optimize} function. This function takes the max iterations as a parameter. I set this value to 1000. After the optimization I used the \textit{model.predict} function and passed the y test data to the trained model. With the returned y values and the y test data from our data set, I calculated the error and the mean of the error. The last step was the plotting of the descending error, the heat map and compared the error with the error of the\textit{Ridge Regression}.
 \subsection{Result}
 \subsection{Conclusion}
 
