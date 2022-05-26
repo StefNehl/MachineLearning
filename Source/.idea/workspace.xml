@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added normalization of y data">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added test with normalized data and training step 20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/Assignment4_Nehl_00935188.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/literature.bib" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/literature.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +49,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Assignment5/ReportAssignment5/pics" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -227,6 +242,9 @@
       <module name="Source" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Assignment5" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -352,14 +370,9 @@
       <workItem from="1652812555126" duration="1169000" />
       <workItem from="1652897746883" duration="2734000" />
       <workItem from="1652900586885" duration="702000" />
-      <workItem from="1652977761096" duration="2042000" />
-    </task>
-    <task id="LOCAL-00021" summary="Changed basic statistic to store the data set in the class">
-      <created>1646567228691</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1646567228692</updated>
+      <workItem from="1652977761096" duration="2674000" />
+      <workItem from="1653398052668" duration="624000" />
+      <workItem from="1653555008887" duration="2837000" />
     </task>
     <task id="LOCAL-00022" summary="Finished Report">
       <created>1646569739437</created>
@@ -697,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652978861824</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Added test with normalized data and training step 20">
+      <created>1652980401135</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1652980401135</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -719,7 +739,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Try and error..." />
     <MESSAGE value="Added Ridged Regression for 2D" />
     <MESSAGE value="Implemented Error" />
     <MESSAGE value="Sorted heatmap correctly" />
@@ -744,7 +763,8 @@
     <MESSAGE value="Finished Test Setup" />
     <MESSAGE value="Added test result with different settings" />
     <MESSAGE value="Added normalization of y data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added normalization of y data" />
+    <MESSAGE value="Added test with normalized data and training step 20" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test with normalized data and training step 20" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

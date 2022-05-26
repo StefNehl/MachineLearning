@@ -21,7 +21,7 @@
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Assignment IV: Bayes'Theorem and Ridge Regression} % The article title
+\title{Assignment V: Gaussian Process Regression} % The article title
 
 \author{
 	\coursetitle{Exercises in Machine Learning (190.013), SS2022}
@@ -48,229 +48,77 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\lettrineabstract{In the fourth assignment, I had to solve three different task. First, calculate the probability for a positive test results with the Bayes' Theorem, next describe the ridge regression and derive the weight update for with the least squares regression and last implement the ridge regression. The implementation of the ridge regression also includes testing the model and plotting it's results.}
+\lettrineabstract{In the fifth assignment, I had to describe the Guassian Process Regression and implement it with the library GPy. Furthermore, I had to test different kernel implementations and hyper parameters and verify and compare the results with the results of the last assignment.}
 
 %----------------------------------------------------------------------------------------
 %	REPORT CONTENTS
 %----------------------------------------------------------------------------------------
 
-\section{Bayes'Theorem}
-The Bayes'Theorem is a mathematical formula which describes the probability of an event. Furthermore, it is used for calculating conditional probabilities. \citep{bayesTheoremHist}
+\section{Gaussian Process Regression}
+Gaussian processes are a class of nonparametric models for machine learning. They are commonly used for modeling spatial and time series data. \citep{gaussianProcessRegression} The \textit{Gaussian Process Regression} uses the 
+\textit{Multivariate Conditional Distribution}. 
 
 \[
-p(A|B) = \frac{p(B|A)p(A)}{p(B)}
+f(\boldsymbol{x'}|\boldsymbol{\mu},\boldsymbol{\Sigma}) = \frac{1}{\sqrt{(2\pi)\textsuperscript{k}\vert\boldsymbol{\Sigma}\vert}
+}
+\:exp\textsuperscript{$-\frac{1}{2}(\boldsymbol{x'}-\boldsymbol{\mu})\textsuperscript{T}\boldsymbol{\Sigma}\textsuperscript{-1}(\boldsymbol{x'}-\boldsymbol{\mu})$}
+\]With $\boldsymbol{x'}$= $\lbrace$x'$_{1}$, ..., $x'_{k}\rbrace$, $\boldsymbol{\Sigma}$ the covariance matrix and $\boldsymbol{|\Sigma|}$ the determinant of the covariance matrix. The covariance is determined by the covariance function of the kernel and has to be positive definite. \citep{bookMachineLearning}
+I tried three different kernels for the \textit{Gaussian Process Regression}. The \textit{Linear Kernel}, the \textit{RBF}, \textit{Radial Basis Function} and the \textit{Matern 52}. 
+
+\subsection{Linear Kernel}
+The \textit{Linear Kernel} is based on linear classification. This classification is based on the linear combination of the characteristics. The decision function can be described with: 
+\[
+d(\boldsymbol{x}) = \boldsymbol{w}^{T}\phi(\boldsymbol{x}) + b
 \]
+where $\boldsymbol{w}$ is the weight vector, b a biased value and $\phi(\boldsymbol{x})$ a higher dimensional vector of \textbf{x}. If $\boldsymbol{w}$ is a linear combination of training data $\boldsymbol{w}$ can be calculated with: 
+\[
+\boldsymbol{w} = \sum_{i=1}^{l}\boldsymbol{\alpha}_i\phi(\boldsymbol{x_i})
+\]
+for some $\boldsymbol{\alpha}$ $\in$ $\textbf{R}^{1}$
+The kernel function can be calculated with 
+\[
+K(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}) = \phi(\boldsymbol{x}_{i}))^{T}\phi(\boldsymbol{x}_{j}))
+\]
+\citep{linearKernel}
+The linear kernel is good for data with a lot of features. That's because mapping the data to a higher dimensional space does not really improve the performance. 
+\citep{linearKernelRecommended}
+The implementation in the \textit{GPy} library was the following: 
+\[
+K(x,y) = \sum_{i=1}^{D} \sigma^2_i x_iy_i
+\]
+Where $D$ defines the dimension and $\sigma^2_i$ the variance for each dimension.
 
-\citep{bookMachineLearning}
+\subsection{RBF}
+The \textit{Radial Basis Function} is one of the most used kernels. It's similar to the \textit{Gaussian distribution}. The kernel calculates the similarity or how close two points are to each other. 
+\[
+K(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}) = \:epx(-\frac{||\boldsymbol{x}_{i} - \boldsymbol{x}_{j}||}{2\sigma^{2}})
+\]
+Where $||\boldsymbol{x}_{i} - \boldsymbol{x}_{j}||$ is the euclidean ($L_{2}$-Norm) and $\sigma$ the variance and the hyper parameter.
+\citep{rbfKernel}
+\[
+K(r) = \sigma^2 \exp \bigg(- \frac{1}{2} r^2 \bigg)
+\]
+Implementation in the \textit{GPy} library where $r = |\boldsymbol{x}_{i} - \boldsymbol{x}_{j}|$ and $\sigma^2$ the variance.
 
-I used this formula to calculate the probability to be infected with SARS CoV2 and having a positive test result of an antigen test. Let A $\in$ [infected, non-infected] the event, which defines if a person is infected or not, and B $\in$ [+,-] the event, which defines the result of the antigen test.
+\subsection{Matern 52}
+The \textit{Matern 52} is a generalization of the \textit{RBF} kernel. 
+\[
+K(r) = (1 + \frac{\sqrt{5}r}{l} + \frac{5r^{2}}{3l^{2}})\:exp(-\frac{\sqrt{5}r}{l})
+\]
+Where $r = |\boldsymbol{x}_{i} - \boldsymbol{x}_{j}|$ and $l$ a positive parameter.\citep{maternKernel}
+However, if I take a look in the code of the \textit{GPy} implementation. It looks a little bit different.
+\[
+K(r) = \sigma^2 (1 + \sqrt{5} r + \frac{5}{3} r^2) \exp(- \sqrt{5} r)
+\]
+It looks like, the positive parameter $l$ is set to 1. As additional hyper parameter the variance, $\sigma^{2}$, was introduced. 
+
+
+\subsection{Hyper-Parameters}
+The \textit{GPy} library has for every kernel a variance parameter. This parameter is a hyper parameter to adjust improve the prediction result. If I set the parameter to a lower value the values for the learning are in a smaller gap. If I increase $\sigma^2$ the gab increases. So if the variance of my data is high, an increased value for the parameter variance makes sense.
 
 \subsection{Implementation}
-First, I created the following variables with the values.
-
-\begin{table}[htbp]
-    \label{tab:alphaBetaParameters}
-	\caption{Variables and Values}
-	\centering
-	\begin{tabular}{llr}
-		\cmidrule(r){1-2}
-		name & value \\
-		\midrule
-		\textit{populationAustria} & 9095538 \\
-		\textit{activeCases} & 441098 \\
-		\textit{covTestSensitivity} & 0.971 \\
-		\textit{covTestSpecific} & 0.995 \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-First, I set the variable for \textit{p(+|inf)} to the value of \textit{covTestSensitivity} and the variable for \textit{p(-|nInf)} tp the value of \textit{covTestSpecific}.
-Next, I calculated the value for \textit{p(inf)}, \textit{p(nInf} and stored the values in the variables 
-\textit{pInfected} and \textit{pNotInfected}. 
-\[
-p(inf) = \textit{activeCases} / \textit{populationAustria}
-\]
-\[
-p(nInf) = 1 -  p(inf)
-\]
-The variable \textit{p(inf)} defines the value for the probability to be infected with covid and \textit{p(nInf)} not. 
-Furthermore, the abbreviation for infected is \textit{inf} and for non infected \textit{nInf}.The abbreviation for having a positive test result is $+$ and for a negative test result $-$.
-Next, I initialized the following variables and calculated there values with the following formulas.
-\[
-p(nInf \& -) = p(nInf) * p(-|non-infected)
-\]
-\[
-p(-) = p(inf \& -) + p(nInf \& -)
-\]
-\[
-p(nInf \& +) = p(nInf) - p(nInf\& -)
-\]
-\[
-p(+) = p(inf \& +) + p(nInf \& +)
-\]
-\[
-p(-|inf) = \frac{p(inf \& -)}{p(-)}
-\]
-\[
-p(+|nInf) = \frac{p(nInf\& +)}{p(nInf)}
-\]
-Last, I used the Bayes'Theorem to calculate the $p(infected|+)$ value.
-\[
-p(inf|+) = \frac{p(+|inf) * p(inf)} {p(nInf)}
-\]
-
-
-\subsection{Result and Conclusion}
-The results of the calculation is displayed in Table 2.
-\begin{table}[htbp]
-    \label{tab:alphaBetaParameters}
-	\caption{Results}
-	\centering
-	\begin{tabular}{llr}
-		\cmidrule(r){1-2}
-		name & value \\
-		\midrule
-		\textit{p(-|inf)}  & 00.15\% \\
-		\textit{p(+|nInf)} & 02.90\% \\
-		\textit{p(inf)}    & 04.85\% \\
-		\textit{p(nInf)}   & 95.15\% \\
-		\textit{p(+)}      & 07.47\% \\
-		\textit{p(inf|+)}  & 63.05\% \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-The result for \textit{p(inf|+)} is $0.630525 \approx 63.05\%$. Which means there is a $63.05\%$ chance to be infected with covid and get a positive test result. The implemented code can be found in the appendix of this paper.
-
-\section{Ridge Regression}
-Ridge regression is used for parameter estimation to address the collinearity problem in multiple linear regression. 
-\citep{ridgeRegression} The Ridge Regression adds the quadratic regularization term 
-$\frac{\lambda}{2}$
-$(\boldsymbol{\omega}\textsuperscript{T}\boldsymbol{\omega})$ to the objective $\textbf{J}_{LS}$.
-\citep{bookMachineLearning}
-
-\subsection{Derivation of the Least Squares Solution}
-For the derivation of the least squares I defined the vectors $\textbf{y} \in \mathbb{R}$,
-$\textbf{A} \in \mathbb{R}^{nxM}$ and
-$\textbf{$\omega$} \in \mathbb{R}^{M}$ where M is the dimension and n the number of samples.
-
-\[
-\frac{\partial \textbf{$J_{LS}$}}{\partial \boldsymbol{\omega}} = 
-\frac{\partial}{\partial \boldsymbol{\omega}}
-\{1/2\sigma^{-2}
-(\textbf{y} - \textbf{A}\boldsymbol{\omega})^{T}
-(\textbf{y} - \textbf{A}\boldsymbol{\omega})
-\}
-\]
-After the partial deviation we receive the following equation. 
-\[
-\frac{\partial \textbf{$J_{LS}$}}{\partial \boldsymbol{\omega}} = 
-1/2\sigma^{-2}
-(-2 \textbf{y}^{T} \textbf{A} + 2 \boldsymbol{\omega}^{T}\textbf{A}^{T}\textbf{A})
-\]
-I set this equation to zero to calculate the least square solution. 
-\[
-\frac{\partial \textbf{$J_{LS}$}}{\partial \boldsymbol{\omega}} = 0,
-\]
-\[
-1/2\sigma^{-2}
-(-2 \textbf{y}^{T} \textbf{A} + 2 \boldsymbol{\omega}^{T}\textbf{A}^{T}\textbf{A}) = 0,
-\]
-\[
-1/2\sigma^{-2}
-(-2 \textbf{y}^{T} \textbf{A} + 2 \boldsymbol{\omega}^{T}\textbf{A}^{T}\textbf{A}) = 0,
-\]
-\[
--\textbf{y}^{T} \textbf{A} + \boldsymbol{\omega}^{T} \textbf{A}^{T}\textbf{A}\boldsymbol{w} = 0,
-\]
-\[
- \boldsymbol{\omega} = (\textbf{A}^{T}\textbf{A})^{-1}\textbf{A}^{T}\textbf{y}.
-\]
-\citep{bookMachineLearning}
-Important here is, that the matrix \textbf{A} has a full rank and is invertible. If this is not the case I would use 
-the Moore–Penrose inverse which is described in the following formula. 
-\[
-\textbf{A}^{+} = (\textbf{A}^{T}\textbf{A})^{-1}\textbf{A}{T}.
-\]
-\citep{bookMachineLearning}
-
-
-\section{Implementation of Ridge Regression}
-The last task was to implement the ridge regression for a given dataset. The dataset includes longitude and latitude of a map with the corresponding temperature data. 
-\subsection{Import Data and Implementation}
-For the implementation I first created the abstract class \textit{Regression} which includes the abstract methods \textit{importData}, \textit{generateTrainingSubset}, \textit{computeLinearRidgeRegression}, \textit{testModel}, 
-\textit{computeError}, \textit{plotError}, \textit{plotHeatMap}, \textit{computMeanOfError}
-Then i created the class \textit{RidgeRegression} which implements those methods and has the parameter \textit{trainStep} which indicates the size of the training data. For importing the data I used the scipy.io library which is able to read \textit{MatLab} files and load this data. I used only the first dataset of the time series data to create the model. The method \textit{generateTrainingSubset} creates the training data with the parameter \textit{trainStep}. The parameter \textit{trainStep} defines the size of the training set. For example, if the value is set to 4 every 4. values is used for the calculation of the weight values. 
-
-\subsection{Ridge Regression}
-For the Implementation of the Ridge Regression calculation I added the method \textit{computeLinearRidgeRegression} and made the calculation. I followed the formula from chapter 2 and used the \textit{numpy} library to do the matrix calculations. I added a helper method which I used to create the feature vector for the calculation. The method is name \textit{createFeatureVector} and takes the parameter \textit{x}. The parameter \textit{x} is the vector of the current y-value. In our case it's a two dimensional vector with the longitude and latitude. I augmented this vector and created the new vector \textit{featureVector} which is a three dimensional vector. The first dimension contains a 1, the second the latitude and the third the longitude. This vector was then returned from the method. After the creation of the feature vectors, the method \textit{computeLinearRidgeRegression} finishes it's calculations and returns the weight vector. The weight vector is used in the method \textit{testModel} where the vector is multiplied with the given test values in the dataset. 
-
-\subsection{Calculate Error}
-After testing the model I calculated the error between the model and the provided test data. For the error computed I added the method compute error, which takes a list of y values, stored in the variable \textit{yStar}, to compute the difference between the calculated result and the parameter \textit{yStar}. Next, I sorted the values descending for plotting and created a \textit{panda data frame} with the \textit{pandas} library. Last, I computed also the mean of the error values with \textit{numpy}.
-
-\subsection{Plotting}
-For plotting I used the \textit{seaborn} library for the heatmap and the descending bar chart and \textit{matplotlib} for the error differences between different lambdas and train steps. Both libraries,
-\textit{seaborn} and \textit{matplotlib} are working great together, because \textit{seaborn} is build on top of \textit{matplotlib}.Because of the native support of \textit{pandas} with the \textit{seaborn} I used the data frame type for preparing the data. For the descending error plot I just created a data frame and passed the value to the function \textit{barplot} in the \textit{seaborn} library. The heat map was a little bit more difficult to create. I created a data frame and used the \textit{pivot} function and sorted the values descending in respect of the longitude value. The sort operation was used, because of the ascending longitude values in the dataset. The prepared data frame was passed to the \textit{heatmap} function of the \textit{seaborn} library. 
-
-
-\subsection{Results}
-The error of the model between the is displayed in Figure 1. This figure shows a descending error plot with a $\lambda$ from 0.1. Raising $\lambda$ does not made any changes in my model. Even raising the value to 50, displayed in Figure 2, only changes the value slightly. The train step was at 4 with both plots. 
-\begin{figure}[htbp] %or use htbp to place it inside the text blocks
-  \centering
-  \includegraphics[width=\columnwidth]{pics/ErrorDescWithL_0_1.png}
-  \caption{Descending error plot with $\lambda$:0.1}
-  \label{fig:fibonacciPlot}
-\end{figure}
-\begin{figure}[htbp] %or use htbp to place it inside the text blocks
-  \centering
-  \includegraphics[width=\columnwidth]{pics/ErrorDescWithL_50.png}
-  \caption{Descending error plot with $\lambda$:50}
-  \label{fig:fibonacciPlot}
-\end{figure}
-The small changes of the error with a different $\lambda$ is also displayed in Figure 3 and 4. The highest error is exactly on the same position in the heat map, only the value itself changed slightly. 
-\begin{figure}[htbp] %or use htbp to place it inside the text blocks
-  \centering
-  \includegraphics[width=\columnwidth]{pics/ErrorHeatWithL_0_1.png}
-  \caption{Heatmap with $\lambda$:0.1}
-  \label{fig:fibonacciPlot}
-\end{figure}
-\begin{figure}[htbp] %or use htbp to place it inside the text blocks
-  \centering
-  \includegraphics[width=\columnwidth]{pics/ErrorHeatWithL_50.png}
-  \caption{Heatmap with $\lambda$:50}
-  \label{fig:fibonacciPlot}
-\end{figure}
-After I made some tests with the different $\lambda$ values I also started to adjust the train step. I reduced the train step to 1 and repeated the tests with different $\lambda$ values. I displayed the results in Figure 5. 
-\begin{figure}[htbp] %or use htbp to place it inside the text blocks
-  \centering
-  \includegraphics[width=\columnwidth]{pics/LambdaDiff.png}
-  \caption{Descending error plot with different lambdas and train steps}
-  \label{fig:fibonacciPlot}
-\end{figure}
-Figure 5 shows, that the changes of the train step and $\lambda$ values only made small adjustment to the results itself. Also the mean values of every tests has only small changes in the value itself. The result of the mean values is displayed in Table 3. 
-
-\begin{table}[htbp]
-    \label{tab:alphaBetaParameters}
-	\caption{Mean Errors}
-	\centering
-	\begin{tabular}{llr}
-		\cmidrule(r){1-3}
-		Train Step & $\lambda$ & Mean\\
-		\midrule
-		4 & 0.1  & 0.5938 \\
-		4 & 0.5  & 0.6117 \\
-		4 & 1.0  & 0.6156 \\				
-		4 & 10.0 & 0.6195 \\
-		4 & 50.0 & 0.6198 \\
-		1 & 0.1  & 0.5938 \\
-		1 & 0.5  & 0.6117 \\
-		1 & 1.0  & 0.6156 \\				
-		1 & 10.0 & 0.6195 \\
-		1 & 50.0 & 0.6198 \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
+\subsection{Result}
 \subsection{Conclusion}
-I had some difficulties with the Implementation of the ridge regression. Especially the augmentation of the values gave me some headache. I even tried to use a \textit{Gaussian Basis Function} with the \textit{Polynomial Basis Function} to create a feature vector. However, all the tries didn't result in a better model. Furthermore, the results were much worse than the straight forward implementation of the feature vector with 1, Latitude and Longitude. One explanation of the error could be the small size of the data set. A larger data set could improve the accuracy of the model. The code of the implementation is in the appendix of this paper. Small side node, I had to remove the correct temperature unit  from the code because it resulted in an \textit{UTF-8} issue. 
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
@@ -282,9 +130,6 @@ I had some difficulties with the Implementation of the ridge regression. Especia
 
 
 \onecolumn\section*{APPENDIX}
-\onecolumn\lstinputlisting{../Task1_BayesTheorem.py}
-\onecolumn\lstinputlisting{../Task3_RidgeRegression.py}
-\onecolumn\lstinputlisting{../../Modules/RidgeRegression.py}
 
 
 

@@ -21,45 +21,86 @@ Database file #1: main-blx.bib
 Database file #2: literature.bib
 Biblatex version: 3.17
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2699 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2699 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2699 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2699 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2703 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2709 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2713 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2713 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2717 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2723 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2727 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2727 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2767 of file biblatex.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 4 entries,
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+Name 1 in "Guo-Xun Yuan, Chia-Hua Ho, and Chih-Jen Lin" has a comma at the end for entry linearKernel
+while executing---line 2815 of file biblatex.bst
+You've used 7 entries,
             6399 wiz_defined-function locations,
-            1230 strings with 10723 characters,
-and the built_in function-call counts, 20448 in all, are:
-= -- 1501
-> -- 366
-< -- 133
-+ -- 461
-- -- 107
-* -- 1331
-:= -- 2115
+            1242 strings with 9860 characters,
+and the built_in function-call counts, 46773 in all, are:
+= -- 3329
+> -- 1466
+< -- 279
++ -- 1510
+- -- 905
+* -- 3173
+:= -- 5078
 add.period$ -- 0
-call.type$ -- 4
-change.case$ -- 91
-chr.to.int$ -- 42
-cite$ -- 6
-duplicate$ -- 1970
-empty$ -- 1896
-format.name$ -- 151
-if$ -- 4365
+call.type$ -- 7
+change.case$ -- 151
+chr.to.int$ -- 114
+cite$ -- 12
+duplicate$ -- 3805
+empty$ -- 4237
+format.name$ -- 308
+if$ -- 9437
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 18
 missing$ -- 0
-newline$ -- 117
-num.names$ -- 189
-pop$ -- 1058
+newline$ -- 189
+num.names$ -- 348
+pop$ -- 2112
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 166
 quote$ -- 0
-skip$ -- 733
+skip$ -- 1364
 stack$ -- 0
-substring$ -- 2596
-swap$ -- 507
-text.length$ -- 95
-text.prefix$ -- 3
+substring$ -- 6711
+swap$ -- 959
+text.length$ -- 200
+text.prefix$ -- 6
 top$ -- 1
-type$ -- 124
+type$ -- 226
 warning$ -- 0
-while$ -- 264
+while$ -- 478
 width$ -- 0
-write$ -- 114
+write$ -- 183
+(There were 20 error messages)
