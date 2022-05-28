@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Added Implementation to the report">
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Implemented Normalization for test data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/GaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/GaussianProcess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/RidgeRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/RidgeRegression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -374,14 +370,7 @@
       <workItem from="1653398052668" duration="624000" />
       <workItem from="1653555008887" duration="5685000" />
       <workItem from="1653663458616" duration="6970000" />
-      <workItem from="1653731582807" duration="4319000" />
-    </task>
-    <task id="LOCAL-00024" summary="Implemented Generation of Samples">
-      <created>1647367698251</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1647367698251</updated>
+      <workItem from="1653731582807" duration="5060000" />
     </task>
     <task id="LOCAL-00025" summary="Implemented Plotting and 1D Gauss">
       <created>1647458081127</created>
@@ -719,7 +708,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653571256189</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Implemented Normalization for test data">
+      <created>1653736319305</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1653736319306</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -741,7 +737,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Sorted heatmap correctly" />
     <MESSAGE value="Adjusted Labels" />
     <MESSAGE value="Added Report for task one" />
     <MESSAGE value="Finished Implementation from Task 3" />
@@ -766,22 +761,11 @@
     <MESSAGE value="Added test with normalized data and training step 20" />
     <MESSAGE value="Added Report with the theory." />
     <MESSAGE value="Added Implementation to the report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Implementation to the report" />
+    <MESSAGE value="Implemented Normalization for test data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Normalization for test data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Modules/GaussianProcess.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Modules/GaussianProcess.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

@@ -8,6 +8,7 @@ import pandas as pd
 
 from inference import Regression
 from GaussDistribution import GaussDistribution
+from BasicStatistics import BasicStatistics
 
 class RidgeRegression(Regression):
 
@@ -25,7 +26,9 @@ class RidgeRegression(Regression):
         latData = dataDictonary.get("LatitudeScale") #y-value: Lat
 
         self.x_test = np.array(dataDictonary.get("x_test")) # Testdata from DataSet
-        self.y_test = np.array(dataDictonary.get("y_test")) # Testdata from DataSet
+
+        normalizedY_TestValues = np.matrix(BasicStatistics(dataDictonary.get("y_test")[0]).getNormalizeDataSet())
+        self.y_test = np.transpose(np.array(normalizedY_TestValues)) # Testdata from DataSet
 
         longLatData = []
         arrayValues = []
@@ -40,7 +43,9 @@ class RidgeRegression(Regression):
                 longLatData.append((latData[y][0], longData[x][0])) #[0] needed because of strange import of long/latData
 
         self.inputValues = np.array(longLatData)
-        self.outputValues = np.array(arrayValues)
+
+        normalizedYValues =  BasicStatistics(arrayValues)
+        self.outputValues = np.array(normalizedYValues.getNormalizeDataSet())
         self.numberOfSamples = len(self.inputValues)
 
     def generateTrainingSubset(self):

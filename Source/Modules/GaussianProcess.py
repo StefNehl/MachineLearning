@@ -36,7 +36,6 @@ class GaussianProcess(Regression):
 
         normalizedY_TestValues = np.matrix(BasicStatistics(dataDictonary.get("y_test")[0]).getNormalizeDataSet())
         self.y_test = np.transpose(np.array(normalizedY_TestValues)) # Testdata from DataSet
-        #self.y_test = np.transpose(np.array(dataDictonary.get("y_test")))
 
         longLatData = []
         arrayValues = []
