@@ -135,9 +135,36 @@ For the implementation of the \textit{Gaussian Process Regression} i created a t
 \end{table}
 
 I checked those values with an if and set the kernel to the corresponding value.
-The kernel function, \textit{GPY.kern.KernelName} got 2 more parameters. One was the dimension of the data and the other one the variance, which is the hyper parameter. The dimension was set to two and for the variance I tried different values. After the kernel I created the model with the function \textit{GPY.models.GPRegression} which takes the x and y values and the kernel as a parameter. The y values where normalized to have a mean of zero in the data and I used only a subset of the training data to overcome the performance issues. After the model creation I optimized the model with the \textit{model.optimize} function. This function takes the max iterations as a parameter. I set this value to 1000. After the optimization I used the \textit{model.predict} function and passed the y test data to the trained model. With the returned y values and the y test data from our data set, I calculated the error and the mean of the error. The last step was the plotting of the descending error, the heat map and compared the error with the error of the\textit{Ridge Regression}.
+The kernel function, \textit{GPY.kern.KernelName} got 2 more parameters. One was the dimension of the data and the other one the variance, which is the hyper parameter. The dimension was set to two and for the variance I tried different values. After the kernel I created the model with the function \textit{GPY.models.GPRegression} which takes the x and y values and the kernel as a parameter. The y values where normalized to have a mean of zero in the data and I used only a subset of the training data to overcome the performance issues. The size of the subset can be set with the parameter \textit{trainStep} which has the same implementation from assignment 4. After the model creation I optimized the model with the \textit{model.optimize} function. This function takes the max iterations as a parameter. I set this value to 1000. After the optimization I used the \textit{model.predict} function and passed the y test data to the trained model. With the returned y values and the y test data from our data set, I calculated the error and the mean of the error. The last step was the plotting of the descending error, the heat map and compared the error with the error of the\textit{Ridge Regression}.
+
 \subsection{Result}
+First I tested which kernel performs the best. For this I created a test with the train steps of 20 and a hyper parameter of 1 and tested all three kernels and compared the error with the error of the \textit{Ridge Regression}. Figure 1 displays the different values. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_V_1.png}
+  \caption{Error with different kernels and variance:1}
+  \label{fig:fibonacciPlot}
+\end{figure}
+Figure 1 shows, that in this case the \textit{Ridge Regression} performs better than the \textit{Gaussian Processes }. From the \textit{Gaussian Processes} the \textit{RBF} and the \textit{Matern 52} performs better than the \textit{Linear Kernel}. Also the time for the learning process took some time. Table 2 displays the learning time from the different kernels. 
+
+\begin{table}[htbp]
+    \label{tab:kernelSettings}
+	\caption{Learning time for the different kernels}
+	\centering
+	\begin{tabular}{llr}
+		\cmidrule(r){1-2}
+		Kernel & Time \\
+		\midrule
+		RBF & 1m 53s\\	
+		Matern 52 & 2m 13s\\				
+		Linear Kernel & 1m 8s\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Because of the results and the performance I used the \textit{Matern 52} kernel for the next tests. I tested the \textit{Matern 52} with 4 different values for the variance. The values were 0.1, 0.5, 1 and 2. 
 \subsection{Conclusion}
+
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

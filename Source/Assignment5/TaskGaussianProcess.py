@@ -55,18 +55,18 @@ def doTestRidge(trainStep, lambdaValue, plot=False):
 
 firstTrainSetErrors = []
 
-trainStep = 20
-variances = {0.1,0.5, 1, 5}
+trainStep = 100
+variances = {1}
 
 for i in variances:
     firstTrainSetErrors.append(doTestGauss(trainStep,variance=i, kernelSetting=KernelSetting.RBF))
     firstTrainSetErrors.append(doTestGauss(trainStep, variance=i, kernelSetting=KernelSetting.Matern52))
     firstTrainSetErrors.append(doTestGauss(trainStep, variance=i, kernelSetting=KernelSetting.LinearKernel))
 
+lambdaValues = {1}
+for i in lambdaValues:
+    firstTrainSetErrors.append(doTestRidge(trainStep, i))
 
-firstTrainSetErrors.append(doTestRidge(trainStep, 0.1))
-firstTrainSetErrors.append(doTestRidge(trainStep, 0.5))
-firstTrainSetErrors.append(doTestRidge(trainStep, 1))
 
 
 plt.figure(figsize=(8, 8))
@@ -77,10 +77,10 @@ for testSet in firstTrainSetErrors:
     y = errors["error"]
     plt.plot(x, y, linewidth=1, label=settings)
 
-plt.title("Errors with different Lambdas and TrainStep")
+plt.title("Errors with different kernes als variance values")
 plt.xlabel("Descending Sorted Y Errors")
 plt.ylabel("Error |yResult - yStar| [C]")
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.10),
           fancybox=True, shadow=True, ncol=1)
 plt.tight_layout()
 plt.show()

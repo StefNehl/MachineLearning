@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  26 MAY 2022 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  27 MAY 2022 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1091,7 +1091,11 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 40.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `tab:kernelSettings' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -1111,8 +1115,7 @@ LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 40.
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 4
 0.
-
-(c:/texlive/2021/texmf-dist/tex/latex/cyrillic/t2acmr.fd
+ (c:/texlive/2021/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    ... okay on input line 40.
@@ -1346,28 +1349,38 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 123.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 123.
+<pics/TrainStep20_V_1.png, id=26, 803.0pt x 803.0pt>
+File: pics/TrainStep20_V_1.png Graphic file (type png)
+<use pics/TrainStep20_V_1.png>
+Package pdftex.def Info: pics/TrainStep20_V_1.png  used on input line 144.
+(pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
+ [2 <./pics/TrainStep20_V_1.png (PNG copy)>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2]
+ [3
 
+] 
 AED: lastpage setting LastPage
-[3
+[4
 
 ] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21600 strings out of 478278
- 380501 string characters out of 5850546
- 1107504 words of memory out of 5000000
- 39249 multiletter control sequences out of 15000+600000
- 627457 words of font info for 237 fonts, out of 8000000 for 9000
+ 21621 strings out of 478278
+ 381003 string characters out of 5850546
+ 1107551 words of memory out of 5000000
+ 39258 multiletter control sequences out of 15000+600000
+ 628500 words of font info for 243 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,75p,1903b,1724s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,75p,1903b,1728s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc}{c:/texlive/2021/te
 xmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{c:/texlive/2021/texmf-dist/fo
@@ -1391,10 +1404,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts
 /type1/public/cm-super/sftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw
 /helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro
 8a.pfb>
-Output written on main.pdf (3 pages, 359978 bytes).
+Output written on main.pdf (4 pages, 418594 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66561 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 66566 words of extra memory for PDF output out of 74296 (max. 10000000)
 
