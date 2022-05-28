@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  27 MAY 2022 19:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.2.17)  28 MAY 2022 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1095,6 +1095,30 @@ Package csquotes Info: ... found 'babel' package.
 
 LaTeX Warning: Label `tab:kernelSettings' multiply defined.
 
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
+
+LaTeX Warning: Label `tab:kernelSettings' multiply defined.
+
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
+
+LaTeX Warning: Label `fig:fibonacciPlot' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1349,23 +1373,112 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 123.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 123.
-<pics/TrainStep20_V_1.png, id=26, 803.0pt x 803.0pt>
-File: pics/TrainStep20_V_1.png Graphic file (type png)
-<use pics/TrainStep20_V_1.png>
-Package pdftex.def Info: pics/TrainStep20_V_1.png  used on input line 144.
+<pics/TrainStep20_kernel_test.png, id=26, 803.0pt x 803.0pt>
+File: pics/TrainStep20_kernel_test.png Graphic file (type png)
+<use pics/TrainStep20_kernel_test.png>
+Package pdftex.def Info: pics/TrainStep20_kernel_test.png  used on input line 1
+43.
 (pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
- [2 <./pics/TrainStep20_V_1.png (PNG copy)>]
+<pics/TrainStep20_kernel_test_v2.png, id=27, 803.0pt x 803.0pt>
+File: pics/TrainStep20_kernel_test_v2.png Graphic file (type png)
+<use pics/TrainStep20_kernel_test_v2.png>
+Package pdftex.def Info: pics/TrainStep20_kernel_test_v2.png  used on input lin
+e 150.
+(pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
+<pics/TrainStep20_Vtest.png, id=28, 803.0pt x 803.0pt>
+File: pics/TrainStep20_Vtest.png Graphic file (type png)
+<use pics/TrainStep20_Vtest.png>
+Package pdftex.def Info: pics/TrainStep20_Vtest.png  used on input line 173.
+(pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
+<pics/TrainStep20_Vtest_withoutOpt.png, id=29, 803.0pt x 803.0pt>
+File: pics/TrainStep20_Vtest_withoutOpt.png Graphic file (type png)
+<use pics/TrainStep20_Vtest_withoutOpt.png>
+Package pdftex.def Info: pics/TrainStep20_Vtest_withoutOpt.png  used on input l
+ine 180.
+(pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
+<pics/TrainStep20_Vtest_matern_withoutOpt.png, id=30, 803.0pt x 803.0pt>
+File: pics/TrainStep20_Vtest_matern_withoutOpt.png Graphic file (type png)
+<use pics/TrainStep20_Vtest_matern_withoutOpt.png>
+Package pdftex.def Info: pics/TrainStep20_Vtest_matern_withoutOpt.png  used on 
+input line 186.
+(pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
+
+Overfull \hbox (46.77974pt too wide) in paragraph at lines 195--225
+ [][] 
+ []
+
+<pics/TrainStep20_LK_RR.png, id=31, 803.0pt x 803.0pt>
+File: pics/TrainStep20_LK_RR.png Graphic file (type png)
+<use pics/TrainStep20_LK_RR.png>
+Package pdftex.def Info: pics/TrainStep20_LK_RR.png  used on input line 230.
+(pdftex.def)             Requested size: 231.88997pt x 231.88382pt.
+<pics/TrainStep20_HM_RR.png, id=32, 803.0pt x 602.25pt>
+File: pics/TrainStep20_HM_RR.png Graphic file (type png)
+<use pics/TrainStep20_HM_RR.png>
+Package pdftex.def Info: pics/TrainStep20_HM_RR.png  used on input line 237.
+(pdftex.def)             Requested size: 231.88997pt x 173.91286pt.
+<pics/TrainStep20_HM_LK.png, id=33, 803.0pt x 602.25pt>
+File: pics/TrainStep20_HM_LK.png Graphic file (type png)
+<use pics/TrainStep20_HM_LK.png>
+Package pdftex.def Info: pics/TrainStep20_HM_LK.png  used on input line 243.
+(pdftex.def)             Requested size: 231.88997pt x 173.91286pt.
+[2 <./pics/TrainStep20_kernel_test.png (PNG copy)>] [3 <./pics/TrainStep20_kern
+el_test_v2.png (PNG copy)> <./pics/TrainStep20_Vtest.png (PNG copy)> <./pics/Tr
+ainStep20_Vtest_withoutOpt.png (PNG copy)> <./pics/TrainStep20_Vtest_matern_wit
+houtOpt.png (PNG copy)>] [4 <./pics/TrainStep20_LK_RR.png (PNG copy)> <./pics/T
+rainStep20_HM_RR.png (PNG copy)> <./pics/TrainStep20_HM_LK.png (PNG copy)>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [3
 
-] 
+[5
+
+] [6
+
+] (../TaskGaussianProcess.py
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+XCharter-TLF on inp
+ut line 80.
+
+(c:/texlive/2021/texmf-dist/tex/latex/xcharter/TS1XCharter-TLF.fd
+File: TS1XCharter-TLF.fd 2020/05/25 (msharpe) Font definitions for TS1/XCharter
+-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/XCharter-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 80.
+Package microtype Info: Character `textbardbl ' is missing
+(microtype)             in font `TS1/XCharter-TLF/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textcelsius ' is missing
+(microtype)             in font `TS1/XCharter-TLF/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+) [8]
+(../../Modules/GaussianProcess.py
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+(../../Modules/inference.py
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12
+
+])
+
 AED: lastpage setting LastPage
-[4
-
-] (./main.aux)
+[13] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1374,40 +1487,40 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21621 strings out of 478278
- 381003 string characters out of 5850546
- 1107551 words of memory out of 5000000
- 39258 multiletter control sequences out of 15000+600000
- 628500 words of font info for 243 fonts, out of 8000000 for 9000
+ 22542 strings out of 478278
+ 393615 string characters out of 5850546
+ 1368555 words of memory out of 5000000
+ 40107 multiletter control sequences out of 15000+600000
+ 634132 words of font info for 275 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,75p,1903b,1728s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
-ive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc}{c:/texlive/2021/te
-xmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{c:/texlive/2021/texmf-dist/fo
-nts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/xchart
-er/XCharter-Bold.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XC
-harter-Italic.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XChar
-ter-Roman.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy1
-0.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy5.pf
-b><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><c
-:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive
-/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2021/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmib10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
-mextra/cmmib7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:
-/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/20
-21/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts
-/type1/public/cm-super/sftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw
-/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro
-8a.pfb>
-Output written on main.pdf (4 pages, 418594 bytes).
+ 65i,12n,75p,1903b,1851s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{c:/texl
+ive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2021/t
+exmf-dist/fonts/enc/dvips/xcharter/xch_yelf2i.enc}{c:/texlive/2021/texmf-dist/f
+onts/enc/dvips/xcharter/xch_rydp4l.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharte
+r-Bold.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Ita
+lic.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Roman.
+pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/
+texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy5.pfb><c:/texl
+ive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><c:/texlive/
+2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2021/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2021/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmib10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmm
+ib7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c
+:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/pub
+lic/cm-super/sftt1000.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/
+uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (13 pages, 953160 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 172 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 66566 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 70697 words of extra memory for PDF output out of 74296 (max. 10000000)
 

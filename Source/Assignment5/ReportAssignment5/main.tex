@@ -133,36 +133,120 @@ For the implementation of the \textit{Gaussian Process Regression} i created a t
 		\bottomrule
 	\end{tabular}
 \end{table}
-
 I checked those values with an if and set the kernel to the corresponding value.
 The kernel function, \textit{GPY.kern.KernelName} got 2 more parameters. One was the dimension of the data and the other one the variance, which is the hyper parameter. The dimension was set to two and for the variance I tried different values. After the kernel I created the model with the function \textit{GPY.models.GPRegression} which takes the x and y values and the kernel as a parameter. The y values where normalized to have a mean of zero in the data and I used only a subset of the training data to overcome the performance issues. The size of the subset can be set with the parameter \textit{trainStep} which has the same implementation from assignment 4. After the model creation I optimized the model with the \textit{model.optimize} function. This function takes the max iterations as a parameter. I set this value to 1000. After the optimization I used the \textit{model.predict} function and passed the y test data to the trained model. With the returned y values and the y test data from our data set, I calculated the error and the mean of the error. The last step was the plotting of the descending error, the heat map and compared the error with the error of the\textit{Ridge Regression}.
 
 \subsection{Result}
-First I tested which kernel performs the best. For this I created a test with the train steps of 20 and a hyper parameter of 1 and tested all three kernels and compared the error with the error of the \textit{Ridge Regression}. Figure 1 displays the different values. 
+First I tested which kernel performs the best. For this I created a test with the train steps of 20 and a hyper parameter of 1 and tested all three kernels and compared the error with the error of the \textit{Ridge Regression}. Figure 1 displays the different values. (I had an issue in the last assignment with the \textit{Ridge Regression}. This bug is now solved.) 
 \begin{figure}[htbp] %or use htbp to place it inside the text blocks
   \centering
-  \includegraphics[width=\columnwidth]{pics/TrainStep20_V_1.png}
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_kernel_test.png}
   \caption{Error with different kernels and variance:1}
   \label{fig:fibonacciPlot}
 \end{figure}
-Figure 1 shows, that in this case the \textit{Ridge Regression} performs better than the \textit{Gaussian Processes }. From the \textit{Gaussian Processes} the \textit{RBF} and the \textit{Matern 52} performs better than the \textit{Linear Kernel}. Also the time for the learning process took some time. Table 2 displays the learning time from the different kernels. 
-
+Figure 1 shows, that in this case the \textit{Ridge Regression} performs better than the \textit{Gaussian Processes }. From the \textit{Gaussian Processes} the \textit{Linear Kernel} performs better than the \textit{Matern 52} and the \textit{RBF}. Similar picture is also displayed in Figure 2 where I repeated the test, but with a variance of two.
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_kernel_test_v2.png}
+  \caption{Error with different kernels and variance:2}
+  \label{fig:fibonacciPlot}
+\end{figure}
+Also the optimization process took some time. Table 2 displays the optimization times from the different kernels. 
 \begin{table}[htbp]
     \label{tab:kernelSettings}
-	\caption{Learning time for the different kernels}
+	\caption{Optimization time for the different kernels}
 	\centering
 	\begin{tabular}{llr}
 		\cmidrule(r){1-2}
-		Kernel & Time \\
+		Kernel & Opt Time \\
 		\midrule
-		RBF & 1m 53s\\	
-		Matern 52 & 2m 13s\\				
-		Linear Kernel & 1m 8s\\
+		RBF & 1m 13\\	
+		Matern 52 & 1m 29s\\				
+		Linear Kernel & 1m 4s\\
 		\bottomrule
 	\end{tabular}
 \end{table}
-Because of the results and the performance I used the \textit{Matern 52} kernel for the next tests. I tested the \textit{Matern 52} with 4 different values for the variance. The values were 0.1, 0.5, 1 and 2. 
+The times are not exact and are depending on the pc and if there are any other programs running in the background.
+Next I tested the different kernels with 4 different values for the variance. The values were 0.1, 0.5, 1 and 2. Figure 3 shows the result of this test. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_Vtest.png}
+  \caption{Error with different kernels and variance:0.1, 0.5, 1, 2}
+  \label{fig:fibonacciPlot}
+\end{figure}
+The result displayed in Figure 3 shows, that with a high amount of optimization iterations the variance effect is small or not even visible. I repeated the test without any optimization. Figure 4 shows that without optimization the mean error decreases with a lower variance for this dataset. This behaviour is also displayed in Figure 5 where I tested the \textit{Matern 52} kernel with the different settings. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_Vtest_withoutOpt.png}
+  \caption{Error with different kernels and variance:0.1, 0.5, 1, 2 and without optimization}
+  \label{fig:fibonacciPlot}
+\end{figure}
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_Vtest_matern_withoutOpt.png}
+  \caption{Error with Matern 52 kernel and variance:0.1, 0.5, 1, 2 and without optimization}
+  \label{fig:fibonacciPlot}
+\end{figure}
+Table 3 displays all results. Without the optimization there is no time measured for the optimization time. 
+\begin{table}[htbp]
+    \label{tab:kernelSettings}
+	\caption{Kernel Results}
+	\centering
+	\begin{tabular}{ccccc}
+		\cmidrule(r){1-5}
+		Kernel & Variance & Optimized & Error Mean & Opt Time \\
+		\midrule
+		RBF & 0.1 & True & 1.7511 & 1m 16s\\	
+		RBF & 0.5 & True & 1.7511 & 1m 06s\\					
+		RBF & 1.0 & True & 1.7511 & 1m 13s\\
+		RBF & 2.0 & True & 1.7511 & 1m 24s\\
+		Matern 52 & 0.1 & True & 1.7520 & 1m 21s\\	
+		Matern 52 & 0.5 & True & 1.7520 & 1m 24s\\					
+		Matern 52 & 1.0 & True & 1.7520 & 1m 29s\\
+		Matern 52 & 2.0 & True & 1.7520 & 1m 40s\\
+		LK & 0.1 & True & 1.6533 & 50s\\	
+		LK & 0.5 & True & 1.6533 & 1m 02s\\					
+		LK & 1.0 & True & 1.6533 & 1m 04s\\
+		LK & 2.0 & True & 1.6533 & 1m 09s\\
+		RBF & 0.1 & False & 1.6925 & -\\	
+		RBF & 0.5 & False & 1.7309 & -\\					
+		RBF & 1.0 & False & 1.7368 & -\\
+		RBF & 2.0 & False & 1.7401 & -\\
+		Matern 52 & 0.1 & False & 1.6906 & -\\	
+		Matern 52 & 0.5 & False & 1.7307 & -\\					
+		Matern 52 & 1.0 & False & 1.7373 & -\\
+		Matern 52 & 2.0 & False & 1.7413 & -\\
+		LK & 0.1 & False & 1.6532 & -\\	
+		LK & 0.5 & False & 1.6533 & -\\					
+		LK & 1.0 & False & 1.6533 & -\\
+		LK & 2.0 & False & 1.6533 & -\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+For the last test I used the \textit{Linear Kernel} and compared the results with the \textit{Ridge Regression}. 
+For this I set the optimization value to 1000, the variance to 1 and the lambda value of the \textit{Ridge Regression} to 1. I compared the error and the heat map of those regression models. Figure 6 displays the result. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_LK_RR.png}
+  \caption{Error with Ridge Regression and Linear Kernel}
+  \label{fig:fibonacciPlot}
+\end{figure}
+The mean of the \textit{Ridge Regression} is smaller. However, the \textit{Linear Kernel} performs better in some areas. This is also visible in Figure 7 and 8 which displays the heat map of both. The \textit{Linear Kernel} performs better in the center of the given longitude and latitude dataset and the \textit{Ridge Regression} better and the right side of the dataset. 
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_HM_RR.png}
+  \caption{Heatmap Ridge Regression}
+  \label{fig:fibonacciPlot}
+\end{figure}
+\begin{figure}[htbp] %or use htbp to place it inside the text blocks
+  \centering
+  \includegraphics[width=\columnwidth]{pics/TrainStep20_HM_LK.png}
+  \caption{Heatmap Linear Kernel}
+  \label{fig:fibonacciPlot}
+\end{figure}
 \subsection{Conclusion}
+The implementation with the \textit{GPy} was easy and with the help of the tutorials good doable. The optimization of the kernel has a big performance impact on the mean and does not always provide better results. I mixture between smaller optimization values and a good picked hyper parameter can improve the overall results. However, 
+in all the cases the \textit{Ridge Regression} had a better mean than the \textit{Gaussian Processes}. 
 
 
 
@@ -176,7 +260,9 @@ Because of the results and the performance I used the \textit{Matern 52} kernel 
 
 
 \onecolumn\section*{APPENDIX}
-
+\onecolumn\lstinputlisting{../TaskGaussianProcess.py}
+\onecolumn\lstinputlisting{../../Modules/GaussianProcess.py}
+\onecolumn\lstinputlisting{../../Modules/inference.py}
 
 
 \end{document}
