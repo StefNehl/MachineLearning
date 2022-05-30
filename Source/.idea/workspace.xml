@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Implemented Normalization for Ridge Regression">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/ReportAssignment5/main.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/TaskGaussianProcess.py" afterDir="false" />
-    </list>
+    <list default="true" id="92a9724e-e0c0-48db-8ec3-ce33e5ca0cb4" name="Changes" comment="Finished Report" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -374,14 +365,7 @@
       <workItem from="1653398052668" duration="624000" />
       <workItem from="1653555008887" duration="5685000" />
       <workItem from="1653663458616" duration="6970000" />
-      <workItem from="1653731582807" duration="13411000" />
-    </task>
-    <task id="LOCAL-00026" summary="Added Beta Distribution">
-      <created>1647474610579</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1647474610579</updated>
+      <workItem from="1653731582807" duration="13575000" />
     </task>
     <task id="LOCAL-00027" summary="Refactoring of both classes (moved generation to the constructor)">
       <created>1647693762923</created>
@@ -719,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653736991203</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Finished Report">
+      <created>1653746236917</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1653746236917</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -747,7 +738,6 @@
     <MESSAGE value="Applied structure to ridge" />
     <MESSAGE value="Finished plotting" />
     <MESSAGE value="Added pics" />
-    <MESSAGE value="Finished Report" />
     <MESSAGE value="Smaller bug fixes" />
     <MESSAGE value="Added assignment 5" />
     <MESSAGE value="Implemented first Model and Tested Data" />
@@ -766,7 +756,8 @@
     <MESSAGE value="Added Implementation to the report" />
     <MESSAGE value="Implemented Normalization for test data" />
     <MESSAGE value="Implemented Normalization for Ridge Regression" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Normalization for Ridge Regression" />
+    <MESSAGE value="Finished Report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Report" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
