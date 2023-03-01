@@ -3,7 +3,6 @@ Implementation of five different machine learning tasks with python.
 
 Assignment 1: 
 Latex and Python Basics
-
 https://github.com/StefNehl/MachineLearning/blob/master/Source/Assignment1/ReportAssignment1/Assignment1.pdf
 
 Assignment 2: 
